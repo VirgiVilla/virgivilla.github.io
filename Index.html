@@ -42,6 +42,23 @@
       color: #666;
       margin-bottom: 25px;
     }
+    ul.benefits {
+      list-style: none;
+      padding: 0;
+      margin: 0 0 25px 0;
+      color: #444;
+    }
+    ul.benefits li {
+      margin-bottom: 12px;
+      padding-left: 20px;
+      position: relative;
+    }
+    ul.benefits li::before {
+      content: "✔";
+      color: #007bff;
+      position: absolute;
+      left: 0;
+    }
     form {
       display: flex;
       flex-direction: column;
@@ -65,9 +82,29 @@
       font-weight: 700;
       cursor: pointer;
       transition: background-color 0.3s ease;
+      padding: 12px;
     }
     input[type="submit"]:hover {
       background-color: #0056b3;
+    }
+    .privacy {
+      font-size: 0.9rem;
+      color: #666;
+      margin-bottom: 15px;
+    }
+    .privacy input {
+      margin-right: 8px;
+      vertical-align: middle;
+    }
+    .confirmation {
+      display: none;
+      background-color: #d4edda;
+      color: #155724;
+      border: 1px solid #c3e6cb;
+      padding: 15px;
+      border-radius: 6px;
+      margin-bottom: 20px;
+      text-align: center;
     }
     footer {
       text-align: center;
@@ -75,14 +112,39 @@
       font-size: 0.9rem;
       margin-top: 15px;
     }
+    .contact-info {
+      text-align: center;
+      font-size: 0.9rem;
+      margin-top: 15px;
+      color: #444;
+    }
+    .contact-info a {
+      color: #007bff;
+      text-decoration: none;
+    }
+    .contact-info a:hover {
+      text-decoration: underline;
+    }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Planifica tu día fácilmente</h1>
     <p class="subtitle">Organiza tu tiempo y toma el control de tu productividad</p>
-    
-    <form id="leadForm" action="mailto:virgivillaescu@gmail.com" method="POST" enctype="text/plain">
+
+    <ul class="benefits">
+      <li>Ahorra tiempo y reduce estrés</li>
+      <li>Mejora tu productividad y enfoque</li>
+      <li>Controla tus finanzas personales</li>
+      <li>100% gratis, sin compromiso</li>
+      <li>Protegemos tu privacidad y datos</li>
+    </ul>
+
+    <div id="confirmation" class="confirmation">
+      ¡Gracias! Tu información ha sido enviada correctamente.
+    </div>
+
+    <form id="leadForm">
       <label for="name">Nombre completo</label>
       <input type="text" id="name" name="Nombre" required />
 
@@ -101,12 +163,52 @@
       <label for="comments">Comentarios o necesidades especiales</label>
       <textarea id="comments" name="Comentarios" rows="3"></textarea>
 
+      <div class="privacy">
+        <input type="checkbox" id="privacyConsent" required />
+        <label for="privacyConsent">Acepto la <a href="privacidad.html" target="_blank">política de privacidad</a></label>
+      </div>
+
       <input type="submit" value="Enviar información" />
     </form>
+
+    <div class="contact-info">
+      <p>¿Tienes dudas? Contáctanos en <a href="mailto:virgivillaescu@gmail.com">virgivillaescu@gmail.com</a></p>
+    </div>
 
     <footer>
       &copy; 2025 Virgi Villa - Todos los derechos reservados.
     </footer>
   </div>
+
+  <script>
+    const form = document.getElementById('leadForm');
+    const confirmation = document.getElementById('confirmation');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+      if (!document.getElementById('privacyConsent').checked) {
+        alert('Por favor acepta la política de privacidad.');
+        return;
+      }
+
+      // Aquí podrías integrar un backend o servicio para enviar datos.
+      // Ahora simulamos el envío y mostramos el mensaje de confirmación:
+
+      confirmation.style.display = 'block';
+      form.style.display = 'none';
+
+      // Opcional: resetear formulario después de un tiempo
+      setTimeout(() => {
+        confirmation.style.display = 'none';
+        form.reset();
+        form.style.display = 'flex';
+      }, 7000);
+    });
+  </script>
 </body>
 </html>
