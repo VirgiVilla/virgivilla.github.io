@@ -69,6 +69,17 @@
     .privacy-link a:hover {
       text-decoration: underline;
     }
+    #formMessage {
+      margin-top: 20px;
+      font-weight: 600;
+      text-align: center;
+    }
+    #formMessage.success {
+      color: green;
+    }
+    #formMessage.error {
+      color: red;
+    }
   </style>
 </head>
 <body>
@@ -97,9 +108,50 @@
     <input type="submit" value="Enviar información" />
   </form>
 
+  <div id="formMessage"></div>
+
   <div class="privacy-link">
     <a href="privacidad.html" target="_blank">Política de privacidad</a>
   </div>
+
+  <script>
+    const form = document.getElementById('leadForm');
+    const formMessage = document.getElementById('formMessage');
+
+    form.addEventListener('submit', function(event) {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch(form.action, {
+        method: form.method,
+        headers: {
+          'Accept': 'application/json'
+        },
+        body: formData
+      })
+      .then(response => {
+        if (response.ok) {
+          formMessage.textContent = "¡Gracias por enviar tu información! Te contactaremos pronto.";
+          formMessage.className = "success";
+          form.reset();
+        } else {
+          return response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              formMessage.textContent = data["errors"].map(error => error.message).join(", ");
+            } else {
+              formMessage.textContent = "Oops! Algo salió mal al enviar el formulario.";
+            }
+            formMessage.className = "error";
+          });
+        }
+      })
+      .catch(() => {
+        formMessage.textContent = "Oops! No se pudo enviar el formulario, por favor intenta más tarde.";
+        formMessage.className = "error";
+      });
+    });
+  </script>
 
 </body>
 </html>
