@@ -3,212 +3,103 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  
-  <title>Impulsa tu Día - Organización Fácil</title>
-  <meta name="description" content="Planifica tu día y mejora tu organización con nuestra app gratuita. Fácil, rápida y para todos.">
-  <meta name="keywords" content="organización, planificación, productividad, agenda, app gratuita">
-  <meta name="author" content="Virgi Villa">
-
-  <!-- Metaetiqueta para Google Search Console -->
-  <meta name="google-site-verification" content="YgyjmPJLvKIX1qU_oF-JO6m3bI1W5w7hgn8r8p1wpTg" />
-  
+  <title>Impulsa tu Día - Planifica tu jornada</title>
   <style>
     body {
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background: #f4f7f8;
       margin: 0;
-      padding: 0;
-      display: flex;
-      justify-content: center;
-      align-items: flex-start;
-      min-height: 100vh;
-    }
-    .container {
-      background: white;
-      max-width: 480px;
-      width: 90%;
-      margin: 40px 0;
       padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      color: #333;
     }
     h1 {
-      text-align: center;
-      color: #333;
-      margin-bottom: 10px;
-    }
-    p.subtitle {
-      text-align: center;
-      color: #666;
-      margin-bottom: 25px;
-    }
-    ul.benefits {
-      list-style: none;
-      padding: 0;
-      margin: 0 0 25px 0;
-      color: #444;
-    }
-    ul.benefits li {
-      margin-bottom: 12px;
-      padding-left: 20px;
-      position: relative;
-    }
-    ul.benefits li::before {
-      content: "✔";
       color: #007bff;
-      position: absolute;
-      left: 0;
+      text-align: center;
     }
     form {
-      display: flex;
-      flex-direction: column;
+      background: white;
+      padding: 20px;
+      border-radius: 6px;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.15);
     }
     label {
-      margin-bottom: 6px;
+      display: block;
+      margin-top: 15px;
       font-weight: 600;
-      color: #444;
     }
-    input, select, textarea {
+    input[type="text"],
+    input[type="email"],
+    input[type="number"],
+    textarea {
+      width: 100%;
       padding: 10px;
-      margin-bottom: 20px;
+      margin-top: 5px;
       border: 1px solid #ccc;
-      border-radius: 5px;
-      font-size: 1rem;
+      border-radius: 4px;
+      font-size: 16px;
+      box-sizing: border-box;
     }
     input[type="submit"] {
       background-color: #007bff;
-      border: none;
       color: white;
-      font-weight: 700;
+      border: none;
+      padding: 12px 20px;
+      margin-top: 20px;
+      border-radius: 4px;
+      font-size: 18px;
       cursor: pointer;
+      width: 100%;
       transition: background-color 0.3s ease;
-      padding: 12px;
     }
     input[type="submit"]:hover {
       background-color: #0056b3;
     }
-    .privacy {
-      font-size: 0.9rem;
-      color: #666;
-      margin-bottom: 15px;
-    }
-    .privacy input {
-      margin-right: 8px;
-      vertical-align: middle;
-    }
-    .confirmation {
-      display: none;
-      background-color: #d4edda;
-      color: #155724;
-      border: 1px solid #c3e6cb;
-      padding: 15px;
-      border-radius: 6px;
-      margin-bottom: 20px;
+    .privacy-link {
+      margin-top: 10px;
+      font-size: 14px;
       text-align: center;
     }
-    footer {
-      text-align: center;
-      color: #aaa;
-      font-size: 0.9rem;
-      margin-top: 15px;
-    }
-    .contact-info {
-      text-align: center;
-      font-size: 0.9rem;
-      margin-top: 15px;
-      color: #444;
-    }
-    .contact-info a {
+    .privacy-link a {
       color: #007bff;
       text-decoration: none;
     }
-    .contact-info a:hover {
+    .privacy-link a:hover {
       text-decoration: underline;
     }
   </style>
 </head>
 <body>
-  <div class="container">
-    <h1>Planifica tu día fácilmente</h1>
-    <p class="subtitle">Organiza tu tiempo y toma el control de tu productividad</p>
 
-    <ul class="benefits">
-      <li>Ahorra tiempo y reduce estrés</li>
-      <li>Mejora tu productividad y enfoque</li>
-      <li>Controla tus finanzas personales</li>
-      <li>100% gratis, sin compromiso</li>
-      <li>Protegemos tu privacidad y datos</li>
-    </ul>
+  <h1>Impulsa tu Día - Planifica tu jornada</h1>
 
-    <div id="confirmation" class="confirmation">
-      ¡Gracias! Tu información ha sido enviada correctamente.
-    </div>
+  <form id="leadForm" action="https://formspree.io/f/xldneqpv" method="POST">
+    <label for="name">Nombre completo</label>
+    <input type="text" id="name" name="name" placeholder="Tu nombre completo" required />
 
-    <form id="leadForm">
-      <label for="name">Nombre completo</label>
-      <input type="text" id="name" name="Nombre" required />
+    <label for="email">Correo electrónico</label>
+    <input type="email" id="email" name="email" placeholder="tu@email.com" required />
 
-      <label for="email">Correo electrónico</label>
-      <input type="email" id="email" name="Email" required />
+    <label for="phone">Teléfono</label>
+    <input type="text" id="phone" name="phone" placeholder="+34 600 000 000" />
 
-      <label for="phone">Teléfono</label>
-      <input type="tel" id="phone" name="Teléfono" />
+    <label for="income">Ingresos mensuales aproximados (€)</label>
+    <input type="number" id="income" name="income" placeholder="Ej: 1200" min="0" />
 
-      <label for="income">Ingresos mensuales aproximados (€)</label>
-      <input type="number" id="income" name="Ingresos" min="0" step="any" required />
+    <label for="expenses">Gastos mensuales aproximados (€)</label>
+    <input type="number" id="expenses" name="expenses" placeholder="Ej: 800" min="0" />
 
-      <label for="expenses">Gastos mensuales aproximados (€)</label>
-      <input type="number" id="expenses" name="Gastos" min="0" step="any" required />
+    <label for="comments">Comentarios adicionales</label>
+    <textarea id="comments" name="comments" placeholder="Cuéntanos más..." rows="4"></textarea>
 
-      <label for="comments">Comentarios o necesidades especiales</label>
-      <textarea id="comments" name="Comentarios" rows="3"></textarea>
+    <input type="submit" value="Enviar información" />
+  </form>
 
-      <div class="privacy">
-        <input type="checkbox" id="privacyConsent" required />
-        <label for="privacyConsent">Acepto la <a href="privacidad.html" target="_blank">política de privacidad</a></label>
-      </div>
-
-      <input type="submit" value="Enviar información" />
-    </form>
-
-    <div class="contact-info">
-      <p>¿Tienes dudas? Contáctanos en <a href="mailto:virgivillaescu@gmail.com">virgivillaescu@gmail.com</a></p>
-    </div>
-
-    <footer>
-      &copy; 2025 Virgi Villa - Todos los derechos reservados.
-    </footer>
+  <div class="privacy-link">
+    <a href="privacidad.html" target="_blank">Política de privacidad</a>
   </div>
 
-  <script>
-    const form = document.getElementById('leadForm');
-    const confirmation = document.getElementById('confirmation');
-
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
-
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-      if (!document.getElementById('privacyConsent').checked) {
-        alert('Por favor acepta la política de privacidad.');
-        return;
-      }
-
-      // Aquí podrías integrar un backend o servicio para enviar datos.
-      // Ahora simulamos el envío y mostramos el mensaje de confirmación:
-
-      confirmation.style.display = 'block';
-      form.style.display = 'none';
-
-      // Opcional: resetear formulario después de un tiempo
-      setTimeout(() => {
-        confirmation.style.display = 'none';
-        form.reset();
-        form.style.display = 'flex';
-      }, 7000);
-    });
-  </script>
 </body>
 </html>
