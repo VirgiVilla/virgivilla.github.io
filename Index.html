@@ -20,7 +20,7 @@
     }
 
     .container {
-      max-width: 500px;
+      max-width: 600px;
       margin: 60px auto;
       padding: 40px;
       box-shadow: 0 8px 30px rgba(0,0,0,0.05);
@@ -41,14 +41,27 @@
       margin-bottom: 30px;
     }
 
+    form {
+      text-align: left;
+    }
+
+    label {
+      display: block;
+      margin: 15px 0 5px;
+      font-weight: 600;
+    }
+
     input[type="text"],
-    input[type="email"] {
+    input[type="email"],
+    input[type="tel"],
+    input[type="number"],
+    select {
       width: 100%;
-      padding: 14px;
-      margin-bottom: 20px;
+      padding: 12px;
       border: 1px solid #dfe6e9;
       border-radius: 6px;
       font-size: 1rem;
+      box-sizing: border-box;
     }
 
     button {
@@ -61,6 +74,7 @@
       font-size: 1.1rem;
       cursor: pointer;
       transition: background 0.3s;
+      margin-top: 25px;
     }
 
     button:hover {
@@ -71,6 +85,7 @@
       margin-top: 30px;
       font-size: 0.9rem;
       color: #b2bec3;
+      text-align: center;
     }
   </style>
 </head>
@@ -79,8 +94,37 @@
     <h1>Impulsa tu Negocio</h1>
     <p>¿Quieres hacer crecer tu proyecto? Déjanos tus datos y recibe una asesoría gratuita por correo.</p>
     <form action="https://formsubmit.co/virgivillaescu@gmail.com" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre completo" required>
-      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <label for="nombre">Nombre completo</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required>
+
+      <label for="email">Correo electrónico</label>
+      <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required>
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Tu teléfono" required>
+
+      <label for="ingresos">Ingresos mensuales aproximados (€)</label>
+      <input type="number" id="ingresos" name="ingresos" placeholder="Ej: 1500" min="0" required>
+
+      <label for="gastos">Gastos mensuales aproximados (€)</label>
+      <input type="number" id="gastos" name="gastos" placeholder="Ej: 800" min="0" required>
+
+      <label for="deudas">¿Tienes deudas pendientes?</label>
+      <select id="deudas" name="deudas" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="Sí">Sí</option>
+        <option value="No">No</option>
+      </select>
+
+      <label for="objetivo">Objetivo financiero principal</label>
+      <select id="objetivo" name="objetivo" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="Ahorrar">Ahorrar</option>
+        <option value="Invertir">Invertir</option>
+        <option value="Pagar deuda">Pagar deuda</option>
+        <option value="Otro">Otro</option>
+      </select>
+
       <button type="submit">Solicitar Asesoría</button>
 
       <!-- Opciones ocultas -->
