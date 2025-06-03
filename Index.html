@@ -3,85 +3,92 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Impulsa tu Negocio - Asesoría Gratis</title>
+  <title>Impulsa tu Negocio</title>
   <style>
+    :root {
+      --primary-color: #2e86de;
+      --accent-color: #00cec9;
+      --background: #ffffff;
+      --text: #2d3436;
+    }
+
     body {
-      margin: 0; padding: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(135deg, #4a90e2, #50e3c2);
-      color: #fff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      height: 100vh;
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--background);
+      color: var(--text);
+    }
+
+    .container {
+      max-width: 500px;
+      margin: 60px auto;
+      padding: 40px;
+      box-shadow: 0 8px 30px rgba(0,0,0,0.05);
+      border-radius: 12px;
+      background: #fff;
       text-align: center;
     }
-    .container {
-      background: rgba(0, 0, 0, 0.4);
-      padding: 40px;
-      border-radius: 12px;
-      max-width: 400px;
-      width: 90%;
-      box-shadow: 0 8px 16px rgba(0,0,0,0.3);
-    }
+
     h1 {
-      font-size: 2.4rem;
-      margin-bottom: 20px;
+      color: var(--primary-color);
+      font-size: 2.2rem;
+      margin-bottom: 10px;
     }
+
     p {
-      font-size: 1.1rem;
+      font-size: 1rem;
+      color: #636e72;
       margin-bottom: 30px;
-      line-height: 1.4;
     }
-    input[type="text"], input[type="email"] {
+
+    input[type="text"],
+    input[type="email"] {
       width: 100%;
-      padding: 12px 15px;
+      padding: 14px;
       margin-bottom: 20px;
-      border: none;
+      border: 1px solid #dfe6e9;
       border-radius: 6px;
       font-size: 1rem;
     }
+
     button {
-      background: #50e3c2;
+      background: var(--primary-color);
+      color: #fff;
       border: none;
-      padding: 15px;
+      padding: 14px;
       width: 100%;
       border-radius: 6px;
       font-size: 1.1rem;
-      font-weight: bold;
-      color: #333;
       cursor: pointer;
-      transition: background 0.3s ease;
+      transition: background 0.3s;
     }
+
     button:hover {
-      background: #3ac9a7;
+      background: #1e6cc7;
     }
+
     .footer {
-      margin-top: 20px;
+      margin-top: 30px;
       font-size: 0.9rem;
-      opacity: 0.7;
+      color: #b2bec3;
     }
   </style>
 </head>
 <body>
   <div class="container">
     <h1>Impulsa tu Negocio</h1>
-    <p>Obtén una asesoría gratuita y personalizada para hacer crecer tu proyecto. ¡Déjanos tus datos y te contactamos!</p>
-    <form id="leadForm">
-      <input type="text" name="nombre" placeholder="Tu nombre" required />
-      <input type="email" name="email" placeholder="Tu correo electrónico" required />
-      <button type="submit">Quiero mi asesoría gratis</button>
-    </form>
-    <div class="footer">Sin spam. Solo ofertas y consejos útiles.</div>
-  </div>
+    <p>¿Quieres hacer crecer tu proyecto? Déjanos tus datos y recibe una asesoría gratuita por correo.</p>
+    <form action="https://formsubmit.co/virgivillaescu@gmail.com" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre completo" required>
+      <input type="email" name="email" placeholder="Tu correo electrónico" required>
+      <button type="submit">Solicitar Asesoría</button>
 
-  <script>
-    const form = document.getElementById('leadForm');
-    form.addEventListener('submit', e => {
-      e.preventDefault();
-      alert('¡Gracias por registrarte! Nos pondremos en contacto pronto.');
-      form.reset();
-    });
-  </script>
+      <!-- Opciones ocultas -->
+      <input type="hidden" name="_subject" value="Nuevo lead desde la landing">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+    </form>
+    <div class="footer">Nunca compartiremos tu información. Solo te contactaremos una vez.</div>
+  </div>
 </body>
 </html>
