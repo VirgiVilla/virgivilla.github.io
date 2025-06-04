@@ -58,35 +58,8 @@
       border-radius: 10px;
       max-width: 300px;
     }
-    form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin: auto;
-    }
-    form input, form textarea, form select {
-      width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1rem;
-    }
-    form button {
-      padding: 12px 25px;
-      background-color: #004a99;
-      color: white;
-      border: none;
-      border-radius: 6px;
-      cursor: pointer;
-      font-weight: bold;
-      font-size: 1.1rem;
-    }
-    form button:hover {
-      background-color: #00306d;
-    }
+    /* Form removed, so no form styles needed */
+
     footer {
       background: #222;
       color: #fff;
@@ -119,41 +92,29 @@
       <p>Soy <strong>Virgi Villa</strong>, asesor financiero con más de 6 años de experiencia ayudando a personas a gestionar su dinero de forma más eficiente, ya sea cambiando de banco, invirtiendo con sentido o simplemente aprendiendo a ahorrar mejor.</p>
     </div>
     <div class="about-photo">
-      <img src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG" alt="Foto de Virgi Villa">
+      <img src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG" alt="Foto de Virgi Villa" loading="lazy">
     </div>
   </section>
 
-  <section id="contacto">
-    <h2 style="text-align:center; margin-bottom: 20px;">Solicita tu asesoría gratuita</h2>
-    <form action="https://formsubmit.co/virgivillaescu@gmail.com" method="POST" aria-describedby="form-description">
-      <p id="form-description">Rellena este formulario para que me ponga en contacto contigo.</p>
-
-      <label for="nombre">Nombre completo *</label>
-      <input type="text" id="nombre" name="nombre" required />
-
-      <label for="email">Correo electrónico *</label>
-      <input type="email" id="email" name="email" required />
-
-      <label for="telefono">Teléfono</label>
-      <input type="tel" id="telefono" name="telefono" />
-
-      <label for="preferencia">¿Cuándo prefieres hablar?</label>
-      <select id="preferencia" name="preferencia">
-        <option value="" disabled selected>Selecciona una opción</option>
-        <option value="mañana">Por la mañana</option>
-        <option value="tarde">Por la tarde</option>
-      </select>
-
-      <label for="mensaje">Mensaje *</label>
-      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
-
-      <!-- Protección y redirección -->
-      <input type="text" name="_honey" style="display:none">
-      <input type="hidden" name="_captcha" value="false">
-      <input type="hidden" name="_next" value="https://virgivilla.github.io/gracias.html">
-
-      <button type="submit">Enviar</button>
-    </form>
+  <section id="contacto" style="text-align:center; padding: 60px 20px;">
+    <h2>Solicita tu asesoría gratuita</h2>
+    <p>Pulsa el botón para enviarme un mensaje por WhatsApp y te responderé lo antes posible.</p>
+    <a href="https://wa.me/34677863127?text=Hola%20Virgi,%20quiero%20solicitar%20una%20asesor%C3%ADa%20financiera." 
+       target="_blank" 
+       style="
+         display: inline-block;
+         margin-top: 20px;
+         padding: 15px 30px;
+         background-color: #25d366;
+         color: white;
+         font-weight: bold;
+         font-size: 1.2rem;
+         border-radius: 8px;
+         text-decoration: none;
+         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+       ">
+      📱 Hablar por WhatsApp
+    </a>
   </section>
 
   <footer>
