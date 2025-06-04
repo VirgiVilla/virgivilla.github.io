@@ -2,238 +2,430 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="google-site-verification" content="YgyjmPJLvKIX1qU_oF-JO6m3bI1W5w7hgn8r8p1wpTg" />
-  <title>Asesoría Financiera Personalizada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asesoría Financiera Personalizada - Virgi Villa</title>
+  <meta name="description" content="Organiza, ahorra e invierte mejor con Virgi Villa. Asesoría financiera personalizada presencial y online. Reserva tu cita gratis hoy." />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* Reset */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Montserrat', sans-serif;
+      background: #f9fbfc;
+      color: #222;
       line-height: 1.6;
-      background-color: #f4f7fa;
-      color: #333;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
     }
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    /* HEADER */
     header {
-      background-image: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4');
-      background-size: cover;
-      background-position: center;
+      position: relative;
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      background: linear-gradient(135deg, #004a99 60%, #0066cc 100%);
       color: white;
-      padding: 80px 20px;
-      text-align: center;
+      padding: 60px 20px;
+      max-width: 1200px;
+      margin: auto;
+      border-radius: 0 0 30px 30px;
+      overflow: hidden;
+    }
+    header .text {
+      flex: 1 1 450px;
+      max-width: 600px;
+      z-index: 2;
     }
     header h1 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
+      font-size: 3rem;
+      margin-bottom: 15px;
+      font-weight: 900;
+      line-height: 1.1;
+      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
     }
     header p {
-      font-size: 1.2rem;
+      font-size: 1.25rem;
+      margin-bottom: 25px;
+      font-weight: 500;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
     }
+    header .btn-cta {
+      background: #00c853;
+      color: white;
+      padding: 16px 32px;
+      border-radius: 30px;
+      font-weight: 700;
+      font-size: 1.1rem;
+      box-shadow: 0 5px 15px rgba(0, 200, 83, 0.6);
+      transition: background 0.3s ease;
+      display: inline-block;
+      cursor: pointer;
+      border: none;
+    }
+    header .btn-cta:hover {
+      background: #009624;
+    }
+    header img {
+      flex: 1 1 350px;
+      max-width: 350px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+      margin-left: auto;
+      z-index: 1;
+    }
+
+    /* SECTIONS */
     section {
-      padding: 60px 20px;
       max-width: 1100px;
-      margin: auto;
+      margin: 50px auto;
+      padding: 0 20px;
     }
+    h2 {
+      text-align: center;
+      font-size: 2.2rem;
+      color: #004a99;
+      margin-bottom: 35px;
+      font-weight: 800;
+    }
+
+    /* BENEFITS */
     .benefits {
       display: flex;
       flex-wrap: wrap;
-      gap: 30px;
       justify-content: center;
-      text-align: center;
+      gap: 35px;
     }
     .benefit {
-      flex: 1 1 250px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
+      padding: 30px;
+      flex: 1 1 280px;
+      text-align: center;
+      transition: transform 0.3s ease;
+      cursor: default;
+    }
+    .benefit:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
     }
     .benefit img {
-      height: 60px;
-      margin-bottom: 15px;
+      height: 70px;
+      margin-bottom: 20px;
+      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
     }
-    .opinions {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
-      max-width: 900px;
-      margin: 40px auto;
-      text-align: center;
-    }
-    .opinion {
-      margin-bottom: 30px;
-    }
-    .opinion p {
-      font-style: italic;
-      margin-bottom: 10px;
-      color: #555;
-    }
-    .opinion .author {
-      font-weight: bold;
+    .benefit h3 {
+      margin-bottom: 12px;
+      font-weight: 700;
+      font-size: 1.4rem;
       color: #004a99;
     }
+    .benefit p {
+      color: #555;
+      font-weight: 500;
+      font-size: 1rem;
+      line-height: 1.4;
+    }
+
+    /* TESTIMONIALS - CARRUSEL */
+    .testimonials {
+      position: relative;
+      background: white;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      padding: 40px 30px 60px;
+      max-width: 900px;
+      margin: auto;
+      overflow: hidden;
+    }
+    .testimonials h2 {
+      margin-bottom: 40px;
+    }
+    .testimonial-slide {
+      display: none;
+      text-align: center;
+      padding: 0 20px;
+    }
+    .testimonial-slide.active {
+      display: block;
+      animation: fadeIn 0.6s ease-in-out;
+    }
+    .testimonial-text {
+      font-style: italic;
+      font-size: 1.15rem;
+      color: #333;
+      margin-bottom: 20px;
+      min-height: 90px;
+    }
+    .testimonial-author {
+      font-weight: 700;
+      font-size: 1.1rem;
+      color: #004a99;
+      margin-bottom: 10px;
+    }
+    .stars {
+      color: #ffb400;
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+    }
+    /* Botones carrusel */
+    .testimonial-buttons {
+      text-align: center;
+    }
+    .testimonial-buttons button {
+      background: #004a99;
+      border: none;
+      color: white;
+      padding: 10px 18px;
+      margin: 0 7px;
+      border-radius: 8px;
+      font-weight: 700;
+      font-size: 1rem;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+    .testimonial-buttons button:hover {
+      background: #0066cc;
+    }
+
+    @keyframes fadeIn {
+      from {opacity: 0;}
+      to {opacity: 1;}
+    }
+
+    /* FORMULARIO */
     form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      background: white;
       max-width: 600px;
       margin: auto;
+      padding: 35px 25px;
+      border-radius: 15px;
+      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
     }
     form input, form textarea, form select {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      padding: 14px 15px;
+      margin-bottom: 20px;
+      border: 1.8px solid #ccc;
+      border-radius: 8px;
+      font-size: 1rem;
+      transition: border-color 0.3s ease;
+      font-family: 'Montserrat', sans-serif;
+    }
+    form input:focus, form textarea:focus, form select:focus {
+      border-color: #004a99;
+      outline: none;
+    }
+    form textarea {
+      resize: vertical;
+      min-height: 120px;
     }
     form button {
-      padding: 12px 25px;
-      background-color: #004a99;
+      background: #00c853;
       color: white;
+      font-weight: 700;
+      font-size: 1.1rem;
       border: none;
-      border-radius: 6px;
+      padding: 16px 0;
+      width: 100%;
+      border-radius: 30px;
       cursor: pointer;
-      font-weight: bold;
+      box-shadow: 0 6px 15px rgba(0,200,83,0.6);
+      transition: background 0.3s ease;
     }
+    form button:hover {
+      background: #009624;
+    }
+
+    /* FOOTER */
     footer {
       background: #222;
-      color: #fff;
-      padding: 20px;
+      color: #ccc;
+      padding: 25px 20px;
       text-align: center;
+      margin-top: auto;
+      font-size: 0.9rem;
+      user-select: none;
     }
     footer a {
-      color: #ddd;
-      margin: 0 10px;
-      text-decoration: none;
+      color: #00c853;
+      margin: 0 12px;
+      font-weight: 600;
+      transition: color 0.3s ease;
     }
-    .whatsapp-link {
-      display: inline-block;
-      margin-top: 10px;
-      background-color: #25D366;
+    footer a:hover {
+      color: #66ff99;
+    }
+    footer strong {
       color: white;
-      padding: 10px 20px;
-      border-radius: 25px;
-      text-decoration: none;
-      font-weight: bold;
     }
-    .whatsapp-link:hover {
-      background-color: #1ebe5b;
-    }
+
+    /* WhatsApp botón flotante */
     .whatsapp-float {
       position: fixed;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25D366;
+      bottom: 25px;
+      right: 25px;
+      background: #25D366;
       color: white;
-      padding: 15px;
+      font-size: 28px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
-      font-size: 26px;
       text-align: center;
-      text-decoration: none;
-      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
-      z-index: 1000;
+      line-height: 60px;
+      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 9999;
+      transition: background 0.3s ease;
     }
     .whatsapp-float:hover {
-      background-color: #1ebe5b;
+      background: #128c4a;
+    }
+
+    /* Responsive */
+    @media (max-width: 850px) {
+      header {
+        flex-direction: column;
+        padding: 50px 20px 60px;
+      }
+      header img {
+        margin: 30px 0 0 0;
+        max-width: 80vw;
+      }
+      .benefits {
+        flex-direction: column;
+        gap: 25px;
+      }
     }
   </style>
 </head>
 <body>
 
   <header>
-    <h1>Asesoría Financiera Personalizada</h1>
-    <p>Nos podemos ver en persona u online para ayudarte a organizar, ahorrar e invertir mejor tu dinero.</p>
+    <div class="text">
+      <h1>Asesoría Financiera Personalizada</h1>
+      <p>Organiza, ahorra e invierte mejor tu dinero con Virgi Villa. Sesiones presenciales y online.</p>
+      <button class="btn-cta" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Reserva tu cita gratis</button>
+    </div>
+    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Virgi Villa asesor financiero" />
   </header>
 
-  <section>
-    <h2 style="text-align:center; margin-bottom: 40px;">¿Qué te ofrecemos?</h2>
+  <section aria-label="Beneficios de la asesoría financiera">
+    <h2>¿Qué te ofrecemos?</h2>
     <div class="benefits">
-      <div class="benefit">
-        <img src="https://img.icons8.com/ios/64/8b5e3c/handshake.png" alt="Asesoramiento Profesional" />
+      <div class="benefit" tabindex="0" aria-describedby="benefit1desc">
+        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-advice-business-flaticons-lineal-color-flat-icons.png" alt="" aria-hidden="true"/>
         <h3>Asesoramiento Profesional</h3>
-        <p>Te guiamos paso a paso para tomar las mejores decisiones económicas.</p>
+        <p id="benefit1desc">Te guiamos paso a paso para tomar las mejores decisiones económicas.</p>
       </div>
-      <div class="benefit">
-        <img src="https://img.icons8.com/color/68/000000/money.png" alt="Ahorro" />
+      <div class="benefit" tabindex="0" aria-describedby="benefit2desc">
+        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-savings-finance-flaticons-lineal-color-flat-icons.png" alt="" aria-hidden="true"/>
         <h3>Optimización de Ahorros</h3>
-        <p>Descubre dónde puedes ahorrar sin perder calidad de vida.</p>
+        <p id="benefit2desc">Descubre dónde puedes ahorrar sin perder calidad de vida.</p>
       </div>
-      <div class="benefit">
-        <img src="https://img.icons8.com/ios-filled/68/4a90e2/calendar--v1.png" alt="Agenda" />
+      <div class="benefit" tabindex="0" aria-describedby="benefit3desc">
+        <img src="https://img.icons8.com/ios-filled/64/4a90e2/clock--v1.png" alt="" aria-hidden="true"/>
         <h3>Flexibilidad Total</h3>
-        <p>Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
+        <p id="benefit3desc">Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
       </div>
     </div>
   </section>
 
-  <section class="opinions">
-    <h2>Opiniones de los clientes</h2>
-    <div class="opinion">
-      <p>"Gracias a Virgi logré organizar mis finanzas y ahorrar más de lo que imaginaba. Su trato es cercano y profesional."</p>
-      <div class="author">— Laura M.</div>
+  <section class="testimonials" aria-label="Opiniones de clientes satisfechos">
+    <h2>Opiniones de clientes</h2>
+
+    <div class="testimonial-slide active" role="group" aria-roledescription="slide" aria-label="Opinión 1">
+      <p class="testimonial-text">"Virgi me ayudó a entender mis finanzas y ahorrar para mi primera casa. ¡Totalmente recomendable!"</p>
+      <p class="testimonial-author">— Ana G.</p>
+      <p class="stars" aria-label="Cinco estrellas">★★★★★</p>
     </div>
-    <div class="opinion">
-      <p>"Muy recomendable. Me ayudó a invertir con seguridad y a entender mejor mis gastos. El servicio personalizado marcó la diferencia."</p>
-      <div class="author">— Carlos R.</div>
+
+    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 2">
+      <p class="testimonial-text">"Gracias a Virgi, ahora tengo un plan claro para invertir y proteger mi futuro financiero."</p>
+      <p class="testimonial-author">— Carlos M.</p>
+      <p class="stars" aria-label="Cuatro estrellas">★★★★☆</p>
     </div>
-    <div class="opinion">
-      <p>"Asesoría clara y eficaz, siempre dispuesta a resolver mis dudas. Ahora siento control y tranquilidad con mi dinero."</p>
-      <div class="author">— Marta G.</div>
+
+    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 3">
+      <p class="testimonial-text">"Muy profesional, cercano y efectivo. Me siento mucho más tranquilo con mis finanzas."</p>
+      <p class="testimonial-author">— Laura P.</p>
+      <p class="stars" aria-label="Cinco estrellas">★★★★★</p>
+    </div>
+
+    <div class="testimonial-buttons" role="tablist" aria-label="Controles de opiniones">
+      <button aria-selected="true" aria-controls="slide1" aria-label="Mostrar opinión 1" onclick="showTestimonial(0)">1</button>
+      <button aria-selected="false" aria-controls="slide2" aria-label="Mostrar opinión 2" onclick="showTestimonial(1)">2</button>
+      <button aria-selected="false" aria-controls="slide3" aria-label="Mostrar opinión 3" onclick="showTestimonial(2)">3</button>
     </div>
   </section>
 
-  <section>
-    <h2 style="text-align:center; margin-bottom: 30px;">Solicita tu asesoría gratuita</h2>
-    <form action="https://formspree.io/f/xldneqpv" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre completo" required />
-      <input type="email" name="email" placeholder="Tu correo electrónico" required />
-      <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" />
-      <select name="horario" required>
-        <option value="" disabled selected>¿Cuándo prefieres que nos veamos?</option>
-        <option value="mañana">Por la mañana</option>
-        <option value="tarde">Por la tarde</option>
-        <option value="sin_preferencia">Sin preferencia</option>
+  <section aria-label="Formulario de solicitud de asesoría">
+    <h2>Solicita tu asesoría gratuita</h2>
+    <form id="contact-form" action="https://formspree.io/f/xldneqpv" method="POST" novalidate>
+      <input type="text" name="nombre" placeholder="Tu nombre completo" required aria-required="true" />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required aria-required="true" />
+      <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" pattern="[0-9]{9}" aria-describedby="phoneHelp" />
+      <small id="phoneHelp" style="color:#555; display:block; margin-top:-15px; margin-bottom:15px; font-size:0.9rem;">
+        Solo números, sin espacios ni símbolos. Ejemplo: 677863127
+      </small>
+      <label for="prefHorario" style="font-weight:700; margin-bottom:8px; display:block; color:#004a99;">¿Qué horario te va mejor para la reunión?</label>
+      <select name="prefHorario" id="prefHorario" required aria-required="true">
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="mañana">Mañana</option>
+        <option value="tarde">Tarde</option>
       </select>
-      <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required></textarea>
+      <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required aria-required="true"></textarea>
       <button type="submit">Enviar solicitud</button>
     </form>
   </section>
 
   <footer>
-    <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
-    <p>Teléfono: <strong>677 863 127</strong></p>
+    <p>&copy; 2025 <strong>Virgi Villa</strong>. Todos los derechos reservados.</p>
     <p>
       <a href="politica-privacidad.html">Política de Privacidad</a> |
       <a href="politica-cookies.html">Política de Cookies</a> |
       <a href="aviso-legal.html">Aviso Legal</a>
     </p>
-    <a
-      href="https://wa.me/34677863127"
-      target="_blank"
-      rel="noopener"
-      class="whatsapp-link"
-      aria-label="Contactar por WhatsApp"
-    >
-      📱 WhatsApp
-    </a>
   </footer>
 
-  <a
-    href="https://wa.me/34677863127"
-    target="_blank"
-    rel="noopener"
+  <!-- WhatsApp floating button -->
+  <a 
+    href="https://wa.me/34677863127" 
+    target="_blank" 
+    rel="noopener noreferrer" 
+    aria-label="Enviar mensaje por WhatsApp a Virgi Villa" 
     class="whatsapp-float"
-    aria-label="WhatsApp flotante"
-    title="Contáctanos por WhatsApp"
   >
-    🟢
+    &#x1F4AC;
   </a>
+
+  <script>
+    // Testimonial carousel logic
+    const slides = document.querySelectorAll('.testimonial-slide');
+    const buttons = document.querySelectorAll('.testimonial-buttons button');
+
+    function showTestimonial(index) {
+      slides.forEach((slide, i) => {
+        slide.classList.toggle('active', i === index);
+        buttons[i].setAttribute('aria-selected', i === index);
+      });
+    }
+
+    // Optional: Auto-cycle testimonials every 8s
+    let currentSlide = 0;
+    setInterval(() => {
+      currentSlide = (currentSlide + 1) % slides.length;
+      showTestimonial(currentSlide);
+    }, 8000);
+  </script>
 
 </body>
 </html>
