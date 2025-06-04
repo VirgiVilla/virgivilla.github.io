@@ -19,6 +19,7 @@
       min-height: 100vh;
       display: flex;
       flex-direction: column;
+      overflow-x: hidden;
     }
     a {
       text-decoration: none;
@@ -28,26 +29,52 @@
     /* HEADER */
     header {
       position: relative;
+      height: 400px;
+      background: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center center/cover no-repeat fixed;
       display: flex;
+      align-items: center;
       justify-content: center;
-      background: #004a99;
-      padding: 60px 20px;
-      max-width: 1200px;
-      margin: auto;
       border-radius: 0 0 30px 30px;
       overflow: hidden;
+      box-shadow: inset 0 0 0 1000px rgba(0, 74, 153, 0.5);
+      color: #fff;
+      text-align: center;
+      padding: 0 20px;
     }
-    header img {
-      max-width: 350px;
-      border-radius: 20px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+    header h1 {
+      font-size: 2.8rem;
+      font-weight: 900;
+      max-width: 700px;
+      animation: fadeInUp 1.5s ease forwards;
+      opacity: 0;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.6);
+      line-height: 1.1;
+    }
+
+    /* Fade in up animation */
+    @keyframes fadeInUp {
+      0% {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
     }
 
     /* SECTIONS */
     section {
       max-width: 1100px;
-      margin: 50px auto;
+      margin: 60px auto;
       padding: 0 20px;
+      opacity: 0;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    section.visible {
+      opacity: 1;
+      transform: translateY(0);
     }
     h2 {
       color: #004a99;
@@ -55,6 +82,8 @@
       font-size: 2.2rem;
       margin-bottom: 35px;
       text-align: left;
+      border-left: 6px solid #00c853;
+      padding-left: 12px;
     }
 
     /* BENEFITS */
@@ -71,17 +100,19 @@
       padding: 30px;
       flex: 1 1 280px;
       text-align: center;
-      transition: transform 0.3s ease;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
       cursor: default;
+      will-change: transform;
     }
     .benefit:hover {
-      transform: translateY(-10px);
+      transform: translateY(-10px) scale(1.05);
       box-shadow: 0 15px 30px rgba(0,0,0,0.15);
     }
     .benefit img {
       height: 70px;
       margin-bottom: 20px;
       filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+      transition: transform 0.3s ease;
     }
     .benefit h3 {
       margin-bottom: 12px;
@@ -114,10 +145,10 @@
       display: none;
       text-align: left;
       padding: 0 20px;
+      animation: fadeIn 0.6s ease-in-out;
     }
     .testimonial-slide.active {
       display: block;
-      animation: fadeIn 0.6s ease-in-out;
     }
     .testimonial-text {
       font-style: italic;
@@ -170,6 +201,11 @@
       padding: 35px 25px;
       border-radius: 15px;
       box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+      transition: transform 0.4s ease;
+    }
+    form:hover {
+      transform: scale(1.02);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
     }
     form input, form textarea, form select {
       width: 100%;
@@ -178,11 +214,12 @@
       border: 1.8px solid #ccc;
       border-radius: 8px;
       font-size: 1rem;
-      transition: border-color 0.3s ease;
+      transition: border-color 0.3s ease, box-shadow 0.3s ease;
       font-family: 'Montserrat', sans-serif;
     }
     form input:focus, form textarea:focus, form select:focus {
       border-color: #004a99;
+      box-shadow: 0 0 8px #004a99aa;
       outline: none;
     }
     form textarea {
@@ -200,10 +237,11 @@
       border-radius: 30px;
       cursor: pointer;
       box-shadow: 0 6px 15px rgba(0,200,83,0.6);
-      transition: background 0.3s ease;
+      transition: background 0.3s ease, box-shadow 0.3s ease;
     }
     form button:hover {
       background: #009624;
+      box-shadow: 0 10px 25px rgba(0,150,36,0.7);
     }
 
     /* FOOTER */
@@ -282,15 +320,21 @@
       margin: 0 auto 20px;
       display: block;
       fill: #dca87d;
+      transition: transform 0.3s ease;
+    }
+    .icon-manos:hover {
+      transform: scale(1.1) rotate(10deg);
     }
 
     /* Responsive */
     @media (max-width: 850px) {
       header {
-        padding: 50px 20px 60px;
+        height: 300px;
+        background-attachment: scroll; /* Evita problemas móviles */
       }
-      header img {
-        max-width: 80vw;
+      header h1 {
+        font-size: 2rem;
+        padding: 0 10px;
       }
       .benefits {
         flex-direction: column;
@@ -305,45 +349,51 @@
 <body>
 
   <header>
-    <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Virgi Villa asesor financiero" />
+    <h1>Asesoramiento Financiero Personalizado Gratis</h1>
   </header>
 
-  <section aria-label="Beneficios de la asesoría financiera">
+  <section aria-label="Beneficios de la asesoría financiera" class="reveal">
     <h2>¿Qué te ofrecemos?</h2>
     <div class="benefits">
       <div class="benefit" tabindex="0" aria-describedby="benefit1desc">
         <!-- Icono manos carne (SVG inline) -->
         <svg class="icon-manos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
           <path d="M10 30c0-5 3-9 7-9s7 4 7 9-3 10-7 10-7-5-7-10zM47 30c0-5-3-9-7-9s-7 4-7 9 3 10 7 10 7-5 7-10z"/>
-          <path d="M16 34l15 10m10-20l-15 10" stroke="#dca87d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+          <path d="M16 34l15 10m10-20l-15 10" stroke="#dca87d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
         </svg>
-        <h3>Asesoramiento Profesional</h3>
-        <p id="benefit1desc">Te guiamos paso a paso para tomar las mejores decisiones económicas.</p>
+        <h3>Organización clara</h3>
+        <p id="benefit1desc">Ponemos orden en tus finanzas para que sepas exactamente dónde estás.</p>
       </div>
       <div class="benefit" tabindex="0" aria-describedby="benefit2desc">
-        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-savings-finance-flaticons-lineal-color-flat-icons.png" alt="" aria-hidden="true"/>
-        <h3>Optimización de Ahorros</h3>
-        <p id="benefit2desc">Descubre dónde puedes ahorrar sin perder calidad de vida.</p>
+        <svg class="icon-manos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M10 30c0-5 3-9 7-9s7 4 7 9-3 10-7 10-7-5-7-10zM47 30c0-5-3-9-7-9s-7 4-7 9 3 10 7 10 7-5 7-10z"/>
+          <path d="M16 34l15 10m10-20l-15 10" stroke="#dca87d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Ahorro inteligente</h3>
+        <p id="benefit2desc">Te ayudamos a ahorrar para objetivos concretos y seguros.</p>
       </div>
       <div class="benefit" tabindex="0" aria-describedby="benefit3desc">
-        <img src="https://img.icons8.com/ios-filled/64/4a90e2/clock--v1.png" alt="" aria-hidden="true"/>
-        <h3>Flexibilidad Total</h3>
-        <p id="benefit3desc">Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
+        <svg class="icon-manos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M10 30c0-5 3-9 7-9s7 4 7 9-3 10-7 10-7-5-7-10zM47 30c0-5-3-9-7-9s-7 4-7 9 3 10 7 10 7-5 7-10z"/>
+          <path d="M16 34l15 10m10-20l-15 10" stroke="#dca87d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+        </svg>
+        <h3>Inversión segura</h3>
+        <p id="benefit3desc">Diseñamos planes para proteger y hacer crecer tu futuro financiero.</p>
       </div>
     </div>
   </section>
 
-  <section class="testimonials" aria-label="Opiniones de clientes satisfechos">
-    <h2>Opiniones de clientes</h2>
+  <section aria-label="Opiniones de clientes satisfechos" class="testimonials reveal">
+    <h2>Opiniones de clientes satisfechos</h2>
 
     <div class="testimonial-slide active" role="group" aria-roledescription="slide" aria-label="Opinión 1">
-      <p class="testimonial-text">"Virgi me ayudó a entender mis finanzas y ahorrar para mi primera casa. ¡Totalmente recomendable!"</p>
+      <p class="testimonial-text">"Virgi es un profesional serio y atento. Me ayudó a organizar mis finanzas y ahora me siento tranquilo."</p>
       <p class="testimonial-author">— Ana G.</p>
       <p class="stars" aria-label="Cinco estrellas">★★★★★</p>
     </div>
 
     <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 2">
-      <p class="testimonial-text">"Gracias a Virgi, ahora tengo un plan claro para invertir y proteger mi futuro financiero."</p>
+      <p class="testimonial-text">"Gracias a su asesoría pude ahorrar para mi casa sin preocupaciones."</p>
       <p class="testimonial-author">— Carlos M.</p>
       <p class="stars" aria-label="Cuatro estrellas">★★★★☆</p>
     </div>
@@ -361,7 +411,7 @@
     </div>
   </section>
 
-  <section aria-label="Formulario de solicitud de asesoría">
+  <section aria-label="Formulario de solicitud de asesoría" class="reveal">
     <h2>Solicita tu asesoría gratuita</h2>
     <form id="contact-form" action="https://formspree.io/f/xldneqpv" method="POST" novalidate>
       <input type="text" name="nombre" placeholder="Tu nombre completo" required aria-required="true" />
@@ -420,7 +470,20 @@
       currentSlide = (currentSlide + 1) % slides.length;
       showTestimonial(currentSlide);
     }, 8000);
-  </script>
 
+    // Scroll reveal
+    const reveals = document.querySelectorAll('.reveal');
+    function revealOnScroll() {
+      const windowHeight = window.innerHeight;
+      reveals.forEach(section => {
+        const top = section.getBoundingClientRect().top;
+        if(top < windowHeight - 100) {
+          section.classList.add('visible');
+        }
+      });
+    }
+    window.addEventListener('scroll', revealOnScroll);
+    window.addEventListener('load', revealOnScroll);
+  </script>
 </body>
 </html>
