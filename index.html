@@ -9,8 +9,12 @@
     * { margin: 0; padding: 0; box-sizing: border-box; }
     body {
       font-family: 'Montserrat', sans-serif;
-      background-color: #f4f7fa;
       color: #333;
+      background: 
+        linear-gradient(rgba(244, 247, 250, 0.85), rgba(244, 247, 250, 0.85)),
+        url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?ixlib=rb-4.0.3&auto=format&fit=crop&w=1470&q=80') no-repeat center center fixed;
+      background-size: cover;
+      min-height: 100vh;
     }
     header {
       position: relative;
@@ -32,6 +36,9 @@
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
+      background: rgba(255,255,255,0.85);
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     .about-section {
       display: flex;
@@ -39,10 +46,6 @@
       gap: 30px;
       align-items: center;
       justify-content: center;
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     .about-text {
       flex: 1 1 350px;
@@ -65,7 +68,7 @@
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
       max-width: 600px;
-      margin: auto 0 auto auto;
+      margin: auto;
     }
     form input, form textarea, form select {
       width: 100%;
@@ -94,6 +97,7 @@
       padding: 20px;
       text-align: center;
       margin-top: 40px;
+      border-radius: 0 0 10px 10px;
     }
     @media (max-width: 768px) {
       .about-section {
@@ -109,12 +113,13 @@
     }
     /* Opiniones */
     .opiniones-section {
-      background: #fff;
+      background: rgba(255,255,255,0.85);
       padding: 40px 30px;
       border-radius: 10px;
       max-width: 1100px;
       margin: 40px auto;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      color: #333;
     }
     .opiniones-section h2 {
       text-align: center;
@@ -195,16 +200,10 @@
     <div class="about-text">
       <h2>Sobre mí</h2>
       <p>
-        Soy Virgi Villa, asesor financiero con más de 6 años de experiencia dedicado a acompañar a personas como tú en el camino hacia la tranquilidad y el éxito económico. Mi pasión es ayudarte a entender tu situación financiera actual y diseñar juntos un plan personalizado que te permita alcanzar tus metas, ya sea ahorrar para un proyecto importante, cambiar a un banco que te ofrezca mejores condiciones, o invertir con seguridad y sentido.
+        Soy Virgi Villa, asesor financiero con más de 6 años de experiencia ayudando a personas a alcanzar sus metas económicas. Mi objetivo es acompañarte para que entiendas mejor tus finanzas, ahorres de forma inteligente y tomes decisiones que te acerquen a la libertad financiera.
       </p>
       <p>
-        Creo firmemente que cada persona tiene un potencial económico que puede explotar cuando cuenta con la información correcta y el acompañamiento adecuado. Por eso, mi objetivo no es solo darte consejos, sino empoderarte para que tomes decisiones financieras inteligentes, sostenibles y alineadas con lo que realmente quieres lograr en tu vida.
-      </p>
-      <p>
-        Trabajo con un enfoque cercano y transparente, porque sé que las finanzas no son solo números, sino historias de vidas, sueños y esfuerzos. Quiero que te sientas seguro y apoyado en cada paso del proceso, para que juntos podamos transformar tus finanzas en una herramienta que te impulse hacia la libertad y el bienestar.
-      </p>
-      <p>
-        Estoy aquí para ayudarte a crear una base sólida, reducir el estrés financiero y construir un futuro donde tus metas sean una realidad tangible y alcanzable. ¡Vamos a lograrlo juntos!
+        Trabajo de forma cercana y transparente, creando planes personalizados que se adaptan a tus necesidades y sueños. Juntos podemos transformar tus finanzas en una herramienta poderosa para construir un futuro seguro y estable.
       </p>
       <a class="whatsapp-button" href="https://wa.me/34677863127" target="_blank" rel="noopener">Hablar por WhatsApp</a>
     </div>
@@ -242,51 +241,51 @@
     </form>
   </section>
 
-  <section class="opiniones-section">
+  <section class="opiniones-section" id="opiniones">
     <h2>Lo que dicen mis clientes</h2>
     <div class="opiniones-list">
-      <article class="opinion">
-        <p>Virgi me ayudó a cambiar de banco sin complicaciones y ahora ahorro mucho más. Su asesoría es clara y efectiva.</p>
+      <div class="opinion">
+        <p>"Virgi me ayudó a organizar mis finanzas y ahorrar para mi primer coche. Su trato cercano y profesional hizo la diferencia."</p>
         <div class="opinion-footer">
-          <span>María G.</span>
+          <span>Juan Pérez</span>
           <span class="stars">★★★★★</span>
         </div>
-      </article>
-      <article class="opinion">
-        <p>Gracias a Virgi aprendí a invertir con sentido y a controlar mejor mis gastos. Me siento mucho más seguro con mis finanzas.</p>
+      </div>
+      <div class="opinion">
+        <p>"Gracias a Virgi pude cambiar de banco sin complicaciones y mejorar mis inversiones. Muy recomendable."</p>
         <div class="opinion-footer">
-          <span>Carlos M.</span>
+          <span>María López</span>
           <span class="stars">★★★★★</span>
         </div>
-      </article>
-      <article class="opinion">
-        <p>Excelente asesoría personalizada, siempre disponible para resolver dudas y con consejos prácticos para ahorrar.</p>
+      </div>
+      <div class="opinion">
+        <p>"Su asesoría fue clave para que entendiera cómo ahorrar mejor y planificar mi futuro financiero."</p>
         <div class="opinion-footer">
-          <span>Laura T.</span>
+          <span>Carlos Gómez</span>
           <span class="stars">★★★★★</span>
         </div>
-      </article>
-      <article class="opinion">
-        <p>Virgi es un profesional comprometido que realmente se preocupa por ayudarte a conseguir tus objetivos financieros.</p>
+      </div>
+      <div class="opinion">
+        <p>"Me sentí escuchada y acompañada en todo momento. Virgi es un gran profesional."</p>
         <div class="opinion-footer">
-          <span>Andrés P.</span>
+          <span>Laura Martínez</span>
           <span class="stars">★★★★★</span>
         </div>
-      </article>
-      <article class="opinion">
-        <p>Muy contento con la asesoría recibida, ahora entiendo mejor cómo manejar mis finanzas y planificar mi futuro.</p>
+      </div>
+      <div class="opinion">
+        <p>"Las recomendaciones de Virgi me ayudaron a mejorar mi salud financiera y reducir mis deudas."</p>
         <div class="opinion-footer">
-          <span>Patricia R.</span>
+          <span>Pedro Fernández</span>
           <span class="stars">★★★★★</span>
         </div>
-      </article>
-      <article class="opinion">
-        <p>Recomiendo a Virgi para quien quiera mejorar su economía sin complicaciones ni jerga difícil.</p>
+      </div>
+      <div class="opinion">
+        <p>"Excelente asesoría, con un enfoque muy humano y práctico. Recomendado 100%."</p>
         <div class="opinion-footer">
-          <span>Javier L.</span>
+          <span>Ana Torres</span>
           <span class="stars">★★★★★</span>
         </div>
-      </article>
+      </div>
     </div>
   </section>
 
@@ -295,28 +294,14 @@
   </footer>
 
   <script>
-    // Manejo del formulario para mostrar mensaje de gracias sin recargar página
-    const form = document.getElementById('contact-form');
-    const graciasMensaje = document.getElementById('gracias-mensaje');
+    document.getElementById('contact-form').addEventListener('submit', function(e) {
+      e.preventDefault();
 
-    form.addEventListener('submit', function(event) {
-      event.preventDefault();
+      // Aquí podrías hacer validaciones extras o enviar datos a un servidor, API, etc.
 
-      if (!form.checkValidity()) {
-        form.reportValidity();
-        return;
-      }
-
-      // Aquí podrías agregar envío a servidor real o email vía API, pero por ahora solo mensaje
-      graciasMensaje.style.display = 'block';
-
-      // Opcional: limpiar formulario
-      form.reset();
-
-      // Desaparece el mensaje después de unos segundos (opcional)
-      setTimeout(() => {
-        graciasMensaje.style.display = 'none';
-      }, 6000);
+      // Mostrar mensaje de gracias y ocultar el formulario
+      this.style.display = 'none';
+      document.getElementById('gracias-mensaje').style.display = 'block';
     });
   </script>
 
