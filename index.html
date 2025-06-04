@@ -3,9 +3,9 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Asesor financiero para ayudarte con cambio banco, optimización de finanzas y asesoramiento bancario personalizado." />
-  <meta name="keywords" content="asesor financiero, cambio banco, banco, ahorro, inversión, finanzas personales" />
-  <title>Asesoramiento Financiero Personalizado Gratis - Cambio Banco y Más</title>
+  <meta name="description" content="Asesor financiero con experiencia en cambio de banco, ahorro e inversión personalizada." />
+  <meta name="keywords" content="asesor financiero, cambio banco, banco, ahorro, inversión, finanzas" />
+  <title>Asesoramiento Financiero Personalizado Gratis</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -19,14 +19,28 @@
       background-color: #f4f7fa;
       color: #333;
     }
+
     header {
+      position: relative;
       background-image: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1350&q=80');
       background-size: cover;
       background-position: center;
       color: white;
       padding: 100px 20px;
       text-align: center;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+    }
+    .header-overlay {
+      position: absolute;
+      top: 0; left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.5);
+      z-index: 1;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 2;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.8);
     }
     header h1 {
       font-size: 3rem;
@@ -57,6 +71,11 @@
       background: #fff;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .benefit:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
     .benefit img {
       height: 60px;
@@ -140,7 +159,6 @@
       text-decoration: none;
     }
 
-    /* WhatsApp floating button */
     #whatsapp {
       position: fixed;
       bottom: 25px;
@@ -168,11 +186,13 @@
 <body>
 
   <header>
+    <div class="header-overlay"></div>
     <h1>Asesoramiento Financiero Personalizado Gratis</h1>
     <p>Organiza, ahorra e invierte con confianza y seguridad, y recibe ayuda experta para tu cambio banco o gestión con tu banco.</p>
   </header>
 
   <section class="about-text">
+    <h2 style="text-align:center; color:#004a99; margin-bottom:20px;">SOBRE MÍ</h2>
     <p>Soy asesor financiero con más de 6 años de experiencia ayudando a muchas personas a alcanzar sus metas económicas. Te guío en el proceso de cambio banco, optimización de tus finanzas personales y toma de decisiones seguras con tu banco. Mi objetivo es que logres estabilidad financiera y tranquilidad.</p>
   </section>
 
@@ -203,53 +223,48 @@
       <input type="text" name="nombre" placeholder="Tu nombre completo" required />
       <input type="email" name="email" placeholder="Tu correo electrónico" required />
       <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" />
-      <select name="preferencia" required>
-        <option value="" disabled selected>¿Qué horario prefieres para la reunión?</option>
-        <option value="mañana">Mañana</option>
-        <option value="tarde">Tarde</option>
+      <select name="preferencia">
+        <option value="">¿Cuándo prefieres hablar?</option>
+        <option value="mañana">Por la mañana</option>
+        <option value="tarde">Por la tarde</option>
       </select>
-      <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required></textarea>
+      <textarea name="mensaje" rows="5" placeholder="Cuéntame tu situación o qué necesitas..." required></textarea>
       <button type="submit">Enviar solicitud</button>
     </form>
   </section>
 
   <section class="opinions">
-    <h2 style="color:#004a99; margin-bottom: 20px;">Opiniones de Clientes</h2>
-
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
-      <strong>María G.</strong>
-      <p>Gracias al asesoramiento, hice un cambio banco que me ha ahorrado mucho dinero. ¡Muy recomendable!</p>
-    </div>
-
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
-      <strong>Carlos R.</strong>
-      <p>Excelente asesor financiero que me ayudó a entender mejor mis cuentas bancarias y optimizar mis finanzas.</p>
-    </div>
-
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
-      <strong>Lucía M.</strong>
-      <p>El proceso de cambio banco fue muy sencillo gracias a su ayuda profesional y cercana.</p>
-    </div>
-
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
-      <strong>José F.</strong>
-      <p>Me guió para invertir mejor y gestionar mis productos bancarios de forma efectiva.</p>
-    </div>
+    <h2 style="text-align:center; color:#004a99; margin-bottom: 20px;">Opiniones de Clientes</h2>
 
     <div class="opinion">
       <div class="stars">★★★★★</div>
       <strong>Ana P.</strong>
       <p>Un asesor muy dedicado que me ayudó a conseguir la estabilidad financiera que necesitaba con mi banco.</p>
     </div>
-
     <div class="opinion">
       <div class="stars">★★★★★</div>
       <strong>David S.</strong>
       <p>Su consejo para cambiar de banco fue clave para mejorar mis finanzas personales. ¡Gracias!</p>
+    </div>
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>Laura G.</strong>
+      <p>Me explicó todo de forma clara. Muy profesional y amable. Totalmente recomendable.</p>
+    </div>
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>Javier M.</strong>
+      <p>Gracias a su asesoría, cambié de banco y ahora tengo mejores condiciones. ¡Un acierto!</p>
+    </div>
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>Claudia T.</strong>
+      <p>Me ayudó a organizar mis gastos y encontrar mejores opciones bancarias. Muy contenta con el trato.</p>
+    </div>
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>Raúl D.</strong>
+      <p>Muy recomendable. Gracias a él ahora tengo una estrategia clara de ahorro e inversión.</p>
     </div>
   </section>
 
@@ -262,7 +277,6 @@
     </p>
   </footer>
 
-  <!-- WhatsApp floating button -->
   <a id="whatsapp" href="https://wa.me/34677863127" target="_blank" aria-label="Contactar por WhatsApp">
     <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" />
   </a>
