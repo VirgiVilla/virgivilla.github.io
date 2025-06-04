@@ -26,20 +26,19 @@
       color: inherit;
     }
 
-    /* HEADER */
+    /* HEADER sin imagen, solo fondo color degradado */
     header {
       position: relative;
-      height: 400px;
-      background: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=1400&q=80') center center/cover no-repeat fixed;
+      height: 300px;
+      background: linear-gradient(135deg, #004a99, #00c853);
       display: flex;
       align-items: center;
       justify-content: center;
       border-radius: 0 0 30px 30px;
-      overflow: hidden;
-      box-shadow: inset 0 0 0 1000px rgba(0, 74, 153, 0.5);
       color: #fff;
       text-align: center;
       padding: 0 20px;
+      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
     }
     header h1 {
       font-size: 2.8rem;
@@ -47,11 +46,10 @@
       max-width: 700px;
       animation: fadeInUp 1.5s ease forwards;
       opacity: 0;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.6);
       line-height: 1.1;
+      text-shadow: 0 3px 8px rgba(0,0,0,0.4);
     }
 
-    /* Fade in up animation */
     @keyframes fadeInUp {
       0% {
         opacity: 0;
@@ -108,10 +106,10 @@
       transform: translateY(-10px) scale(1.05);
       box-shadow: 0 15px 30px rgba(0,0,0,0.15);
     }
-    .benefit img {
+    .benefit svg {
       height: 70px;
       margin-bottom: 20px;
-      filter: drop-shadow(0 1px 1px rgba(0,0,0,0.1));
+      fill: #dca87d;
       transition: transform 0.3s ease;
     }
     .benefit h3 {
@@ -272,37 +270,35 @@
       position: fixed;
       bottom: 25px;
       right: 25px;
-      background: #25D366;
+      background-color: #25d366;
       color: white;
-      font-size: 28px;
-      width: 60px;
-      height: 60px;
+      font-size: 30px;
+      width: 58px;
+      height: 58px;
       border-radius: 50%;
-      text-align: center;
-      line-height: 60px;
-      box-shadow: 0 6px 15px rgba(0,0,0,0.3);
-      cursor: pointer;
-      z-index: 9999;
-      transition: background 0.3s ease;
       display: flex;
       align-items: center;
       justify-content: center;
-      font-weight: 700;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+      cursor: pointer;
+      z-index: 9999;
+      text-decoration: none;
+      transition: background-color 0.3s ease;
       user-select: none;
     }
     .whatsapp-float:hover {
-      background: #128c4a;
+      background-color: #128c4a;
     }
     .whatsapp-tooltip {
       position: fixed;
-      bottom: 95px;
+      bottom: 90px;
       right: 25px;
-      background: #128c4a;
+      background-color: #25d366cc;
       color: white;
-      padding: 6px 12px;
-      border-radius: 8px;
+      padding: 8px 14px;
+      border-radius: 12px;
       font-size: 0.9rem;
-      font-weight: 700;
+      font-weight: 600;
       opacity: 0;
       pointer-events: none;
       transition: opacity 0.3s ease;
@@ -313,73 +309,58 @@
       pointer-events: auto;
     }
 
-    /* Icono manos carne */
-    .icon-manos {
-      width: 80px;
-      height: 80px;
-      margin: 0 auto 20px;
-      display: block;
-      fill: #dca87d;
-      transition: transform 0.3s ease;
-    }
-    .icon-manos:hover {
-      transform: scale(1.1) rotate(10deg);
-    }
-
     /* Responsive */
-    @media (max-width: 850px) {
+    @media (max-width: 760px) {
+      .benefits {
+        flex-direction: column;
+        align-items: center;
+      }
+      section {
+        margin: 40px 15px;
+      }
       header {
-        height: 300px;
-        background-attachment: scroll; /* Evita problemas móviles */
+        height: 240px;
       }
       header h1 {
         font-size: 2rem;
-        padding: 0 10px;
       }
-      .benefits {
-        flex-direction: column;
-        gap: 25px;
-      }
-      .testimonial-buttons button {
-        margin-bottom: 10px;
+      form {
+        width: 100%;
+        padding: 25px 20px;
       }
     }
   </style>
 </head>
 <body>
 
-  <header>
+  <header role="banner" aria-label="Encabezado principal">
     <h1>Asesoramiento Financiero Personalizado Gratis</h1>
   </header>
 
-  <section aria-label="Beneficios de la asesoría financiera" class="reveal">
-    <h2>¿Qué te ofrecemos?</h2>
-    <div class="benefits">
-      <div class="benefit" tabindex="0" aria-describedby="benefit1desc">
-        <!-- Icono manos carne (SVG inline) -->
-        <svg class="icon-manos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <path d="M10 30c0-5 3-9 7-9s7 4 7 9-3 10-7 10-7-5-7-10zM47 30c0-5-3-9-7-9s-7 4-7 9 3 10 7 10 7-5 7-10z"/>
-          <path d="M16 34l15 10m10-20l-15 10" stroke="#dca87d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Organización clara</h3>
-        <p id="benefit1desc">Ponemos orden en tus finanzas para que sepas exactamente dónde estás.</p>
-      </div>
-      <div class="benefit" tabindex="0" aria-describedby="benefit2desc">
-        <svg class="icon-manos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <path d="M10 30c0-5 3-9 7-9s7 4 7 9-3 10-7 10-7-5-7-10zM47 30c0-5-3-9-7-9s-7 4-7 9 3 10 7 10 7-5 7-10z"/>
-          <path d="M16 34l15 10m10-20l-15 10" stroke="#dca87d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Ahorro inteligente</h3>
-        <p id="benefit2desc">Te ayudamos a ahorrar para objetivos concretos y seguros.</p>
-      </div>
-      <div class="benefit" tabindex="0" aria-describedby="benefit3desc">
-        <svg class="icon-manos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          <path d="M10 30c0-5 3-9 7-9s7 4 7 9-3 10-7 10-7-5-7-10zM47 30c0-5-3-9-7-9s-7 4-7 9 3 10 7 10 7-5 7-10z"/>
-          <path d="M16 34l15 10m10-20l-15 10" stroke="#dca87d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
-        </svg>
-        <h3>Inversión segura</h3>
-        <p id="benefit3desc">Diseñamos planes para proteger y hacer crecer tu futuro financiero.</p>
-      </div>
+  <section aria-label="Beneficios de la asesoría financiera" class="benefits reveal">
+    <div class="benefit" tabindex="0" aria-describedby="benefit1desc">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path fill="#dca87d" d="M14 32c0-6 5-11 11-11s11 5 11 11-5 14-11 14-11-8-11-14z"/>
+        <path stroke="#a36f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 35h18v7H18z"/>
+      </svg>
+      <h3>Organización clara</h3>
+      <p id="benefit1desc">Ponemos orden en tus finanzas para que sepas exactamente dónde estás.</p>
+    </div>
+    <div class="benefit" tabindex="0" aria-describedby="benefit2desc">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <circle cx="32" cy="32" r="14" fill="#dca87d"/>
+        <path stroke="#a36f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M32 18v28M18 32h28"/>
+      </svg>
+      <h3>Ahorro inteligente</h3>
+      <p id="benefit2desc">Te ayudamos a ahorrar para objetivos concretos y seguros.</p>
+    </div>
+    <div class="benefit" tabindex="0" aria-describedby="benefit3desc">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+        <path fill="#dca87d" d="M10 22h44v20H10z"/>
+        <path stroke="#a36f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 30h20v10H22z"/>
+      </svg>
+      <h3>Inversión segura</h3>
+      <p id="benefit3desc">Diseñamos planes para proteger y hacer crecer tu futuro financiero.</p>
     </div>
   </section>
 
@@ -404,10 +385,24 @@
       <p class="stars" aria-label="Cinco estrellas">★★★★★</p>
     </div>
 
+    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 4">
+      <p class="testimonial-text">"Excelente servicio y atención personalizada. Recomendado al 100%."</p>
+      <p class="testimonial-author">— Miguel R.</p>
+      <p class="stars" aria-label="Cinco estrellas">★★★★★</p>
+    </div>
+
+    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 5">
+      <p class="testimonial-text">"Me ayudó a entender mejor mis inversiones y a planificar a largo plazo."</p>
+      <p class="testimonial-author">— Sandra V.</p>
+      <p class="stars" aria-label="Cuatro estrellas">★★★★☆</p>
+    </div>
+
     <div class="testimonial-buttons" role="tablist" aria-label="Controles de opiniones">
       <button aria-selected="true" aria-controls="slide1" aria-label="Mostrar opinión 1" onclick="showTestimonial(0)">1</button>
       <button aria-selected="false" aria-controls="slide2" aria-label="Mostrar opinión 2" onclick="showTestimonial(1)">2</button>
       <button aria-selected="false" aria-controls="slide3" aria-label="Mostrar opinión 3" onclick="showTestimonial(2)">3</button>
+      <button aria-selected="false" aria-controls="slide4" aria-label="Mostrar opinión 4" onclick="showTestimonial(3)">4</button>
+      <button aria-selected="false" aria-controls="slide5" aria-label="Mostrar opinión 5" onclick="showTestimonial(4)">5</button>
     </div>
   </section>
 
@@ -453,7 +448,7 @@
   <div class="whatsapp-tooltip" aria-hidden="true">Contactar por WhatsApp</div>
 
   <script>
-    // Testimonial carousel logic
+    // Mostrar opiniones
     const slides = document.querySelectorAll('.testimonial-slide');
     const buttons = document.querySelectorAll('.testimonial-buttons button');
 
@@ -471,7 +466,7 @@
       showTestimonial(currentSlide);
     }, 8000);
 
-    // Scroll reveal
+    // Scroll reveal animación
     const reveals = document.querySelectorAll('.reveal');
     function revealOnScroll() {
       const windowHeight = window.innerHeight;
