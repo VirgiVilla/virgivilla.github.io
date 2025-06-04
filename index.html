@@ -8,6 +8,7 @@
   <meta name="keywords" content="asesor financiero, asesor financiero personal, cambio de banco, ayuda para cambio de banco, ahorro, inversión personalizada, finanzas personales, asesoría financiera" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* Reset y base */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -17,6 +18,7 @@
       background-color: #f4f7fa;
       color: #333;
     }
+    /* Header con imagen de fondo */
     header {
       position: relative;
       background-image: url('https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/main/img/5a00846f-17c0-4f9b-b033-69d2f3615ab8.JPG');
@@ -25,7 +27,7 @@
       color: white;
       padding: 100px 20px;
       text-align: center;
-      height: 400px; /* para asegurar espacio visible */
+      height: 400px;
     }
     .header-overlay {
       position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 1;
@@ -44,10 +46,38 @@
       max-width: 700px;
       margin: 0 auto;
     }
-    section {
-      padding: 60px 20px;
+    /* Sección SOBRE MI con imagen al lado */
+    #sobre-mi {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 30px;
+      max-width: 900px;
+      margin: 60px auto;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      color: #444;
+    }
+    #sobre-mi img {
+      width: 250px;
+      height: auto;
+      border-radius: 10px;
+      object-fit: cover;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      flex-shrink: 0;
+    }
+    #sobre-mi div {
+      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.5;
+    }
+    /* Beneficios */
+    section#servicios {
       max-width: 1100px;
-      margin: auto;
+      margin: 60px auto;
+      padding: 0 20px;
     }
     .benefits {
       display: flex;
@@ -72,38 +102,17 @@
       height: 60px;
       margin-bottom: 15px;
     }
-    .about-text {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-bottom: 60px;
-      max-width: 900px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 1.1rem;
-      color: #444;
-      line-height: 1.5;
-
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      flex-wrap: wrap;
-    }
-    .about-text img {
-      width: 200px;
-      height: auto;
-      border-radius: 15px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-      flex-shrink: 0;
+    /* Formulario contacto */
+    #contacto {
+      max-width: 600px;
+      margin: 60px auto;
+      padding: 0 20px;
     }
     form {
       background: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      max-width: 600px;
-      margin: auto;
     }
     form input, form textarea, form select {
       width: 100%;
@@ -127,9 +136,10 @@
     form button:hover {
       background-color: #00306d;
     }
+    /* Opiniones */
     .opinions {
       max-width: 900px;
-      margin: 40px auto;
+      margin: 40px auto 80px auto;
       padding: 0 20px;
     }
     .opinion {
@@ -150,6 +160,7 @@
       font-weight: 700;
       color: #004a99;
     }
+    /* Footer */
     footer {
       background: #222;
       color: #fff;
@@ -165,6 +176,7 @@
       color: #fff;
       text-decoration: underline;
     }
+    /* WhatsApp botón */
     #whatsapp {
       position: fixed;
       bottom: 25px;
@@ -189,7 +201,7 @@
     }
   </style>
 
-  <!-- JSON-LD para SEO local y de persona -->
+  <!-- JSON-LD para SEO local y persona -->
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -211,6 +223,7 @@
     }
   }
   </script>
+
 </head>
 <body>
 
@@ -220,16 +233,16 @@
     <p>Recibe asesoría financiera gratuita y personalizada para optimizar tus finanzas personales, mejorar tus ahorros y facilitar tu cambio de banco.</p>
   </header>
 
-  <section class="about-text" id="sobre-mi">
-    <img src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG" alt="Foto Virgi Villa" />
+  <section id="sobre-mi" aria-label="Sobre el asesor financiero">
     <div>
       <h2>SOBRE EL ASESOR FINANCIERO</h2>
       <p>Soy <strong>Virgi Villa</strong>, asesor financiero personal con más de 6 años de experiencia ayudando a clientes a mejorar sus finanzas personales. Especializado en <em>cambio de banco</em>, estrategias de <em>ahorro</em> y <em>inversión personalizada</em>, te acompaño en el proceso para lograr una gestión financiera clara y efectiva.</p>
       <p>Mi asesoría financiera se adapta a tus necesidades para que logres estabilidad económica, tranquilidad y crecimiento sostenible.</p>
     </div>
+    <img src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/refs/heads/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG" alt="Foto Virgi Villa" />
   </section>
 
-  <section id="servicios">
+  <section id="servicios" aria-label="Servicios de asesoría financiera personalizada">
     <h2>Servicios de Asesoría Financiera Personalizada</h2>
     <div class="benefits">
       <article class="benefit" aria-label="Asesoramiento Profesional en Finanzas">
@@ -253,75 +266,44 @@
   <section id="contacto" aria-label="Formulario de contacto para asesoría financiera">
     <h2>Solicita tu Asesoría Financiera Gratuita</h2>
     <form action="https://formspree.io/f/xldneqpv" method="POST" aria-describedby="form-description">
-      <p id="form-description">Completa el formulario para recibir asesoría personalizada en ahorro, inversión o cambio de banco.</p>
+      <p id="form-description">Rellena el formulario y te contactaré en menos de 24 horas para comenzar a mejorar tus finanzas.</p>
       <label for="nombre">Nombre completo *</label>
-      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required aria-required="true" />
-      
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
       <label for="email">Correo electrónico *</label>
-      <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required aria-required="true" />
-      
-      <label for="telefono">Número de teléfono (opcional)</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono" />
-      
-      <label for="preferencia">¿Cuándo prefieres hablar?</label>
-      <select id="preferencia" name="preferencia" >
-        <option value="" disabled selected>Selecciona una opción</option>
-        <option value="mañana">Por la mañana</option>
-        <option value="tarde">Por la tarde</option>
-      </select>
-      
-      <label for="mensaje">Mensaje *</label>
-      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame qué necesitas: ahorro, inversión, cambio de banco, finanzas personales..." required aria-required="true"></textarea>
-      
-      <button type="submit">Enviar solicitud</button>
+      <input type="email" id="email" name="email" required placeholder="tu@email.com" />
+      <label for="telefono">Teléfono *</label>
+      <input type="tel" id="telefono" name="telefono" required placeholder="+34 6XXXXXXXX" />
+      <label for="comentarios">Comentarios o consulta</label>
+      <textarea id="comentarios" name="comentarios" rows="4" placeholder="Cuéntame cómo puedo ayudarte"></textarea>
+      <button type="submit">Enviar</button>
     </form>
   </section>
 
-  <section class="opinions" aria-label="Opiniones de clientes sobre asesoría financiera">
-    <h2>Opiniones de Clientes Satisfechos</h2>
-    <article class="opinion">
-      <div class="stars" aria-label="5 estrellas">★★★★★</div>
-      <strong>Ana P.</strong>
-      <p>Un asesor financiero muy dedicado que me ayudó a conseguir la estabilidad financiera que necesitaba con mi banco.</p>
+  <section class="opinions" aria-label="Opiniones de clientes">
+    <h2>Opiniones de Clientes</h2>
+    <article class="opinion" aria-label="Opinión positiva de cliente Ana">
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <strong>Ana</strong>
+      <p>"Gracias a la asesoría personalizada, logré cambiar de banco sin complicaciones y mejorar mi ahorro mensual. ¡Recomendado!"</p>
     </article>
-    <article class="opinion">
-      <div class="stars" aria-label="5 estrellas">★★★★★</div>
-      <strong>David S.</strong>
-      <p>Su consejo para cambiar de banco fue clave para mejorar mis finanzas personales. ¡Gracias!</p>
-    </article>
-    <article class="opinion">
-      <div class="stars" aria-label="5 estrellas">★★★★★</div>
-      <strong>Laura G.</strong>
-      <p>Me explicó todo de forma clara. Muy profesional y amable. Totalmente recomendable.</p>
-    </article>
-    <article class="opinion">
-      <div class="stars" aria-label="5 estrellas">★★★★★</div>
-      <strong>Javier M.</strong>
-      <p>Gracias a su asesoría, cambié de banco y ahora tengo mejores condiciones. ¡Un acierto!</p>
-    </article>
-    <article class="opinion">
-      <div class="stars" aria-label="5 estrellas">★★★★★</div>
-      <strong>Claudia T.</strong>
-      <p>Me ayudó a organizar mis gastos y encontrar mejores opciones bancarias. Muy contenta con el trato.</p>
-    </article>
-    <article class="opinion">
-      <div class="stars" aria-label="5 estrellas">★★★★★</div>
-      <strong>Raúl D.</strong>
-      <p>Muy recomendable. Gracias a él ahora tengo una estrategia clara de ahorro e inversión.</p>
+    <article class="opinion" aria-label="Opinión positiva de cliente Carlos">
+      <div class="stars" aria-hidden="true">★★★★★</div>
+      <strong>Carlos</strong>
+      <p>"Virgi me ayudó a entender mis finanzas y a invertir de forma segura. Un servicio muy profesional y cercano."</p>
     </article>
   </section>
 
   <footer>
-    <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
+    <p>© 2025 Virgi Villa - Asesor Financiero Personal</p>
     <p>
-      <a href="politica-privacidad.html">Política de Privacidad</a> |
-      <a href="politica-cookies.html">Política de Cookies</a> |
-      <a href="aviso-legal.html">Aviso Legal</a>
+      <a href="https://www.linkedin.com/in/virgivilla" target="_blank" rel="noopener noreferrer">LinkedIn</a> |
+      <a href="https://www.facebook.com/virgivilla" target="_blank" rel="noopener noreferrer">Facebook</a>
     </p>
   </footer>
 
-  <a href="https://wa.me/34632435190" target="_blank" id="whatsapp" aria-label="WhatsApp chat">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Icono WhatsApp para contacto rápido" />
+  <!-- Botón WhatsApp fijo -->
+  <a href="https://api.whatsapp.com/send?phone=34632435190" target="_blank" rel="noopener noreferrer" id="whatsapp" aria-label="Contactar por WhatsApp">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Icono WhatsApp" />
   </a>
 
 </body>
