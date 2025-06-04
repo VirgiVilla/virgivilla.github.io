@@ -2,8 +2,10 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Asesoría Financiera Personalizada</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="Asesor financiero para ayudarte con cambio banco, optimización de finanzas y asesoramiento bancario personalizado." />
+  <meta name="keywords" content="asesor financiero, cambio banco, banco, ahorro, inversión, finanzas personales" />
+  <title>Asesoramiento Financiero Personalizado Gratis - Cambio Banco y Más</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
@@ -13,36 +15,26 @@
     }
     body {
       font-family: 'Montserrat', sans-serif;
+      line-height: 1.6;
       background-color: #f4f7fa;
       color: #333;
-      line-height: 1.6;
     }
     header {
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
+      background-image: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 120px 20px 80px;
+      padding: 100px 20px;
       text-align: center;
-      position: relative;
-    }
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 40, 80, 0.75);
-      z-index: 0;
-    }
-    header h1, header p {
-      position: relative;
-      z-index: 1;
-      text-shadow: 0 0 8px rgba(0,0,0,0.8);
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
     }
     header h1 {
       font-size: 3rem;
-      font-weight: 800;
       margin-bottom: 20px;
+      font-weight: 700;
     }
     header p {
-      font-size: 1.3rem;
+      font-size: 1.4rem;
       max-width: 700px;
       margin: 0 auto;
     }
@@ -52,7 +44,6 @@
       max-width: 1100px;
       margin: auto;
     }
-
     .benefits {
       display: flex;
       flex-wrap: wrap;
@@ -61,57 +52,38 @@
       text-align: center;
     }
     .benefit {
-      flex: 1 1 280px;
-      background: white;
-      padding: 25px;
-      border-radius: 12px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.05);
-      transition: transform 0.3s ease;
-    }
-    .benefit:hover {
-      transform: translateY(-5px);
+      flex: 1 1 250px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
     .benefit img {
       height: 60px;
-      margin-bottom: 20px;
-    }
-    .benefit h3 {
-      color: #004a99;
-      margin-bottom: 10px;
+      margin-bottom: 15px;
     }
 
-    .about {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      margin-top: 40px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-
-    .reviews {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-      gap: 30px;
-      margin-top: 60px;
-    }
-    .review {
-      background: white;
-      padding: 20px;
+    .about-text {
+      background: #fff;
+      padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .stars {
-      color: gold;
-      font-size: 1.2rem;
-      margin-bottom: 10px;
+      margin-bottom: 60px;
+      max-width: 700px;
+      margin-left: auto;
+      margin-right: auto;
+      font-size: 1.1rem;
+      color: #444;
+      line-height: 1.5;
     }
 
     form {
-      background: white;
+      background: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      margin-top: 60px;
+      max-width: 600px;
+      margin: auto;
     }
     form input, form textarea, form select {
       width: 100%;
@@ -119,16 +91,43 @@
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 6px;
+      font-size: 1rem;
     }
     form button {
       padding: 12px 25px;
-      background-color: #25d366;
+      background-color: #004a99;
       color: white;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
+      font-size: 1.1rem;
     }
+
+    .opinions {
+      max-width: 900px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .opinion {
+      background: #fff;
+      padding: 20px 30px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 0 8px rgba(0,0,0,0.05);
+      color: #444;
+    }
+    .stars {
+      color: #f5c518;
+      margin-bottom: 10px;
+    }
+    .opinion strong {
+      display: block;
+      margin-bottom: 10px;
+      font-weight: 700;
+      color: #004a99;
+    }
+
     footer {
       background: #222;
       color: #fff;
@@ -141,26 +140,28 @@
       text-decoration: none;
     }
 
-    .whatsapp-float {
+    /* WhatsApp floating button */
+    #whatsapp {
       position: fixed;
+      bottom: 25px;
+      right: 25px;
+      background-color: #25d366;
       width: 60px;
       height: 60px;
-      bottom: 30px;
-      right: 30px;
-      background-color: #25d366;
-      color: white;
       border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
-      z-index: 1000;
       display: flex;
       align-items: center;
       justify-content: center;
-      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+      z-index: 1000;
+      transition: background-color 0.3s ease;
     }
-    .whatsapp-float:hover {
-      background-color: #1ebe57;
+    #whatsapp:hover {
+      background-color: #128c4a;
+    }
+    #whatsapp img {
+      width: 32px;
+      height: 32px;
     }
   </style>
 </head>
@@ -168,66 +169,88 @@
 
   <header>
     <h1>Asesoramiento Financiero Personalizado Gratis</h1>
-    <p>Organiza, ahorra e invierte con confianza y seguridad</p>
+    <p>Organiza, ahorra e invierte con confianza y seguridad, y recibe ayuda experta para tu cambio banco o gestión con tu banco.</p>
   </header>
 
+  <section class="about-text">
+    <p>Soy asesor financiero con más de 6 años de experiencia ayudando a muchas personas a alcanzar sus metas económicas. Te guío en el proceso de cambio banco, optimización de tus finanzas personales y toma de decisiones seguras con tu banco. Mi objetivo es que logres estabilidad financiera y tranquilidad.</p>
+  </section>
+
   <section>
-    <h2 style="text-align:center; margin-bottom:40px;">¿Qué te ofrecemos?</h2>
+    <h2 style="text-align:center; margin-bottom: 40px;">¿Qué te ofrecemos?</h2>
     <div class="benefits">
       <div class="benefit">
-        <img src="https://img.icons8.com/fluency/68/consultation.png" alt="Asesoramiento Profesional" />
+        <img src="https://img.icons8.com/external-flat-juicy-fish/64/000000/external-finance-financial-technology-flat-flat-juicy-fish.png" alt="Asesoramiento Profesional" />
         <h3>Asesoramiento Profesional</h3>
-        <p>Te guio paso a paso para tomar las mejores decisiones económicas.</p>
+        <p>Te ayudamos con tu cambio banco y cualquier gestión relacionada con tu banco, para que optimices tu dinero.</p>
       </div>
       <div class="benefit">
-        <img src="https://img.icons8.com/color/68/004a99/money.png" alt="Ahorro" />
+        <img src="https://img.icons8.com/color/64/000000/money.png" alt="Ahorro" />
         <h3>Optimización de Ahorros</h3>
-        <p>Descubre dónde puedes ahorrar sin perder calidad de vida.</p>
+        <p>Descubre dónde puedes ahorrar sin perder calidad de vida, maximizando tus recursos bancarios.</p>
       </div>
       <div class="benefit">
-        <img src="https://img.icons8.com/ios-filled/68/004a99/calendar--v1.png" alt="Agenda" />
+        <img src="https://img.icons8.com/ios-filled/64/4a90e2/calendar--v1.png" alt="Agenda" />
         <h3>Flexibilidad Total</h3>
         <p>Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
       </div>
     </div>
-
-    <div class="about">
-      <h2>Sobre mí</h2>
-      <p>Soy asesor financiero desde hace más de 6 años. Durante este tiempo he ayudado a personas de todas las edades a tomar el control de sus finanzas.  
-      Mi misión es ayudarte a entender cómo ahorrar, invertir y planificar tus metas con claridad.  
-      Trabajo con cada cliente de forma personalizada, según su situación y sus objetivos.  
-      La confianza, la claridad y los resultados son mis prioridades.  
-      Me apasiona ver cómo mis clientes ganan tranquilidad y prosperidad, pero sobre todo, que llegan a conseguir sus METAS.
-      Estoy aquí para acompañarte paso a paso hacia tu bienestar financiero.</p>
-    </div>
   </section>
 
   <section>
-    <h2 style="text-align:center;">Opiniones de Clientes</h2>
-    <div class="reviews">
-      <div class="review"><div class="stars">★★★★★</div><p>"Gracias al asesoramiento pude ahorrar y comenzar a invertir con confianza. ¡Muy recomendable!"<br><strong>- María G.</strong></p></div>
-      <div class="review"><div class="stars">★★★★★</div><p>"Profesional y atento, me ayudó a organizar mis finanzas de forma clara y sencilla."<br><strong>- Carlos R.</strong></p></div>
-      <div class="review"><div class="stars">★★★★★</div><p>"Servicio gratuito que realmente marca la diferencia. El trato fue excelente."<br><strong>- Laura M.</strong></p></div>
-      <div class="review"><div class="stars">★★★★★</div><p>"Me ayudó a entender mejor mis finanzas y a planificar mi futuro económico."<br><strong>- José F.</strong></p></div>
-      <div class="review"><div class="stars">★★★★★</div><p>"Muy buen servicio, atención personalizada y consejos útiles para ahorrar e invertir."<br><strong>- Ana P.</strong></p></div>
-      <div class="review"><div class="stars">★★★★★</div><p>"Desde la primera reunión sentí claridad y confianza. Hoy tengo mis finanzas bajo control."<br><strong>- David S.</strong></p></div>
-    </div>
-  </section>
-
-  <section>
+    <h2 style="text-align:center; margin-bottom: 30px;">Solicita tu asesoría gratuita</h2>
     <form action="https://formspree.io/f/xldneqpv" method="POST">
-      <h2 style="text-align:center; margin-bottom:30px;">Solicita tu asesoría gratuita</h2>
       <input type="text" name="nombre" placeholder="Tu nombre completo" required />
       <input type="email" name="email" placeholder="Tu correo electrónico" required />
       <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" />
-      <select name="horario">
-        <option value="">¿Qué horario prefieres?</option>
-        <option value="mañana">Por la mañana</option>
-        <option value="tarde">Por la tarde</option>
+      <select name="preferencia" required>
+        <option value="" disabled selected>¿Qué horario prefieres para la reunión?</option>
+        <option value="mañana">Mañana</option>
+        <option value="tarde">Tarde</option>
       </select>
       <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required></textarea>
       <button type="submit">Enviar solicitud</button>
     </form>
+  </section>
+
+  <section class="opinions">
+    <h2 style="color:#004a99; margin-bottom: 20px;">Opiniones de Clientes</h2>
+
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>María G.</strong>
+      <p>Gracias al asesoramiento, hice un cambio banco que me ha ahorrado mucho dinero. ¡Muy recomendable!</p>
+    </div>
+
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>Carlos R.</strong>
+      <p>Excelente asesor financiero que me ayudó a entender mejor mis cuentas bancarias y optimizar mis finanzas.</p>
+    </div>
+
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>Lucía M.</strong>
+      <p>El proceso de cambio banco fue muy sencillo gracias a su ayuda profesional y cercana.</p>
+    </div>
+
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>José F.</strong>
+      <p>Me guió para invertir mejor y gestionar mis productos bancarios de forma efectiva.</p>
+    </div>
+
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>Ana P.</strong>
+      <p>Un asesor muy dedicado que me ayudó a conseguir la estabilidad financiera que necesitaba con mi banco.</p>
+    </div>
+
+    <div class="opinion">
+      <div class="stars">★★★★★</div>
+      <strong>David S.</strong>
+      <p>Su consejo para cambiar de banco fue clave para mejorar mis finanzas personales. ¡Gracias!</p>
+    </div>
   </section>
 
   <footer>
@@ -239,8 +262,9 @@
     </p>
   </footer>
 
-  <a href="https://wa.me/34677863127" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
-    💬
+  <!-- WhatsApp floating button -->
+  <a id="whatsapp" href="https://wa.me/34677863127" target="_blank" aria-label="Contactar por WhatsApp">
+    <img src="https://img.icons8.com/ios-filled/50/ffffff/whatsapp.png" alt="WhatsApp" />
   </a>
 
 </body>
