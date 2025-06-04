@@ -2,137 +2,167 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <meta name="google-site-verification" content="YgyjmPJLvKIX1qU_oF-JO6m3bI1W5w7hgn8r8p1wpTg" />
   <title>Asesoría Financiera Personalizada</title>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
-      box-sizing: border-box;
       margin: 0;
       padding: 0;
+      box-sizing: border-box;
     }
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #f4f6f8;
-      color: #333;
+      font-family: 'Montserrat', sans-serif;
       line-height: 1.6;
+      background-color: #f4f7fa;
+      color: #333;
     }
     header {
-      background: linear-gradient(to right, #004a99, #007acc);
+      background-image: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4');
+      background-size: cover;
+      background-position: center;
       color: white;
-      padding: 3rem 1rem;
+      padding: 80px 20px;
       text-align: center;
     }
     header h1 {
       font-size: 2.5rem;
-      margin-bottom: 1rem;
+      margin-bottom: 20px;
     }
     header p {
       font-size: 1.2rem;
     }
-    .content {
+
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    .benefits {
       display: flex;
       flex-wrap: wrap;
+      gap: 30px;
       justify-content: center;
-      padding: 2rem 1rem;
-      gap: 2rem;
+      text-align: center;
     }
-    .image-area {
-      flex: 1 1 300px;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-    .image-area img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.1);
-    }
-    .form-area {
-      flex: 1 1 400px;
-      background: white;
-      padding: 2rem;
-      border-radius: 12px;
+    .benefit {
+      flex: 1 1 250px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-    .form-area h2 {
-      margin-bottom: 1rem;
-      color: #004a99;
+    .benefit img {
+      height: 60px;
+      margin-bottom: 15px;
     }
-    form input, form select, form textarea {
+
+    .about {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      align-items: center;
+    }
+    .about img {
+      max-width: 100%;
+      border-radius: 10px;
+      flex: 1;
+    }
+    .about-text {
+      flex: 2;
+    }
+
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    form input, form textarea {
       width: 100%;
-      padding: 0.75rem;
-      margin-bottom: 1rem;
+      padding: 12px;
+      margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 6px;
     }
     form button {
-      background-color: #007acc;
+      padding: 12px 25px;
+      background-color: #004a99;
       color: white;
-      padding: 0.75rem;
       border: none;
       border-radius: 6px;
       cursor: pointer;
       font-weight: bold;
     }
-    form button:hover {
-      background-color: #005f99;
-    }
     footer {
+      background: #222;
+      color: #fff;
+      padding: 20px;
       text-align: center;
-      padding: 2rem 1rem;
-      font-size: 0.9rem;
-      background-color: #f0f0f0;
     }
     footer a {
-      color: #004a99;
-      margin: 0 0.5rem;
+      color: #ddd;
+      margin: 0 10px;
       text-decoration: none;
-    }
-    footer a:hover {
-      text-decoration: underline;
     }
   </style>
 </head>
 <body>
+
   <header>
     <h1>Asesoría Financiera Personalizada</h1>
-    <p>Nos podemos ver en persona u online. Empieza gratis hoy.</p>
+    <p>Nos podemos ver en persona u online para ayudarte a organizar, ahorrar e invertir mejor tu dinero.</p>
   </header>
 
-  <section class="content">
-    <div class="image-area">
-      <img src="https://images.unsplash.com/photo-1581090700227-1e8e4b87a4aa?auto=format&fit=crop&w=800&q=80" alt="Dispositivos electrónicos" />
-    </div>
-
-    <div class="form-area">
-      <h2>Solicita tu primera consulta</h2>
-      <form action="https://formspree.io/f/xldneqpv" method="POST">
-        <input type="text" name="nombre" placeholder="Nombre completo" required />
-        <input type="email" name="email" placeholder="Correo electrónico" required />
-        <input type="tel" name="telefono" placeholder="Teléfono (opcional)" />
-        <select name="objetivo">
-          <option value="">¿Cuál es tu objetivo principal?</option>
-          <option value="ahorrar">Ahorrar mejor</option>
-          <option value="invertir">Invertir con seguridad</option>
-          <option value="gestionar">Gestionar deudas</option>
-          <option value="otro">Otro</option>
-        </select>
-        <textarea name="mensaje" rows="4" placeholder="Cuéntanos brevemente tu situación"></textarea>
-        <button type="submit">Enviar</button>
-      </form>
+  <section>
+    <h2 style="text-align:center; margin-bottom: 40px;">¿Qué te ofrecemos?</h2>
+    <div class="benefits">
+      <div class="benefit">
+        <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/68/000000/external-investment-finance-smashingstocks-flat-smashing-stocks.png" alt="Inversión" />
+        <h3>Asesoramiento Profesional</h3>
+        <p>Te guiamos paso a paso para tomar las mejores decisiones económicas.</p>
+      </div>
+      <div class="benefit">
+        <img src="https://img.icons8.com/color/68/000000/money.png" alt="Ahorro" />
+        <h3>Optimización de Ahorros</h3>
+        <p>Descubre dónde puedes ahorrar sin perder calidad de vida.</p>
+      </div>
+      <div class="benefit">
+        <img src="https://img.icons8.com/ios-filled/68/4a90e2/calendar--v1.png" alt="Agenda" />
+        <h3>Flexibilidad Total</h3>
+        <p>Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
+      </div>
     </div>
   </section>
 
+  <section class="about">
+    <div class="about-text">
+      <h2>Sobre mí</h2>
+      <p>Mi nombre es Virgi Villa y estoy aquí para ayudarte a entender tus finanzas, sin tecnicismos. Me apasiona ver cómo mis clientes ganan control, tranquilidad y prosperidad.</p>
+    </div>
+    <img src="https://images.unsplash.com/photo-1581091012184-7f7a9b47e899" alt="Virgi Villa asesora" />
+  </section>
+
+  <section>
+    <h2 style="text-align:center; margin-bottom: 30px;">Solicita tu asesoría gratuita</h2>
+    <form action="https://formspree.io/f/xldneqpv" method="POST">
+      <input type="text" name="nombre" placeholder="Tu nombre completo" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" />
+      <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required></textarea>
+      <button type="submit">Enviar solicitud</button>
+    </form>
+  </section>
+
   <footer>
+    <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
     <p>
       <a href="politica-privacidad.html">Política de Privacidad</a> |
       <a href="politica-cookies.html">Política de Cookies</a> |
       <a href="aviso-legal.html">Aviso Legal</a>
     </p>
-    <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
   </footer>
+
 </body>
 </html>
