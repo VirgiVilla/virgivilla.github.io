@@ -22,39 +22,34 @@
       scroll-behavior: smooth;
     }
 
-    /* Header */
+    /* Header con imagen */
     header {
+      position: relative;
       height: 350px;
+      border-radius: 0 0 40px 40px;
+      overflow: hidden;
+      margin-bottom: 60px;
+      text-align: center;
       display: flex;
       justify-content: center;
       align-items: center;
-      text-align: center;
-      color: #fff;
-      font-family: 'Montserrat', sans-serif;
-      border-radius: 0 0 40px 40px;
-      position: relative;
-      margin-bottom: 60px;
-      overflow: hidden;
     }
-    .header-bg {
+    .header-image {
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
-      opacity: 0.9;
-      z-index: 1;
-      background-image:
-        linear-gradient(45deg, rgba(255,255,255,0.07) 25%, transparent 25%),
-        linear-gradient(-45deg, rgba(255,255,255,0.07) 25%, transparent 25%),
-        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.07) 75%),
-        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.07) 75%);
-      background-size: 40px 40px;
-      background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+      background-image: url('https://images.unsplash.com/photo-1565372919297-cf812ea4a42d?auto=format&fit=crop&w=1350&q=80');
+      background-size: cover;
+      background-position: center;
+      filter: brightness(0.5);
+      z-index: 0;
     }
     .header-content {
       position: relative;
-      z-index: 10;
+      z-index: 1;
       max-width: 750px;
       padding: 0 20px;
+      color: #fff;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.7);
       animation: fadeInDown 1.6s ease forwards;
       opacity: 0;
     }
@@ -63,13 +58,11 @@
       font-weight: 900;
       margin-bottom: 12px;
       line-height: 1.1;
-      text-shadow: 0 5px 15px rgba(0,0,0,0.3);
     }
     .subtitle {
       font-size: 1.3rem;
       margin-bottom: 30px;
       font-weight: 500;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.25);
     }
     .btn-cta {
       display: inline-block;
@@ -119,6 +112,8 @@
         font-size: 1rem;
       }
     }
+
+    /* Resto igual... */
 
     /* Section: ¿Qué te ofrecemos? */
     section {
@@ -262,9 +257,9 @@
 </head>
 <body>
 
-  <!-- Header Mejorado -->
+  <!-- Header Mejorado con imagen -->
   <header role="banner" aria-label="Encabezado principal">
-    <div class="header-bg"></div>
+    <div class="header-image" aria-hidden="true"></div>
     <div class="header-content" tabindex="0">
       <h1>Asesoramiento Financiero Personalizado Gratis</h1>
       <p class="subtitle">Organiza, ahorra e invierte con confianza y seguridad</p>
@@ -298,69 +293,42 @@
   <section class="reviews-section" aria-labelledby="reviews-title">
     <h2 id="reviews-title">Opiniones de Clientes Satisfechos</h2>
     <div class="review" tabindex="0">
-      <p>"Virgi me ayudó a organizar mis finanzas personales y ahora tengo más control y tranquilidad. ¡Muy recomendable!"</p>
-      <strong>- Carlos M.</strong>
+      <p>"Gracias al asesoramiento pude ahorrar y comenzar a invertir con confianza. ¡Muy recomendable!"</p>
+      <strong>- María G.</strong>
     </div>
     <div class="review" tabindex="0">
-      <p>"Gracias a la asesoría personalizada, he logrado ahorrar para mis proyectos sin sacrificar mi día a día."</p>
-      <strong>- Laura G.</strong>
+      <p>"Profesionales y atentos, me ayudaron a organizar mis finanzas de forma clara y sencilla."</p>
+      <strong>- Carlos R.</strong>
     </div>
     <div class="review" tabindex="0">
-      <p>"La flexibilidad para elegir horarios fue clave para mí. Excelente atención y resultados."</p>
-      <strong>- Javier P.</strong>
-    </div>
-    <div class="review" tabindex="0">
-      <p>"El trato cercano y profesional me dio la confianza para invertir con éxito."</p>
-      <strong>- Ana R.</strong>
-    </div>
-    <div class="review" tabindex="0">
-      <p>"Virgi sabe explicar todo de manera clara, sin tecnicismos, ¡me encantó su asesoría!"</p>
-      <strong>- Miguel T.</strong>
+      <p>"Servicio gratuito que realmente marca la diferencia. El trato fue excelente."</p>
+      <strong>- Laura M.</strong>
     </div>
   </section>
 
   <!-- Formulario de Contacto -->
-  <section aria-labelledby="contact-form-title">
-    <h2 id="contact-form-title" style="text-align:center; margin-bottom: 30px;">Solicita tu asesoría gratuita</h2>
-    <form id="contact-form" action="https://formspree.io/f/xldneqpv" method="POST" aria-describedby="form-desc">
-      <p id="form-desc" style="text-align:center; margin-bottom: 25px; color:#555;">
-        Completa el formulario y elige tu horario preferido para la reunión.
-      </p>
-      <input type="text" name="nombre" placeholder="Tu nombre completo" required aria-required="true" />
-      <input type="email" name="email" placeholder="Tu correo electrónico" required aria-required="true" />
-      <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" pattern="[0-9\s+-]{7,15}" />
-      <label for="horario-preferencia" style="display:block; font-weight:600; margin-bottom:8px;">¿Qué horario prefieres para la reunión?</label>
-      <select name="horario" id="horario-preferencia" required aria-required="true">
-        <option value="" disabled selected>Selecciona una opción</option>
-        <option value="mañana">Por la mañana</option>
-        <option value="tarde">Por la tarde</option>
-      </select>
-      <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required aria-required="true"></textarea>
+  <section aria-labelledby="contact-form-title" id="contact-form" style="margin-bottom: 60px;">
+    <h2 id="contact-form-title" style="text-align: center; margin-bottom: 30px; color: #004a99;">Reserva tu cita gratuita</h2>
+    <form action="https://formspree.io/f/yourformid" method="POST" aria-label="Formulario de reserva de cita">
+      <label for="name">Nombre completo:</label>
+      <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
+
+      <label for="email">Correo electrónico:</label>
+      <input type="email" id="email" name="_replyto" required placeholder="tu@email.com" />
+
+      <label for="phone">Número de teléfono:</label>
+      <input type="tel" id="phone" name="phone" placeholder="Opcional" />
+
+      <label for="date">Fecha preferida:</label>
+      <input type="date" id="date" name="date" required />
+
       <button type="submit">Enviar solicitud</button>
     </form>
   </section>
 
-  <!-- Footer -->
-  <footer>
-    <p style="text-align:center; color:#666; margin-bottom: 8px;">&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
-    <p style="text-align:center;">
-      <a href="politica-privacidad.html" style="color:#004a99; text-decoration:none; margin: 0 10px;">Política de Privacidad</a> |
-      <a href="politica-cookies.html" style="color:#004a99; text-decoration:none; margin: 0 10px;">Política de Cookies</a> |
-      <a href="aviso-legal.html" style="color:#004a99; text-decoration:none; margin: 0 10px;">Aviso Legal</a>
-    </p>
-  </footer>
-
-  <!-- WhatsApp Flotante -->
-  <a
-    href="https://wa.me/34677863127"
-    class="whatsapp-float"
-    target="_blank"
-    rel="noopener"
-    aria-label="Contactar por WhatsApp"
-  >
-    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
-      <path d="M20.52 3.48A11.82 11.82 0 0012 0C5.373 0 0 5.372 0 12c0 2.116.553 4.159 1.602 5.961L0 24l6.156-1.592A11.913 11.913 0 0012 24c6.627 0 12-5.372 12-12 0-3.198-1.247-6.204-3.48-8.52zm-8.52 17.271a9.28 9.28 0 01-4.98-1.47l-.356-.211-3.662.947.978-3.565-.232-.363a9.276 9.276 0 11{0} 9.285zm4.297-5.226c-.063-.107-.229-.17-.477-.3-.247-.128-1.46-.718-1.686-.799-.226-.08-.39-.107-.555.107-.165.213-.637.799-.78.963-.143.165-.286.19-.532.064-.246-.128-1.04-.384-1.983-1.22-.732-.654-1.224-1.462-1.367-1.674-.143-.213-.015-.328.113-.456.116-.116.247-.305.37-.457.122-.152.163-.26.246-.433.082-.173.041-.326-.02-.455-.06-.128-.555-1.34-.76-1.836-.2-.48-.403-.415-.555-.423l-.475-.009c-.162 0-.428.061-.65.29-.223.23-.852.83-.852 2.02 0 1.19.873 2.344.995 2.507.123.165 1.717 2.62 4.166 3.67.582.25 1.035.4 1.388.513.582.19 1.11.163 1.53.1.467-.07 1.46-.6 1.666-1.18.206-.582.206-1.08.144-1.18z"/>
-    </svg>
+  <!-- Botón WhatsApp -->
+  <a href="https://wa.me/34123456789" class="whatsapp-float" aria-label="Chat por WhatsApp" target="_blank" rel="noopener noreferrer">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339-16.9 197.5-24.9 107.8 40.2 17.5 105.7 1 245.4 45.2 347.4L0 512l164.2-44.6c101.6 42.7 241.1 25.6 305-64.7 35.7-54.7 34.3-128.8-8.3-179.6zM224 360c-28.2 0-54.2-11.1-73.9-29.3l-5.3-5.1c-19.7-19.7-30.9-45.7-30.9-73.9 0-58.1 47.1-105.2 105.2-105.2 27.7 0 53.7 11.2 73.3 29.7 19.6 18.4 31.1 44.1 31.1 72.9 0 57.8-47 104.9-104.5 104.9z"/></svg>
   </a>
 
 </body>
