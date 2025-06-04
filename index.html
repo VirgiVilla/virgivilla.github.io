@@ -2,213 +2,178 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Solicita asesoría financiera gratuita. Te ayudamos a mejorar tu situación económica.">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Asesoría financiera personalizada - Agenda tu cita</title>
+  <meta name="description" content="Obtén asesoría financiera personalizada. Nos podemos ver en persona u online. Rellena el formulario y agenda tu cita." />
+  <meta name="keywords" content="asesoría financiera, finanzas personales, cita financiera, asesor, presupuesto, ahorro" />
   <meta name="google-site-verification" content="YgyjmPJLvKIX1qU_oF-JO6m3bI1W5w7hgn8r8p1wpTg" />
-  <title>Asesoría Financiera | Virgi Villa</title>
   <style>
     body {
-      font-family: 'Segoe UI', sans-serif;
-      margin: 0;
-      background-color: #f8f9fa;
-      color: #333;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin: 0; padding: 0; background: #f4f7f8; color: #333;
     }
-
     header {
-      background: linear-gradient(90deg, #3a7bd5, #00d2ff);
+      background: #004a99;
       color: white;
+      padding: 1.5rem;
       text-align: center;
-      padding: 60px 20px;
     }
-
     header h1 {
-      font-size: 2.5em;
       margin: 0;
+      font-size: 2rem;
     }
-
-    header p {
-      font-size: 1.2em;
-      margin-top: 10px;
+    main {
+      max-width: 900px;
+      margin: 2rem auto;
+      padding: 0 1rem;
     }
-
     section {
-      max-width: 800px;
-      margin: 40px auto;
       background: white;
-      padding: 30px;
+      margin-bottom: 2rem;
+      padding: 1.5rem 2rem;
       border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
     }
-
     h2 {
-      color: #3a7bd5;
-      margin-top: 0;
+      color: #004a99;
+      margin-bottom: 1rem;
     }
-
-    .benefits ul {
-      list-style: none;
-      padding: 0;
+    form label {
+      display: block;
+      margin-top: 1rem;
+      font-weight: 600;
     }
-
-    .benefits li::before {
-      content: "✅";
-      margin-right: 10px;
-      color: #3a7bd5;
-    }
-
-    .testimonios blockquote {
-      border-left: 4px solid #3a7bd5;
-      padding-left: 10px;
-      margin: 10px 0;
-      font-style: italic;
-      color: #555;
-    }
-
-    form input, form textarea, form button {
+    form input, form select, form textarea {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
+      padding: 0.5rem;
+      margin-top: 0.3rem;
       border: 1px solid #ccc;
-      border-radius: 6px;
-      font-size: 1em;
+      border-radius: 4px;
+      font-size: 1rem;
     }
-
     form button {
-      background-color: #3a7bd5;
+      margin-top: 1.5rem;
+      padding: 0.75rem 1.5rem;
+      background: #004a99;
       color: white;
       border: none;
+      border-radius: 4px;
       cursor: pointer;
+      font-size: 1.1rem;
+      transition: background 0.3s ease;
     }
-
     form button:hover {
-      background-color: #336ec1;
+      background: #003366;
     }
-
+    .testimonials {
+      font-style: italic;
+      color: #555;
+      border-left: 4px solid #004a99;
+      padding-left: 1rem;
+      margin-bottom: 1rem;
+    }
+    .social-links a {
+      margin-right: 1rem;
+      color: #004a99;
+      text-decoration: none;
+      font-weight: 600;
+    }
+    .social-links a:hover {
+      text-decoration: underline;
+    }
+    iframe {
+      width: 100%;
+      height: 600px;
+      border: none;
+      border-radius: 8px;
+    }
     footer {
       text-align: center;
-      padding: 20px;
-      background: #f1f1f1;
-      font-size: 0.9em;
+      font-size: 0.9rem;
+      padding: 1rem 0;
       color: #777;
     }
-
-    /* Botón de WhatsApp */
-    .whatsapp-float {
-      position: fixed;
-      width: 60px;
-      height: 60px;
-      bottom: 20px;
-      right: 20px;
-      background-color: #25d366;
-      color: #fff;
-      border-radius: 50%;
-      text-align: center;
-      font-size: 30px;
-      z-index: 100;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-decoration: none;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.2);
-    }
-
-    .whatsapp-float:hover {
-      background-color: #1ebea5;
-    }
-
-    .thanks-message {
-      display: none;
-      background: #e0ffe0;
-      padding: 15px;
-      border: 1px solid #2ecc71;
-      color: #2c662d;
-      border-radius: 6px;
-      margin-bottom: 20px;
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.5rem;
+      }
+      iframe {
+        height: 400px;
+      }
     }
   </style>
 </head>
 <body>
-
   <header>
-    <h1>Mejora tus finanzas personales</h1>
-    <p>Asesoría gratuita y personalizada para cualquier persona</p>
+    <h1>Asesoría financiera personalizada</h1>
+    <p>Nos podemos ver en persona u online</p>
   </header>
+  <main>
 
-  <section class="about">
-    <h2>¿Quién soy?</h2>
-    <p>Hola, soy <strong>Virgi Villa</strong>, especialista en finanzas personales. Mi misión es ayudarte a tomar control de tu dinero de forma sencilla y sin estrés. Ya he ayudado a decenas de personas a organizar su economía, y ahora quiero ayudarte a ti.</p>
-  </section>
+    <section>
+      <h2>Rellena el formulario para que te contactemos</h2>
+      <form action="https://formspree.io/f/xldneqpv" method="POST">
+        <label for="nombre">Nombre completo *</label>
+        <input type="text" id="nombre" name="nombre" required />
 
-  <section class="benefits">
-    <h2>¿Por qué elegir esta asesoría?</h2>
-    <ul>
-      <li>Es gratuita y sin compromiso</li>
-      <li>Te doy respuestas rápidas y personalizadas</li>
-      <li>Nos podemos ver en persona u online</li>
-      <li>Confidencialidad total</li>
-    </ul>
-  </section>
+        <label for="email">Correo electrónico *</label>
+        <input type="email" id="email" name="_replyto" required />
 
-  <section class="testimonios">
-    <h2>Lo que dicen otros</h2>
-    <blockquote>“Gracias a Virgi entendí mis gastos y ahora ahorro todos los meses.”</blockquote>
-    <blockquote>“Muy clara y cercana. Me ayudó más que mi banco.”</blockquote>
-    <blockquote>“Pensé que esto iba a ser complicado, pero fue muy fácil.”</blockquote>
-  </section>
+        <label for="telefono">Teléfono</label>
+        <input type="tel" id="telefono" name="telefono" />
 
-  <section>
-    <h2>Solicita tu asesoría</h2>
-    <div class="thanks-message" id="thanks">¡Gracias! Te responderé muy pronto.</div>
-    <form action="https://formspree.io/f/xldneqpv" method="POST" onsubmit="showThanks(event)">
-      <label>Nombre completo</label>
-      <input type="text" name="nombre" required />
+        <label for="ingresos">Ingresos mensuales aproximados *</label>
+        <input type="number" id="ingresos" name="ingresos" min="0" required />
 
-      <label>Correo electrónico</label>
-      <input type="email" name="email" required />
+        <label for="gastos">Gastos mensuales aproximados *</label>
+        <input type="number" id="gastos" name="gastos" min="0" required />
 
-      <label>Teléfono (opcional)</label>
-      <input type="tel" name="telefono" />
+        <label for="objetivo">¿Cuál es tu principal objetivo financiero?</label>
+        <select id="objetivo" name="objetivo" required>
+          <option value="">Selecciona una opción</option>
+          <option value="ahorro">Ahorrar más</option>
+          <option value="inversion">Invertir</option>
+          <option value="reduccion_deudas">Reducir deudas</option>
+          <option value="planificacion">Planificación general</option>
+        </select>
 
-      <label>¿Cuál es tu situación financiera actual?</label>
-      <textarea name="situacion" rows="4" required></textarea>
+        <label for="comentarios">Comentarios adicionales</label>
+        <textarea id="comentarios" name="comentarios" rows="3"></textarea>
 
-      <label>¿Qué tipo de ayuda necesitas?</label>
-      <textarea name="ayuda" rows="3"></textarea>
+        <button type="submit">Enviar</button>
+      </form>
+    </section>
 
-      <button type="submit">Enviar</button>
-    </form>
-  </section>
+    <section>
+      <h2>Agenda tu cita</h2>
+      <!-- Sustituye el enlace src por el de tu Calendly real -->
+      <iframe src="https://calendly.com/tu_usuario/tu_evento?embed_domain=virgivilla.github.io&embed_type=Inline" allowfullscreen></iframe>
+    </section>
+
+    <section>
+      <h2>Testimonios</h2>
+      <blockquote class="testimonials">
+        "Gracias a esta asesoría pude organizar mis finanzas y ahorrar para mi primer viaje." – Ana M.
+      </blockquote>
+      <blockquote class="testimonials">
+        "Atención personalizada y resultados rápidos. Totalmente recomendable." – Carlos R.
+      </blockquote>
+    </section>
+
+    <section>
+      <h2>Síguenos en redes sociales</h2>
+      <div class="social-links">
+        <a href="https://www.facebook.com/tu_pagina" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://twitter.com/tu_usuario" target="_blank" rel="noopener noreferrer">Twitter</a>
+        <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://www.linkedin.com/in/tu_usuario" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+      </div>
+    </section>
+
+  </main>
 
   <footer>
-    &copy; 2025 Virgi Villa · Contacto: virgivillaescu@gmail.com
+    <p>&copy; 2025 Tu Empresa - <a href="politica-privacidad.html">Política de privacidad</a></p>
   </footer>
-
-  <!-- Botón WhatsApp -->
-  <a class="whatsapp-float" href="https://wa.me/34600000000?text=Hola%20Virgi,%20quiero%20una%20asesoría%20financiera" target="_blank" title="Escríbeme por WhatsApp">
-    🟢
-  </a>
-
-  <script>
-    function showThanks(event) {
-      event.preventDefault();
-      const form = event.target;
-      const thanks = document.getElementById('thanks');
-      fetch(form.action, {
-        method: "POST",
-        body: new FormData(form),
-        headers: {
-          'Accept': 'application/json'
-        }
-      }).then(response => {
-        if (response.ok) {
-          form.reset();
-          thanks.style.display = 'block';
-        } else {
-          alert("Hubo un error. Intenta más tarde.");
-        }
-      });
-    }
-  </script>
-
 </body>
 </html>
