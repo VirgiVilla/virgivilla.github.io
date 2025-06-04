@@ -2,11 +2,15 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Virgi Villa | Asesor Financiero Personal</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: #f4f7fa;
@@ -22,11 +26,19 @@
       text-align: center;
     }
     .header-overlay {
-      position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
     }
-    header h1, header p {
-      position: relative; z-index: 2;
-      text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
+    header h1,
+    header p {
+      position: relative;
+      z-index: 2;
+      text-shadow: 3px 3px 10px rgba(0, 0, 0, 0.9);
     }
     section {
       padding: 60px 20px;
@@ -42,7 +54,7 @@
       background: #fff;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
     }
     .about-text {
       flex: 1 1 350px;
@@ -57,13 +69,14 @@
       width: 100%;
       border-radius: 10px;
       max-width: 300px;
+      display: block;
     }
     /* Opiniones */
     #opiniones {
       background: #fff;
       padding: 40px 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
       margin: 60px auto;
     }
     #opiniones h2 {
@@ -75,7 +88,7 @@
     }
     .opiniones-grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
       gap: 25px;
     }
     .opinion {
@@ -84,7 +97,7 @@
       background: #fafafa;
       padding: 20px;
       border-radius: 10px;
-      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
       position: relative;
     }
     .opinion p {
@@ -102,17 +115,27 @@
       background: #fff;
       padding: 30px;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
       max-width: 600px;
       margin: auto;
     }
-    form input, form textarea, form select {
+    form label {
+      display: block;
+      font-weight: 600;
+      margin-bottom: 5px;
+      color: #333;
+    }
+    form input,
+    form textarea,
+    form select {
       width: 100%;
       padding: 12px;
       margin-bottom: 15px;
       border: 1px solid #ccc;
       border-radius: 6px;
       font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
     }
     form button {
       padding: 12px 25px;
@@ -124,6 +147,7 @@
       font-weight: bold;
       font-size: 1.1rem;
       transition: background-color 0.3s ease;
+      width: 100%;
     }
     form button:hover {
       background-color: #00306d;
@@ -131,7 +155,7 @@
     /* Botón WhatsApp */
     .btn-whatsapp {
       display: inline-block;
-      margin-top: 20px;
+      margin: 20px auto 0 auto;
       padding: 15px 30px;
       background-color: #25d366;
       color: white;
@@ -139,8 +163,10 @@
       font-size: 1.2rem;
       border-radius: 8px;
       text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
       transition: background-color 0.3s ease;
+      text-align: center;
+      max-width: 300px;
     }
     .btn-whatsapp:hover {
       background-color: #1ebe57;
@@ -174,10 +200,16 @@
   <section class="about-section" id="sobre-mi">
     <div class="about-text">
       <h2>Sobre mí</h2>
-      <p>Soy <strong>Virgi Villa</strong>, asesor financiero con más de 6 años de experiencia ayudando a personas a gestionar su dinero de forma más eficiente, ya sea cambiando de banco, invirtiendo con sentido o simplemente aprendiendo a ahorrar mejor.</p>
+      <p>
+        Soy <strong>Virgi Villa</strong>, asesor financiero con más de 6 años de experiencia ayudando a personas a gestionar su dinero de forma más eficiente, ya sea cambiando de banco, invirtiendo con sentido o simplemente aprendiendo a ahorrar mejor.
+      </p>
     </div>
     <div class="about-photo">
-      <img src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG" alt="Foto de Virgi Villa" loading="lazy">
+      <img
+        src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG"
+        alt="Foto de Virgi Villa"
+        loading="lazy"
+      />
     </div>
   </section>
 
@@ -214,8 +246,14 @@
 
   <section id="contacto">
     <h2 style="text-align:center; margin-bottom: 20px;">Solicita tu asesoría gratuita</h2>
-    <form action="https://formsubmit.co/virgivillaescu@gmail.com" method="POST" aria-describedby="form-description">
-      <p id="form-description" style="text-align:center; margin-bottom: 20px;">Rellena este formulario para que me ponga en contacto contigo.</p>
+    <form
+      action="https://formsubmit.co/virgivillaescu@gmail.com"
+      method="POST"
+      aria-describedby="form-description"
+    >
+      <p id="form-description" style="text-align:center; margin-bottom: 20px;">
+        Rellena este formulario para que me ponga en contacto contigo.
+      </p>
 
       <label for="nombre">Nombre completo *</label>
       <input type="text" id="nombre" name="nombre" required />
@@ -239,23 +277,28 @@
       <!-- Protección y redirección -->
       <input type="text" name="_honey" style="display:none" />
       <input type="hidden" name="_captcha" value="false" />
-      <input type="hidden" name="_next" value="https://virgivilla.github.io/gracias.html" />
+      <input
+        type="hidden"
+        name="_next"
+        value="https://virgivilla.github.io/gracias.html"
+      />
 
       <button type="submit">Enviar</button>
     </form>
     <div style="text-align:center;">
-      <a href="https://wa.me/34677863127?text=Hola%20Virgi,%20quiero%20solicitar%20una%20asesoría%20financiera." 
-         target="_blank" 
-         class="btn-whatsapp"
-         aria-label="Hablar por WhatsApp con Virgi Villa">
-        📱 Hablar por WhatsApp
-      </a>
+      <a
+        href="https://wa.me/34677863127?text=Hola%20Virgi,%20quiero%20solicitar%20una%20asesoría%20financiera."
+        target="_blank"
+        class="btn-whatsapp"
+        aria-label="Hablar por WhatsApp con Virgi Villa"
+        rel="noopener"
+        >📱 Hablar por WhatsApp</a
+      >
     </div>
   </section>
 
   <footer>
     <p>&copy; 2025 Virgi Villa – Todos los derechos reservados.</p>
   </footer>
-
 </body>
 </html>
