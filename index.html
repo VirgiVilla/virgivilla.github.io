@@ -2,178 +2,137 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Asesoría financiera personalizada - Agenda tu cita</title>
-  <meta name="description" content="Obtén asesoría financiera personalizada. Nos podemos ver en persona u online. Rellena el formulario y agenda tu cita." />
-  <meta name="keywords" content="asesoría financiera, finanzas personales, cita financiera, asesor, presupuesto, ahorro" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="YgyjmPJLvKIX1qU_oF-JO6m3bI1W5w7hgn8r8p1wpTg" />
+  <title>Asesoría Financiera Personalizada</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
     body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0; padding: 0; background: #f4f7f8; color: #333;
+      font-family: 'Inter', sans-serif;
+      background-color: #f4f6f8;
+      color: #333;
+      line-height: 1.6;
     }
     header {
-      background: #004a99;
+      background: linear-gradient(to right, #004a99, #007acc);
       color: white;
-      padding: 1.5rem;
+      padding: 3rem 1rem;
       text-align: center;
     }
     header h1 {
-      margin: 0;
-      font-size: 2rem;
-    }
-    main {
-      max-width: 900px;
-      margin: 2rem auto;
-      padding: 0 1rem;
-    }
-    section {
-      background: white;
-      margin-bottom: 2rem;
-      padding: 1.5rem 2rem;
-      border-radius: 8px;
-      box-shadow: 0 2px 5px rgb(0 0 0 / 0.1);
-    }
-    h2 {
-      color: #004a99;
+      font-size: 2.5rem;
       margin-bottom: 1rem;
     }
-    form label {
-      display: block;
-      margin-top: 1rem;
-      font-weight: 600;
+    header p {
+      font-size: 1.2rem;
+    }
+    .content {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      padding: 2rem 1rem;
+      gap: 2rem;
+    }
+    .image-area {
+      flex: 1 1 300px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .image-area img {
+      max-width: 100%;
+      height: auto;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
+    }
+    .form-area {
+      flex: 1 1 400px;
+      background: white;
+      padding: 2rem;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    }
+    .form-area h2 {
+      margin-bottom: 1rem;
+      color: #004a99;
     }
     form input, form select, form textarea {
       width: 100%;
-      padding: 0.5rem;
-      margin-top: 0.3rem;
+      padding: 0.75rem;
+      margin-bottom: 1rem;
       border: 1px solid #ccc;
-      border-radius: 4px;
-      font-size: 1rem;
+      border-radius: 6px;
     }
     form button {
-      margin-top: 1.5rem;
-      padding: 0.75rem 1.5rem;
-      background: #004a99;
+      background-color: #007acc;
       color: white;
+      padding: 0.75rem;
       border: none;
-      border-radius: 4px;
+      border-radius: 6px;
       cursor: pointer;
-      font-size: 1.1rem;
-      transition: background 0.3s ease;
+      font-weight: bold;
     }
     form button:hover {
-      background: #003366;
-    }
-    .testimonials {
-      font-style: italic;
-      color: #555;
-      border-left: 4px solid #004a99;
-      padding-left: 1rem;
-      margin-bottom: 1rem;
-    }
-    .social-links a {
-      margin-right: 1rem;
-      color: #004a99;
-      text-decoration: none;
-      font-weight: 600;
-    }
-    .social-links a:hover {
-      text-decoration: underline;
-    }
-    iframe {
-      width: 100%;
-      height: 600px;
-      border: none;
-      border-radius: 8px;
+      background-color: #005f99;
     }
     footer {
       text-align: center;
+      padding: 2rem 1rem;
       font-size: 0.9rem;
-      padding: 1rem 0;
-      color: #777;
+      background-color: #f0f0f0;
     }
-    @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.5rem;
-      }
-      iframe {
-        height: 400px;
-      }
+    footer a {
+      color: #004a99;
+      margin: 0 0.5rem;
+      text-decoration: none;
+    }
+    footer a:hover {
+      text-decoration: underline;
     }
   </style>
 </head>
 <body>
   <header>
-    <h1>Asesoría financiera personalizada</h1>
-    <p>Nos podemos ver en persona u online</p>
+    <h1>Asesoría Financiera Personalizada</h1>
+    <p>Nos podemos ver en persona u online. Empieza gratis hoy.</p>
   </header>
-  <main>
 
-    <section>
-      <h2>Rellena el formulario para que te contactemos</h2>
+  <section class="content">
+    <div class="image-area">
+      <img src="https://images.unsplash.com/photo-1581090700227-1e8e4b87a4aa?auto=format&fit=crop&w=800&q=80" alt="Dispositivos electrónicos" />
+    </div>
+
+    <div class="form-area">
+      <h2>Solicita tu primera consulta</h2>
       <form action="https://formspree.io/f/xldneqpv" method="POST">
-        <label for="nombre">Nombre completo *</label>
-        <input type="text" id="nombre" name="nombre" required />
-
-        <label for="email">Correo electrónico *</label>
-        <input type="email" id="email" name="_replyto" required />
-
-        <label for="telefono">Teléfono</label>
-        <input type="tel" id="telefono" name="telefono" />
-
-        <label for="ingresos">Ingresos mensuales aproximados *</label>
-        <input type="number" id="ingresos" name="ingresos" min="0" required />
-
-        <label for="gastos">Gastos mensuales aproximados *</label>
-        <input type="number" id="gastos" name="gastos" min="0" required />
-
-        <label for="objetivo">¿Cuál es tu principal objetivo financiero?</label>
-        <select id="objetivo" name="objetivo" required>
-          <option value="">Selecciona una opción</option>
-          <option value="ahorro">Ahorrar más</option>
-          <option value="inversion">Invertir</option>
-          <option value="reduccion_deudas">Reducir deudas</option>
-          <option value="planificacion">Planificación general</option>
+        <input type="text" name="nombre" placeholder="Nombre completo" required />
+        <input type="email" name="email" placeholder="Correo electrónico" required />
+        <input type="tel" name="telefono" placeholder="Teléfono (opcional)" />
+        <select name="objetivo">
+          <option value="">¿Cuál es tu objetivo principal?</option>
+          <option value="ahorrar">Ahorrar mejor</option>
+          <option value="invertir">Invertir con seguridad</option>
+          <option value="gestionar">Gestionar deudas</option>
+          <option value="otro">Otro</option>
         </select>
-
-        <label for="comentarios">Comentarios adicionales</label>
-        <textarea id="comentarios" name="comentarios" rows="3"></textarea>
-
+        <textarea name="mensaje" rows="4" placeholder="Cuéntanos brevemente tu situación"></textarea>
         <button type="submit">Enviar</button>
       </form>
-    </section>
-
-    <section>
-      <h2>Agenda tu cita</h2>
-      <!-- Sustituye el enlace src por el de tu Calendly real -->
-      <iframe src="https://calendly.com/tu_usuario/tu_evento?embed_domain=virgivilla.github.io&embed_type=Inline" allowfullscreen></iframe>
-    </section>
-
-    <section>
-      <h2>Testimonios</h2>
-      <blockquote class="testimonials">
-        "Gracias a esta asesoría pude organizar mis finanzas y ahorrar para mi primer viaje." – Ana M.
-      </blockquote>
-      <blockquote class="testimonials">
-        "Atención personalizada y resultados rápidos. Totalmente recomendable." – Carlos R.
-      </blockquote>
-    </section>
-
-    <section>
-      <h2>Síguenos en redes sociales</h2>
-      <div class="social-links">
-        <a href="https://www.facebook.com/tu_pagina" target="_blank" rel="noopener noreferrer">Facebook</a>
-        <a href="https://twitter.com/tu_usuario" target="_blank" rel="noopener noreferrer">Twitter</a>
-        <a href="https://www.instagram.com/tu_usuario" target="_blank" rel="noopener noreferrer">Instagram</a>
-        <a href="https://www.linkedin.com/in/tu_usuario" target="_blank" rel="noopener noreferrer">LinkedIn</a>
-      </div>
-    </section>
-
-  </main>
+    </div>
+  </section>
 
   <footer>
-    <p>&copy; 2025 Tu Empresa - <a href="politica-privacidad.html">Política de privacidad</a></p>
+    <p>
+      <a href="politica-privacidad.html">Política de Privacidad</a> |
+      <a href="politica-cookies.html">Política de Cookies</a> |
+      <a href="aviso-legal.html">Aviso Legal</a>
+    </p>
+    <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
   </footer>
 </body>
 </html>
