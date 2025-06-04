@@ -58,6 +58,93 @@
       border-radius: 10px;
       max-width: 300px;
     }
+    /* Opiniones */
+    #opiniones {
+      background: #fff;
+      padding: 40px 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      margin: 60px auto;
+    }
+    #opiniones h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #222;
+    }
+    .opiniones-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+      gap: 25px;
+    }
+    .opinion {
+      font-style: italic;
+      color: #555;
+      background: #fafafa;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+      position: relative;
+    }
+    .opinion p {
+      margin-bottom: 15px;
+      line-height: 1.4;
+    }
+    .opinion footer {
+      font-weight: 700;
+      color: #004a99;
+      font-style: normal;
+      text-align: right;
+    }
+    /* Formulario */
+    form {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
+    }
+    form input, form textarea, form select {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+    }
+    form button {
+      padding: 12px 25px;
+      background-color: #004a99;
+      color: white;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
+    }
+    form button:hover {
+      background-color: #00306d;
+    }
+    /* Botón WhatsApp */
+    .btn-whatsapp {
+      display: inline-block;
+      margin-top: 20px;
+      padding: 15px 30px;
+      background-color: #25d366;
+      color: white;
+      font-weight: bold;
+      font-size: 1.2rem;
+      border-radius: 8px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+    }
+    .btn-whatsapp:hover {
+      background-color: #1ebe57;
+    }
     footer {
       background: #222;
       color: #fff;
@@ -94,63 +181,76 @@
     </div>
   </section>
 
-  <!-- Sección de opiniones -->
-  <section id="opiniones" style="max-width:1100px; margin: 60px auto; padding: 0 20px;">
-    <h2 style="text-align:center; margin-bottom: 40px;">Lo que dicen mis clientes</h2>
-    <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px;">
-      
-      <blockquote style="background:#fff; padding: 20px; border-radius:10px; box-shadow: 0 0 8px rgba(0,0,0,0.05); font-style: italic; color:#555;">
+  <!-- Opiniones de clientes -->
+  <section id="opiniones" aria-label="Opiniones de clientes">
+    <h2>Lo que dicen mis clientes</h2>
+    <div class="opiniones-grid">
+      <article class="opinion">
         <p>"Gracias a Virgi mejoré mi ahorro y conseguí mejores condiciones en mi banco. Muy recomendable."</p>
-        <footer style="margin-top: 10px; font-weight: bold; color:#333;">— Laura G.</footer>
-      </blockquote>
-
-      <blockquote style="background:#fff; padding: 20px; border-radius:10px; box-shadow: 0 0 8px rgba(0,0,0,0.05); font-style: italic; color:#555;">
+        <footer>— Laura G.</footer>
+      </article>
+      <article class="opinion">
         <p>"Su asesoría fue clara y personalizada, me ayudó a organizar mis finanzas sin complicaciones."</p>
-        <footer style="margin-top: 10px; font-weight: bold; color:#333;">— Carlos M.</footer>
-      </blockquote>
-
-      <blockquote style="background:#fff; padding: 20px; border-radius:10px; box-shadow: 0 0 8px rgba(0,0,0,0.05); font-style: italic; color:#555;">
+        <footer>— Carlos M.</footer>
+      </article>
+      <article class="opinion">
         <p>"Muy profesional y atento, me acompañó durante todo el proceso para cambiar de banco."</p>
-        <footer style="margin-top: 10px; font-weight: bold; color:#333;">— Ana R.</footer>
-      </blockquote>
-
-      <blockquote style="background:#fff; padding: 20px; border-radius:10px; box-shadow: 0 0 8px rgba(0,0,0,0.05); font-style: italic; color:#555;">
+        <footer>— Ana R.</footer>
+      </article>
+      <article class="opinion">
         <p>"Con sus consejos logré invertir con más confianza y seguridad. ¡Gracias Virgi!"</p>
-        <footer style="margin-top: 10px; font-weight: bold; color:#333;">— José L.</footer>
-      </blockquote>
-
-      <blockquote style="background:#fff; padding: 20px; border-radius:10px; box-shadow: 0 0 8px rgba(0,0,0,0.05); font-style: italic; color:#555;">
+        <footer>— José L.</footer>
+      </article>
+      <article class="opinion">
         <p>"Me ayudó a entender mejor mis gastos y a planificar un presupuesto realista."</p>
-        <footer style="margin-top: 10px; font-weight: bold; color:#333;">— Marta S.</footer>
-      </blockquote>
-
-      <blockquote style="background:#fff; padding: 20px; border-radius:10px; box-shadow: 0 0 8px rgba(0,0,0,0.05); font-style: italic; color:#555;">
+        <footer>— Marta S.</footer>
+      </article>
+      <article class="opinion">
         <p>"Un servicio personalizado y cercano que recomiendo a todos los que quieren mejorar sus finanzas."</p>
-        <footer style="margin-top: 10px; font-weight: bold; color:#333;">— David P.</footer>
-      </blockquote>
-
+        <footer>— David P.</footer>
+      </article>
     </div>
   </section>
 
-  <section id="contacto" style="text-align:center; padding: 60px 20px;">
-    <h2>Solicita tu asesoría gratuita</h2>
-    <p>Pulsa el botón para enviarme un mensaje por WhatsApp y te responderé lo antes posible.</p>
-    <a href="https://wa.me/34677863127?text=Hola%20Virgi,%20quiero%20solicitar%20una%20asesoría%20financiera." 
-       target="_blank" 
-       style="
-         display: inline-block;
-         margin-top: 20px;
-         padding: 15px 30px;
-         background-color: #25d366;
-         color: white;
-         font-weight: bold;
-         font-size: 1.2rem;
-         border-radius: 8px;
-         text-decoration: none;
-         box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-       ">
-      📱 Hablar por WhatsApp
-    </a>
+  <section id="contacto">
+    <h2 style="text-align:center; margin-bottom: 20px;">Solicita tu asesoría gratuita</h2>
+    <form action="https://formsubmit.co/virgivillaescu@gmail.com" method="POST" aria-describedby="form-description">
+      <p id="form-description" style="text-align:center; margin-bottom: 20px;">Rellena este formulario para que me ponga en contacto contigo.</p>
+
+      <label for="nombre">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre" required />
+
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="email" required />
+
+      <label for="telefono">Teléfono</label>
+      <input type="tel" id="telefono" name="telefono" />
+
+      <label for="preferencia">¿Cuándo prefieres hablar?</label>
+      <select id="preferencia" name="preferencia">
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="mañana">Por la mañana</option>
+        <option value="tarde">Por la tarde</option>
+      </select>
+
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
+
+      <!-- Protección y redirección -->
+      <input type="text" name="_honey" style="display:none" />
+      <input type="hidden" name="_captcha" value="false" />
+      <input type="hidden" name="_next" value="https://virgivilla.github.io/gracias.html" />
+
+      <button type="submit">Enviar</button>
+    </form>
+    <div style="text-align:center;">
+      <a href="https://wa.me/34677863127?text=Hola%20Virgi,%20quiero%20solicitar%20una%20asesoría%20financiera." 
+         target="_blank" 
+         class="btn-whatsapp"
+         aria-label="Hablar por WhatsApp con Virgi Villa">
+        📱 Hablar por WhatsApp
+      </a>
+    </div>
   </section>
 
   <footer>
