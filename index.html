@@ -11,6 +11,7 @@
       font-family: 'Montserrat', sans-serif;
       background-color: #f4f7fa;
       color: #333;
+      line-height: 1.6;
     }
     header {
       position: relative;
@@ -47,7 +48,6 @@
     .about-text {
       flex: 1 1 350px;
       font-size: 1.1rem;
-      line-height: 1.5;
       color: #444;
     }
     .about-photo {
@@ -83,57 +83,10 @@
       cursor: pointer;
       font-weight: bold;
       font-size: 1.1rem;
+      transition: background-color 0.3s ease;
     }
     form button:hover {
       background-color: #00306d;
-    }
-    #gracias-mensaje {
-      background: #dff0d8;
-      border: 1px solid #3c763d;
-      color: #3c763d;
-      padding: 20px;
-      margin-top: 20px;
-      border-radius: 6px;
-      font-size: 1.2rem;
-      max-width: 600px;
-      margin-left: auto;
-      margin-right: auto;
-      display: none;
-      text-align: center;
-    }
-    .opiniones-section {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 800px;
-      margin: 50px auto;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-    }
-    .opiniones-section h2 {
-      text-align: center;
-      margin-bottom: 30px;
-      color: #004a99;
-    }
-    .opinion {
-      background: #e9eff5;
-      margin-bottom: 20px;
-      padding: 20px;
-      border-radius: 10px;
-      color: #222;
-      box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-    }
-    .opinion p {
-      margin-bottom: 10px;
-      font-style: italic;
-    }
-    .opinion .cliente {
-      font-weight: bold;
-      color: #004a99;
-      margin-bottom: 6px;
-    }
-    .estrellas {
-      color: #f5b301;
-      font-size: 1.1rem;
     }
     footer {
       background: #222;
@@ -141,25 +94,6 @@
       padding: 20px;
       text-align: center;
       margin-top: 40px;
-    }
-    .whatsapp-button {
-      display: inline-block;
-      background-color: #25d366;
-      color: white;
-      padding: 12px 25px;
-      border-radius: 30px;
-      font-weight: bold;
-      font-size: 1.1rem;
-      text-decoration: none;
-      margin: 20px auto;
-      display: block;
-      max-width: 200px;
-      text-align: center;
-      box-shadow: 0 4px 8px rgba(37, 211, 102, 0.4);
-      transition: background-color 0.3s ease;
-    }
-    .whatsapp-button:hover {
-      background-color: #1ebe57;
     }
     @media (max-width: 768px) {
       .about-section {
@@ -169,6 +103,66 @@
       .about-photo img {
         max-width: 80%;
       }
+    }
+    /* Opiniones */
+    .testimonios {
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 40px auto;
+    }
+    .testimonio {
+      border-bottom: 1px solid #ddd;
+      padding: 15px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+    .testimonio:last-child {
+      border-bottom: none;
+    }
+    .texto-testimonio {
+      flex: 1 1 70%;
+      font-style: italic;
+      color: #555;
+    }
+    .autor-testimonio {
+      flex: 1 1 25%;
+      text-align: right;
+      font-weight: 700;
+      color: #004a99;
+      font-size: 1.05rem;
+      min-width: 150px;
+    }
+    .estrellas {
+      color: #f5a623;
+      margin-left: 10px;
+      font-size: 1.2rem;
+      flex-shrink: 0;
+    }
+    /* WhatsApp Button */
+    .whatsapp-button {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      font-size: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: background-color 0.3s ease;
+      z-index: 1000;
+    }
+    .whatsapp-button:hover {
+      background-color: #1ebe57;
     }
   </style>
 </head>
@@ -184,16 +178,15 @@
     <div class="about-text">
       <h2>Sobre mí</h2>
       <p>Soy <strong>Virgi Villa</strong>, asesor financiero con más de 6 años de experiencia ayudando a personas a gestionar su dinero de forma más eficiente, ya sea cambiando de banco, invirtiendo con sentido o simplemente aprendiendo a ahorrar mejor.</p>
-      <a href="https://wa.me/34677863127" target="_blank" rel="noopener" class="whatsapp-button" aria-label="Hablar por WhatsApp con Virgi Villa">Hablar por WhatsApp</a>
     </div>
     <div class="about-photo">
-      <img src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG" alt="Foto de Virgi Villa" />
+      <img src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG" alt="Foto de Virgi Villa">
     </div>
   </section>
 
   <section id="contacto">
     <h2 style="text-align:center; margin-bottom: 20px;">Solicita tu asesoría gratuita</h2>
-    <form id="contact-form" aria-describedby="form-description">
+    <form id="contact-form" aria-describedby="form-description" novalidate>
       <p id="form-description">Rellena este formulario para que me ponga en contacto contigo.</p>
 
       <label for="nombre">Nombre completo *</label>
@@ -217,60 +210,90 @@
 
       <button type="submit">Enviar</button>
     </form>
-    <div id="gracias-mensaje" role="alert" aria-live="polite">
+
+    <div id="gracias-mensaje" role="alert" aria-live="polite" style="display:none; margin-top: 20px; font-weight: bold; color: green;">
       ¡Gracias por tu mensaje! Pronto me pondré en contacto contigo para ayudarte con tu asesoría financiera.
     </div>
   </section>
 
-  <section class="opiniones-section" aria-label="Opiniones de clientes">
-    <h2>Lo que dicen mis clientes</h2>
-    <article class="opinion" tabindex="0">
-      <p>Virgi me ayudó a entender mejor cómo invertir y ahora tengo más tranquilidad financiera.</p>
-      <div><span class="cliente">Ana M.</span> <span class="estrellas" aria-label="5 estrellas">★★★★★</span></div>
-    </article>
-    <article class="opinion" tabindex="0">
-      <p>Gracias a Virgi cambié de banco y he ahorrado mucho en comisiones.</p>
-      <div><span class="cliente">Carlos G.</span> <span class="estrellas" aria-label="5 estrellas">★★★★★</span></div>
-    </article>
-    <article class="opinion" tabindex="0">
-      <p>Su asesoría personalizada me permitió planificar mejor mis gastos mensuales.</p>
-      <div><span class="cliente">Lucía R.</span> <span class="estrellas" aria-label="5 estrellas">★★★★★</span></div>
-    </article>
-    <article class="opinion" tabindex="0">
-      <p>Profesional y cercano, me acompañó paso a paso para organizar mis finanzas.</p>
-      <div><span class="cliente">Miguel S.</span> <span class="estrellas" aria-label="5 estrellas">★★★★★</span></div>
-    </article>
-    <article class="opinion" tabindex="0">
-      <p>La mejor inversión que he hecho ha sido confiar en Virgi Villa.</p>
-      <div><span class="cliente">Sofía T.</span> <span class="estrellas" aria-label="5 estrellas">★★★★★</span></div>
-    </article>
-    <article class="opinion" tabindex="0">
-      <p>Recomiendo a Virgi a todos mis conocidos, su ayuda fue invaluable.</p>
-      <div><span class="cliente">Javier L.</span> <span class="estrellas" aria-label="5 estrellas">★★★★★</span></div>
-    </article>
+  <section class="testimonios">
+    <h2 style="text-align:center; margin-bottom: 30px;">Lo que dicen mis clientes</h2>
+
+    <div class="testimonio">
+      <p class="texto-testimonio">"Virgi me ayudó a organizar mis finanzas y cambiar a un banco con mejores condiciones. ¡Totalmente recomendable!"</p>
+      <div>
+        <span class="autor-testimonio">Ana G.</span>
+        <span class="estrellas">★★★★★</span>
+      </div>
+    </div>
+
+    <div class="testimonio">
+      <p class="texto-testimonio">"Gracias a Virgi aprendí a ahorrar y a invertir con sentido. Su asesoría fue clave para mejorar mi economía."</p>
+      <div>
+        <span class="autor-testimonio">Carlos M.</span>
+        <span class="estrellas">★★★★★</span>
+      </div>
+    </div>
+
+    <div class="testimonio">
+      <p class="texto-testimonio">"Un trato cercano y profesional. Siempre disponible para resolver mis dudas financieras."</p>
+      <div>
+        <span class="autor-testimonio">María L.</span>
+        <span class="estrellas">★★★★★</span>
+      </div>
+    </div>
+
+    <div class="testimonio">
+      <p class="texto-testimonio">"Con Virgi entendí cómo planificar mejor mis gastos y evitar deudas innecesarias."</p>
+      <div>
+        <span class="autor-testimonio">Javier R.</span>
+        <span class="estrellas">★★★★★</span>
+      </div>
+    </div>
+
+    <div class="testimonio">
+      <p class="texto-testimonio">"Muy satisfecha con el acompañamiento personalizado y los consejos prácticos."</p>
+      <div>
+        <span class="autor-testimonio">Laura P.</span>
+        <span class="estrellas">★★★★★</span>
+      </div>
+    </div>
+
+    <div class="testimonio">
+      <p class="texto-testimonio">"Virgi tiene un enfoque claro y efectivo para ayudarte a mejorar tu salud financiera."</p>
+      <div>
+        <span class="autor-testimonio">Sergio T.</span>
+        <span class="estrellas">★★★★★</span>
+      </div>
+    </div>
   </section>
 
+  <a href="https://wa.me/34677863127" class="whatsapp-button" target="_blank" aria-label="Chatea conmigo en WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="white" width="30px" height="30px">
+      <path d="M20.52 3.48A11.89 11.89 0 0012 0C5.373 0 0 5.372 0 12a11.96 11.96 0 001.816 6.034L0 24l6.134-1.802A11.936 11.936 0 0012 24c6.627 0 12-5.373 12-12a11.89 11.89 0 00-3.48-8.52zm-8.52 17.091a9.504 9.504 0 01-4.954-1.48l-.354-.21-3.65 1.072 1.07-3.558-.218-.365a9.522 9.522 0 011.516-12.39 9.466 9.466 0 0112.754 12.754 9.52 9.52 0 01-9.318 4.177zm5.231-6.82c-.286-.143-1.687-.831-1.947-.927-.26-.095-.45-.143-.64.143s-.733.927-.9 1.115c-.166.188-.333.212-.62.07a8.46 8.46 0 01-2.487-1.54 9.44 9.44 0 01-1.757-2.18c-.187-.32-.02-.493.13-.636.134-.134.3-.347.45-.52.15-.173.2-.287.3-.48.1-.19.05-.356-.025-.5-.075-.143-.64-1.54-.876-2.11-.23-.56-.466-.485-.64-.495-.164-.01-.353-.01-.54-.01a1.34 1.34 0 00-.98.455c-.335.326-1.286 1.26-1.286 3.07s1.318 3.56 1.5 3.815c.18.26 2.59 3.98 6.282 5.58a10.63 10.63 0 003.54.57c.57 0 1.76-.23 2.008-.46.247-.23.247-.853.173-.97-.075-.11-.26-.18-.54-.322z"/>
+    </svg>
+  </a>
+
   <footer>
-    <p>© 2025 Virgi Villa. Todos los derechos reservados.</p>
+    <p>&copy; 2025 Virgi Villa – Todos los derechos reservados.</p>
   </footer>
 
   <script>
-    // Capturamos el formulario y el mensaje de gracias
     const form = document.getElementById('contact-form');
     const graciasMensaje = document.getElementById('gracias-mensaje');
 
     form.addEventListener('submit', function(event) {
-      event.preventDefault(); // evitar envío real (no hay backend)
-      
-      // Aquí podrías añadir código para enviar datos a un backend o servicio externo si quisieras
+      event.preventDefault(); // Evitar envío real
 
-      // Mostrar mensaje de gracias y ocultar formulario
+      if (!form.checkValidity()) {
+        form.reportValidity();
+        return;
+      }
+
       form.style.display = 'none';
       graciasMensaje.style.display = 'block';
-      
-      // Opcional: limpiar campos si quieres que el formulario aparezca de nuevo después
-      // form.reset();
     });
   </script>
+
 </body>
 </html>
