@@ -3,57 +3,99 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Asesoría Financiera Personalizada - Virgi Villa</title>
-  <meta name="description" content="Organiza, ahorra e invierte mejor con Virgi Villa. Asesoría financiera personalizada presencial y online. Reserva tu cita gratis hoy." />
+  <meta name="google-site-verification" content="YgyjmPJLvKIX1qU_oF-JO6m3bI1W5w7hgn8r8p1wpTg" />
+  <title>Asesoría Financiera Personalizada</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     /* Reset */
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
+
     body {
       font-family: 'Montserrat', sans-serif;
-      background: #f9fbfc;
-      color: #222;
       line-height: 1.6;
-      min-height: 100vh;
-      display: flex;
-      flex-direction: column;
-      overflow-x: hidden;
-    }
-    a {
-      text-decoration: none;
-      color: inherit;
+      background-color: #f4f7fa;
+      color: #333;
+      scroll-behavior: smooth;
     }
 
-    /* HEADER sin imagen, solo fondo color degradado */
+    /* Header */
     header {
-      position: relative;
-      height: 300px;
-      background: linear-gradient(135deg, #004a99, #00c853);
+      height: 350px;
       display: flex;
-      align-items: center;
       justify-content: center;
-      border-radius: 0 0 30px 30px;
-      color: #fff;
+      align-items: center;
       text-align: center;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      border-radius: 0 0 40px 40px;
+      position: relative;
+      margin-bottom: 60px;
+      overflow: hidden;
+    }
+    .header-bg {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: linear-gradient(135deg, #0072ff 0%, #00c6ff 100%);
+      opacity: 0.9;
+      z-index: 1;
+      background-image:
+        linear-gradient(45deg, rgba(255,255,255,0.07) 25%, transparent 25%),
+        linear-gradient(-45deg, rgba(255,255,255,0.07) 25%, transparent 25%),
+        linear-gradient(45deg, transparent 75%, rgba(255,255,255,0.07) 75%),
+        linear-gradient(-45deg, transparent 75%, rgba(255,255,255,0.07) 75%);
+      background-size: 40px 40px;
+      background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    }
+    .header-content {
+      position: relative;
+      z-index: 10;
+      max-width: 750px;
       padding: 0 20px;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+      animation: fadeInDown 1.6s ease forwards;
+      opacity: 0;
     }
     header h1 {
-      font-size: 2.8rem;
+      font-size: 3rem;
       font-weight: 900;
-      max-width: 700px;
-      animation: fadeInUp 1.5s ease forwards;
-      opacity: 0;
+      margin-bottom: 12px;
       line-height: 1.1;
-      text-shadow: 0 3px 8px rgba(0,0,0,0.4);
+      text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    }
+    .subtitle {
+      font-size: 1.3rem;
+      margin-bottom: 30px;
+      font-weight: 500;
+      text-shadow: 0 3px 10px rgba(0,0,0,0.25);
+    }
+    .btn-cta {
+      display: inline-block;
+      background: #ff6f61;
+      color: #fff;
+      font-weight: 700;
+      font-size: 1.15rem;
+      padding: 14px 38px;
+      border-radius: 40px;
+      box-shadow: 0 6px 15px rgba(255,111,97,0.7);
+      transition: background-color 0.3s ease, box-shadow 0.3s ease;
+      cursor: pointer;
+      text-decoration: none;
+      user-select: none;
+    }
+    .btn-cta:hover,
+    .btn-cta:focus {
+      background: #e65b50;
+      box-shadow: 0 8px 20px rgba(230,91,80,0.8);
+      outline: none;
     }
 
-    @keyframes fadeInUp {
+    @keyframes fadeInDown {
       0% {
         opacity: 0;
-        transform: translateY(30px);
+        transform: translateY(-30px);
       }
       100% {
         opacity: 1;
@@ -61,424 +103,265 @@
       }
     }
 
-    /* SECTIONS */
-    section {
-      max-width: 1100px;
-      margin: 60px auto;
-      padding: 0 20px;
-      opacity: 0;
-      transform: translateY(30px);
-      transition: opacity 0.8s ease, transform 0.8s ease;
-    }
-    section.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-    h2 {
-      color: #004a99;
-      font-weight: 800;
-      font-size: 2.2rem;
-      margin-bottom: 35px;
-      text-align: left;
-      border-left: 6px solid #00c853;
-      padding-left: 12px;
+    @media (max-width: 760px) {
+      header {
+        height: 300px;
+        border-radius: 0 0 30px 30px;
+      }
+      header h1 {
+        font-size: 2rem;
+      }
+      .subtitle {
+        font-size: 1.1rem;
+      }
+      .btn-cta {
+        padding: 12px 28px;
+        font-size: 1rem;
+      }
     }
 
-    /* BENEFITS */
+    /* Section: ¿Qué te ofrecemos? */
+    section {
+      padding: 60px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+    h2 {
+      text-align: center;
+      margin-bottom: 40px;
+      font-weight: 700;
+      font-size: 2rem;
+      color: #004a99;
+    }
     .benefits {
       display: flex;
       flex-wrap: wrap;
+      gap: 30px;
       justify-content: center;
-      gap: 35px;
+      text-align: center;
     }
     .benefit {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.1);
-      padding: 30px;
-      flex: 1 1 280px;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      cursor: default;
-      will-change: transform;
+      flex: 1 1 250px;
+      padding: 20px;
+      background: #fff;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      transition: transform 0.3s ease;
     }
     .benefit:hover {
-      transform: translateY(-10px) scale(1.05);
-      box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+      transform: translateY(-8px);
+      box-shadow: 0 8px 20px rgba(0,74,153,0.2);
     }
-    .benefit svg {
-      height: 70px;
-      margin-bottom: 20px;
-      fill: #dca87d;
-      transition: transform 0.3s ease;
+    .benefit img {
+      height: 60px;
+      margin-bottom: 15px;
     }
     .benefit h3 {
       margin-bottom: 12px;
-      font-weight: 700;
-      font-size: 1.4rem;
       color: #004a99;
     }
-    .benefit p {
-      color: #555;
-      font-weight: 500;
-      font-size: 1rem;
-      line-height: 1.4;
-    }
 
-    /* TESTIMONIALS - alineadas a la izquierda */
-    .testimonials {
-      background: white;
-      border-radius: 15px;
-      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-      padding: 40px 30px 60px;
+    /* Opiniones */
+    .reviews-section {
       max-width: 900px;
-      margin: auto;
-      overflow: hidden;
-    }
-    .testimonials h2 {
-      margin-bottom: 40px;
-      text-align: left;
-    }
-    .testimonial-slide {
-      display: none;
-      text-align: left;
+      margin: 60px auto 80px auto;
       padding: 0 20px;
-      animation: fadeIn 0.6s ease-in-out;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 5px 25px rgba(0,0,0,0.07);
+      color: #222;
     }
-    .testimonial-slide.active {
-      display: block;
-    }
-    .testimonial-text {
-      font-style: italic;
-      font-size: 1.15rem;
-      color: #333;
-      margin-bottom: 20px;
-      min-height: 90px;
-    }
-    .testimonial-author {
-      font-weight: 700;
-      font-size: 1.1rem;
+    .reviews-section h2 {
       color: #004a99;
-      margin-bottom: 10px;
-    }
-    .stars {
-      color: #ffb400;
-      font-size: 1.3rem;
-      margin-bottom: 20px;
-    }
-    /* Botones carrusel */
-    .testimonial-buttons {
+      margin-bottom: 30px;
       text-align: left;
     }
-    .testimonial-buttons button {
-      background: #004a99;
-      border: none;
-      color: white;
-      padding: 10px 18px;
-      margin: 0 7px 7px 0;
-      border-radius: 8px;
+    .review {
+      border-bottom: 1px solid #ddd;
+      padding: 20px 0;
+      font-style: italic;
+    }
+    .review:last-child {
+      border-bottom: none;
+    }
+    .review strong {
+      display: block;
+      margin-top: 8px;
+      font-style: normal;
       font-weight: 700;
-      font-size: 1rem;
-      cursor: pointer;
-      transition: background 0.3s ease;
-    }
-    .testimonial-buttons button:hover {
-      background: #0066cc;
+      color: #004a99;
     }
 
-    @keyframes fadeIn {
-      from {opacity: 0;}
-      to {opacity: 1;}
-    }
-
-    /* FORMULARIO */
+    /* Formulario */
     form {
-      background: white;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
       max-width: 600px;
-      margin: auto;
-      padding: 35px 25px;
-      border-radius: 15px;
-      box-shadow: 0 8px 25px rgba(0,0,0,0.1);
-      transition: transform 0.4s ease;
-    }
-    form:hover {
-      transform: scale(1.02);
-      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+      margin: 0 auto 60px auto;
     }
     form input, form textarea, form select {
       width: 100%;
-      padding: 14px 15px;
-      margin-bottom: 20px;
-      border: 1.8px solid #ccc;
-      border-radius: 8px;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
       font-size: 1rem;
-      transition: border-color 0.3s ease, box-shadow 0.3s ease;
       font-family: 'Montserrat', sans-serif;
+      transition: border-color 0.3s ease;
     }
     form input:focus, form textarea:focus, form select:focus {
       border-color: #004a99;
-      box-shadow: 0 0 8px #004a99aa;
       outline: none;
     }
-    form textarea {
-      resize: vertical;
-      min-height: 120px;
-    }
     form button {
-      background: #00c853;
+      padding: 14px 30px;
+      background-color: #004a99;
       color: white;
-      font-weight: 700;
-      font-size: 1.1rem;
       border: none;
-      padding: 16px 0;
-      width: 100%;
-      border-radius: 30px;
+      border-radius: 6px;
       cursor: pointer;
-      box-shadow: 0 6px 15px rgba(0,200,83,0.6);
-      transition: background 0.3s ease, box-shadow 0.3s ease;
+      font-weight: bold;
+      font-size: 1.1rem;
+      transition: background-color 0.3s ease;
     }
-    form button:hover {
-      background: #009624;
-      box-shadow: 0 10px 25px rgba(0,150,36,0.7);
-    }
-
-    /* FOOTER */
-    footer {
-      background: #222;
-      color: #ccc;
-      padding: 25px 20px;
-      text-align: center;
-      margin-top: auto;
-      font-size: 0.9rem;
-      user-select: none;
-    }
-    footer a {
-      color: #00c853;
-      margin: 0 12px;
-      font-weight: 600;
-      transition: color 0.3s ease;
-    }
-    footer a:hover {
-      color: #66ff99;
-    }
-    footer strong {
-      color: white;
+    form button:hover,
+    form button:focus {
+      background-color: #003366;
+      outline: none;
     }
 
-    /* WhatsApp botón flotante */
+    /* WhatsApp flotante */
     .whatsapp-float {
       position: fixed;
       bottom: 25px;
       right: 25px;
       background-color: #25d366;
-      color: white;
-      font-size: 30px;
-      width: 58px;
-      height: 58px;
+      width: 60px;
+      height: 60px;
       border-radius: 50%;
+      box-shadow: 0 6px 12px rgba(37,211,102,0.6);
+      z-index: 1000;
       display: flex;
-      align-items: center;
       justify-content: center;
-      box-shadow: 0 8px 18px rgba(0,0,0,0.3);
+      align-items: center;
       cursor: pointer;
-      z-index: 9999;
-      text-decoration: none;
       transition: background-color 0.3s ease;
-      user-select: none;
     }
     .whatsapp-float:hover {
-      background-color: #128c4a;
+      background-color: #1ebe57;
     }
-    .whatsapp-tooltip {
-      position: fixed;
-      bottom: 90px;
-      right: 25px;
-      background-color: #25d366cc;
-      color: white;
-      padding: 8px 14px;
-      border-radius: 12px;
-      font-size: 0.9rem;
-      font-weight: 600;
-      opacity: 0;
-      pointer-events: none;
-      transition: opacity 0.3s ease;
-      user-select: none;
-    }
-    .whatsapp-float:hover + .whatsapp-tooltip {
-      opacity: 1;
-      pointer-events: auto;
+    .whatsapp-float svg {
+      width: 32px;
+      height: 32px;
+      fill: white;
     }
 
-    /* Responsive */
-    @media (max-width: 760px) {
-      .benefits {
-        flex-direction: column;
-        align-items: center;
-      }
-      section {
-        margin: 40px 15px;
-      }
-      header {
-        height: 240px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-      form {
-        width: 100%;
-        padding: 25px 20px;
-      }
-    }
   </style>
 </head>
 <body>
 
+  <!-- Header Mejorado -->
   <header role="banner" aria-label="Encabezado principal">
-    <h1>Asesoramiento Financiero Personalizado Gratis</h1>
+    <div class="header-bg"></div>
+    <div class="header-content" tabindex="0">
+      <h1>Asesoramiento Financiero Personalizado Gratis</h1>
+      <p class="subtitle">Organiza, ahorra e invierte con confianza y seguridad</p>
+      <a href="#contact-form" class="btn-cta" aria-label="Reserva tu cita gratuita">Reserva tu cita gratis</a>
+    </div>
   </header>
 
-  <section aria-label="Beneficios de la asesoría financiera" class="benefits reveal">
-    <div class="benefit" tabindex="0" aria-describedby="benefit1desc">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <path fill="#dca87d" d="M14 32c0-6 5-11 11-11s11 5 11 11-5 14-11 14-11-8-11-14z"/>
-        <path stroke="#a36f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M18 35h18v7H18z"/>
-      </svg>
-      <h3>Organización clara</h3>
-      <p id="benefit1desc">Ponemos orden en tus finanzas para que sepas exactamente dónde estás.</p>
-    </div>
-    <div class="benefit" tabindex="0" aria-describedby="benefit2desc">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <circle cx="32" cy="32" r="14" fill="#dca87d"/>
-        <path stroke="#a36f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M32 18v28M18 32h28"/>
-      </svg>
-      <h3>Ahorro inteligente</h3>
-      <p id="benefit2desc">Te ayudamos a ahorrar para objetivos concretos y seguros.</p>
-    </div>
-    <div class="benefit" tabindex="0" aria-describedby="benefit3desc">
-      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-        <path fill="#dca87d" d="M10 22h44v20H10z"/>
-        <path stroke="#a36f3a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" d="M22 30h20v10H22z"/>
-      </svg>
-      <h3>Inversión segura</h3>
-      <p id="benefit3desc">Diseñamos planes para proteger y hacer crecer tu futuro financiero.</p>
+  <!-- ¿Qué te ofrecemos? -->
+  <section aria-labelledby="que-te-ofrecemos-title">
+    <h2 id="que-te-ofrecemos-title">¿Qué te ofrecemos?</h2>
+    <div class="benefits">
+      <div class="benefit" tabindex="0">
+        <img src="https://img.icons8.com/ios-filled/68/004a99/investment-portfolio.png" alt="Inversión" />
+        <h3>Asesoramiento Profesional</h3>
+        <p>Te guiamos paso a paso para tomar las mejores decisiones económicas.</p>
+      </div>
+      <div class="benefit" tabindex="0">
+        <img src="https://img.icons8.com/color/68/000000/money.png" alt="Ahorro" />
+        <h3>Optimización de Ahorros</h3>
+        <p>Descubre dónde puedes ahorrar sin perder calidad de vida.</p>
+      </div>
+      <div class="benefit" tabindex="0">
+        <img src="https://img.icons8.com/ios-filled/68/004a99/calendar--v1.png" alt="Agenda" />
+        <h3>Flexibilidad Total</h3>
+        <p>Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
+      </div>
     </div>
   </section>
 
-  <section aria-label="Opiniones de clientes satisfechos" class="testimonials reveal">
-    <h2>Opiniones de clientes satisfechos</h2>
-
-    <div class="testimonial-slide active" role="group" aria-roledescription="slide" aria-label="Opinión 1">
-      <p class="testimonial-text">"Virgi es un profesional serio y atento. Me ayudó a organizar mis finanzas y ahora me siento tranquilo."</p>
-      <p class="testimonial-author">— Ana G.</p>
-      <p class="stars" aria-label="Cinco estrellas">★★★★★</p>
+  <!-- Opiniones de Clientes -->
+  <section class="reviews-section" aria-labelledby="reviews-title">
+    <h2 id="reviews-title">Opiniones de Clientes Satisfechos</h2>
+    <div class="review" tabindex="0">
+      <p>"Virgi me ayudó a organizar mis finanzas personales y ahora tengo más control y tranquilidad. ¡Muy recomendable!"</p>
+      <strong>- Carlos M.</strong>
     </div>
-
-    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 2">
-      <p class="testimonial-text">"Gracias a su asesoría pude ahorrar para mi casa sin preocupaciones."</p>
-      <p class="testimonial-author">— Carlos M.</p>
-      <p class="stars" aria-label="Cuatro estrellas">★★★★☆</p>
+    <div class="review" tabindex="0">
+      <p>"Gracias a la asesoría personalizada, he logrado ahorrar para mis proyectos sin sacrificar mi día a día."</p>
+      <strong>- Laura G.</strong>
     </div>
-
-    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 3">
-      <p class="testimonial-text">"Muy profesional, cercano y efectivo. Me siento mucho más tranquilo con mis finanzas."</p>
-      <p class="testimonial-author">— Laura P.</p>
-      <p class="stars" aria-label="Cinco estrellas">★★★★★</p>
+    <div class="review" tabindex="0">
+      <p>"La flexibilidad para elegir horarios fue clave para mí. Excelente atención y resultados."</p>
+      <strong>- Javier P.</strong>
     </div>
-
-    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 4">
-      <p class="testimonial-text">"Excelente servicio y atención personalizada. Recomendado al 100%."</p>
-      <p class="testimonial-author">— Miguel R.</p>
-      <p class="stars" aria-label="Cinco estrellas">★★★★★</p>
+    <div class="review" tabindex="0">
+      <p>"El trato cercano y profesional me dio la confianza para invertir con éxito."</p>
+      <strong>- Ana R.</strong>
     </div>
-
-    <div class="testimonial-slide" role="group" aria-roledescription="slide" aria-label="Opinión 5">
-      <p class="testimonial-text">"Me ayudó a entender mejor mis inversiones y a planificar a largo plazo."</p>
-      <p class="testimonial-author">— Sandra V.</p>
-      <p class="stars" aria-label="Cuatro estrellas">★★★★☆</p>
-    </div>
-
-    <div class="testimonial-buttons" role="tablist" aria-label="Controles de opiniones">
-      <button aria-selected="true" aria-controls="slide1" aria-label="Mostrar opinión 1" onclick="showTestimonial(0)">1</button>
-      <button aria-selected="false" aria-controls="slide2" aria-label="Mostrar opinión 2" onclick="showTestimonial(1)">2</button>
-      <button aria-selected="false" aria-controls="slide3" aria-label="Mostrar opinión 3" onclick="showTestimonial(2)">3</button>
-      <button aria-selected="false" aria-controls="slide4" aria-label="Mostrar opinión 4" onclick="showTestimonial(3)">4</button>
-      <button aria-selected="false" aria-controls="slide5" aria-label="Mostrar opinión 5" onclick="showTestimonial(4)">5</button>
+    <div class="review" tabindex="0">
+      <p>"Virgi sabe explicar todo de manera clara, sin tecnicismos, ¡me encantó su asesoría!"</p>
+      <strong>- Miguel T.</strong>
     </div>
   </section>
 
-  <section aria-label="Formulario de solicitud de asesoría" class="reveal">
-    <h2>Solicita tu asesoría gratuita</h2>
-    <form id="contact-form" action="https://formspree.io/f/xldneqpv" method="POST" novalidate>
+  <!-- Formulario de Contacto -->
+  <section aria-labelledby="contact-form-title">
+    <h2 id="contact-form-title" style="text-align:center; margin-bottom: 30px;">Solicita tu asesoría gratuita</h2>
+    <form id="contact-form" action="https://formspree.io/f/xldneqpv" method="POST" aria-describedby="form-desc">
+      <p id="form-desc" style="text-align:center; margin-bottom: 25px; color:#555;">
+        Completa el formulario y elige tu horario preferido para la reunión.
+      </p>
       <input type="text" name="nombre" placeholder="Tu nombre completo" required aria-required="true" />
       <input type="email" name="email" placeholder="Tu correo electrónico" required aria-required="true" />
-      <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" pattern="[0-9]{9}" aria-describedby="phoneHelp" />
-      <small id="phoneHelp" style="color:#555; display:block; margin-top:-15px; margin-bottom:15px; font-size:0.9rem;">
-        Solo números, sin espacios ni símbolos. Ejemplo: 123456789
-      </small>
-      <label for="prefHorario" style="font-weight:700; margin-bottom:8px; display:block; color:#004a99;">¿Qué horario te va mejor para la reunión?</label>
-      <select name="prefHorario" id="prefHorario" required aria-required="true">
+      <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" pattern="[0-9\s+-]{7,15}" />
+      <label for="horario-preferencia" style="display:block; font-weight:600; margin-bottom:8px;">¿Qué horario prefieres para la reunión?</label>
+      <select name="horario" id="horario-preferencia" required aria-required="true">
         <option value="" disabled selected>Selecciona una opción</option>
-        <option value="mañana">Mañana</option>
-        <option value="tarde">Tarde</option>
+        <option value="mañana">Por la mañana</option>
+        <option value="tarde">Por la tarde</option>
       </select>
       <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required aria-required="true"></textarea>
       <button type="submit">Enviar solicitud</button>
     </form>
   </section>
 
+  <!-- Footer -->
   <footer>
-    <p>&copy; 2025 <strong>Virgi Villa</strong>. Todos los derechos reservados.</p>
-    <p>
-      <a href="politica-privacidad.html">Política de Privacidad</a> |
-      <a href="politica-cookies.html">Política de Cookies</a> |
-      <a href="aviso-legal.html">Aviso Legal</a>
+    <p style="text-align:center; color:#666; margin-bottom: 8px;">&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
+    <p style="text-align:center;">
+      <a href="politica-privacidad.html" style="color:#004a99; text-decoration:none; margin: 0 10px;">Política de Privacidad</a> |
+      <a href="politica-cookies.html" style="color:#004a99; text-decoration:none; margin: 0 10px;">Política de Cookies</a> |
+      <a href="aviso-legal.html" style="color:#004a99; text-decoration:none; margin: 0 10px;">Aviso Legal</a>
     </p>
   </footer>
 
-  <!-- WhatsApp floating button -->
+  <!-- WhatsApp Flotante -->
   <a
     href="https://wa.me/34677863127"
-    target="_blank"
-    rel="noopener noreferrer"
-    aria-label="Enviar mensaje por WhatsApp a Virgi Villa"
     class="whatsapp-float"
+    target="_blank"
+    rel="noopener"
+    aria-label="Contactar por WhatsApp"
   >
-    💬
+    <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
+      <path d="M20.52 3.48A11.82 11.82 0 0012 0C5.373 0 0 5.372 0 12c0 2.116.553 4.159 1.602 5.961L0 24l6.156-1.592A11.913 11.913 0 0012 24c6.627 0 12-5.372 12-12 0-3.198-1.247-6.204-3.48-8.52zm-8.52 17.271a9.28 9.28 0 01-4.98-1.47l-.356-.211-3.662.947.978-3.565-.232-.363a9.276 9.276 0 11{0} 9.285zm4.297-5.226c-.063-.107-.229-.17-.477-.3-.247-.128-1.46-.718-1.686-.799-.226-.08-.39-.107-.555.107-.165.213-.637.799-.78.963-.143.165-.286.19-.532.064-.246-.128-1.04-.384-1.983-1.22-.732-.654-1.224-1.462-1.367-1.674-.143-.213-.015-.328.113-.456.116-.116.247-.305.37-.457.122-.152.163-.26.246-.433.082-.173.041-.326-.02-.455-.06-.128-.555-1.34-.76-1.836-.2-.48-.403-.415-.555-.423l-.475-.009c-.162 0-.428.061-.65.29-.223.23-.852.83-.852 2.02 0 1.19.873 2.344.995 2.507.123.165 1.717 2.62 4.166 3.67.582.25 1.035.4 1.388.513.582.19 1.11.163 1.53.1.467-.07 1.46-.6 1.666-1.18.206-.582.206-1.08.144-1.18z"/>
+    </svg>
   </a>
-  <div class="whatsapp-tooltip" aria-hidden="true">Contactar por WhatsApp</div>
 
-  <script>
-    // Mostrar opiniones
-    const slides = document.querySelectorAll('.testimonial-slide');
-    const buttons = document.querySelectorAll('.testimonial-buttons button');
-
-    function showTestimonial(index) {
-      slides.forEach((slide, i) => {
-        slide.classList.toggle('active', i === index);
-        buttons[i].setAttribute('aria-selected', i === index);
-      });
-    }
-
-    // Auto-ciclo opiniones cada 8 segundos
-    let currentSlide = 0;
-    setInterval(() => {
-      currentSlide = (currentSlide + 1) % slides.length;
-      showTestimonial(currentSlide);
-    }, 8000);
-
-    // Scroll reveal animación
-    const reveals = document.querySelectorAll('.reveal');
-    function revealOnScroll() {
-      const windowHeight = window.innerHeight;
-      reveals.forEach(section => {
-        const top = section.getBoundingClientRect().top;
-        if(top < windowHeight - 100) {
-          section.classList.add('visible');
-        }
-      });
-    }
-    window.addEventListener('scroll', revealOnScroll);
-    window.addEventListener('load', revealOnScroll);
-  </script>
 </body>
 </html>
