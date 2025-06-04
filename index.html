@@ -174,18 +174,6 @@
     .whatsapp-button:hover {
       background-color: #1ebe57;
     }
-    /* Mensaje gracias */
-    #gracias-mensaje {
-      display: none;
-      background-color: #d4edda;
-      border: 1px solid #c3e6cb;
-      color: #155724;
-      padding: 15px 20px;
-      margin-top: 20px;
-      border-radius: 6px;
-      font-weight: bold;
-      text-align: center;
-    }
   </style>
 </head>
 <body>
@@ -214,7 +202,7 @@
 
   <section id="contacto">
     <h2 style="text-align:center; margin-bottom: 20px;">Solicita tu asesoría gratuita</h2>
-    <form id="contact-form" aria-describedby="form-description" novalidate>
+    <form id="contact-form" action="https://formsubmit.co/virgivillaescu@gmail.com" method="POST" aria-describedby="form-description" novalidate>
       <p id="form-description">Rellena este formulario para que me ponga en contacto contigo.</p>
 
       <label for="nombre">Nombre completo *</label>
@@ -236,8 +224,10 @@
       <label for="mensaje">Mensaje *</label>
       <textarea id="mensaje" name="mensaje" rows="5" required></textarea>
 
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_next" value="https://virgivilla.github.io/gracias.html">
+
       <button type="submit">Enviar</button>
-      <div id="gracias-mensaje">¡Gracias por contactarme! Te responderé lo antes posible.</div>
     </form>
   </section>
 
@@ -292,18 +282,6 @@
   <footer>
     <p>&copy; 2025 Virgi Villa – Todos los derechos reservados.</p>
   </footer>
-
-  <script>
-    document.getElementById('contact-form').addEventListener('submit', function(e) {
-      e.preventDefault();
-
-      // Aquí podrías hacer validaciones extras o enviar datos a un servidor, API, etc.
-
-      // Mostrar mensaje de gracias y ocultar el formulario
-      this.style.display = 'none';
-      document.getElementById('gracias-mensaje').style.display = 'block';
-    });
-  </script>
 
 </body>
 </html>
