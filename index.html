@@ -29,57 +29,18 @@
     header {
       position: relative;
       display: flex;
-      flex-wrap: wrap;
-      align-items: center;
-      background: linear-gradient(135deg, #004a99 60%, #0066cc 100%);
-      color: white;
+      justify-content: center;
+      background: #004a99;
       padding: 60px 20px;
       max-width: 1200px;
       margin: auto;
       border-radius: 0 0 30px 30px;
       overflow: hidden;
     }
-    header .text {
-      flex: 1 1 450px;
-      max-width: 600px;
-      z-index: 2;
-    }
-    header h1 {
-      font-size: 3rem;
-      margin-bottom: 15px;
-      font-weight: 900;
-      line-height: 1.1;
-      text-shadow: 1px 1px 4px rgba(0,0,0,0.3);
-    }
-    header p {
-      font-size: 1.25rem;
-      margin-bottom: 25px;
-      font-weight: 500;
-      text-shadow: 1px 1px 3px rgba(0,0,0,0.25);
-    }
-    header .btn-cta {
-      background: #00c853;
-      color: white;
-      padding: 16px 32px;
-      border-radius: 30px;
-      font-weight: 700;
-      font-size: 1.1rem;
-      box-shadow: 0 5px 15px rgba(0, 200, 83, 0.6);
-      transition: background 0.3s ease;
-      display: inline-block;
-      cursor: pointer;
-      border: none;
-    }
-    header .btn-cta:hover {
-      background: #009624;
-    }
     header img {
-      flex: 1 1 350px;
       max-width: 350px;
       border-radius: 20px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.25);
-      margin-left: auto;
-      z-index: 1;
     }
 
     /* SECTIONS */
@@ -89,11 +50,11 @@
       padding: 0 20px;
     }
     h2 {
-      text-align: center;
-      font-size: 2.2rem;
       color: #004a99;
-      margin-bottom: 35px;
       font-weight: 800;
+      font-size: 2.2rem;
+      margin-bottom: 35px;
+      text-align: left;
     }
 
     /* BENEFITS */
@@ -135,9 +96,8 @@
       line-height: 1.4;
     }
 
-    /* TESTIMONIALS - CARRUSEL */
+    /* TESTIMONIALS - alineadas a la izquierda */
     .testimonials {
-      position: relative;
       background: white;
       border-radius: 15px;
       box-shadow: 0 10px 30px rgba(0,0,0,0.1);
@@ -148,10 +108,11 @@
     }
     .testimonials h2 {
       margin-bottom: 40px;
+      text-align: left;
     }
     .testimonial-slide {
       display: none;
-      text-align: center;
+      text-align: left;
       padding: 0 20px;
     }
     .testimonial-slide.active {
@@ -178,14 +139,14 @@
     }
     /* Botones carrusel */
     .testimonial-buttons {
-      text-align: center;
+      text-align: left;
     }
     .testimonial-buttons button {
       background: #004a99;
       border: none;
       color: white;
       padding: 10px 18px;
-      margin: 0 7px;
+      margin: 0 7px 7px 0;
       border-radius: 8px;
       font-weight: 700;
       font-size: 1rem;
@@ -285,24 +246,58 @@
       cursor: pointer;
       z-index: 9999;
       transition: background 0.3s ease;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      user-select: none;
     }
     .whatsapp-float:hover {
       background: #128c4a;
+    }
+    .whatsapp-tooltip {
+      position: fixed;
+      bottom: 95px;
+      right: 25px;
+      background: #128c4a;
+      color: white;
+      padding: 6px 12px;
+      border-radius: 8px;
+      font-size: 0.9rem;
+      font-weight: 700;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.3s ease;
+      user-select: none;
+    }
+    .whatsapp-float:hover + .whatsapp-tooltip {
+      opacity: 1;
+      pointer-events: auto;
+    }
+
+    /* Icono manos carne */
+    .icon-manos {
+      width: 80px;
+      height: 80px;
+      margin: 0 auto 20px;
+      display: block;
+      fill: #dca87d;
     }
 
     /* Responsive */
     @media (max-width: 850px) {
       header {
-        flex-direction: column;
         padding: 50px 20px 60px;
       }
       header img {
-        margin: 30px 0 0 0;
         max-width: 80vw;
       }
       .benefits {
         flex-direction: column;
         gap: 25px;
+      }
+      .testimonial-buttons button {
+        margin-bottom: 10px;
       }
     }
   </style>
@@ -310,11 +305,6 @@
 <body>
 
   <header>
-    <div class="text">
-      <h1>Asesoría Financiera Personalizada</h1>
-      <p>Organiza, ahorra e invierte mejor tu dinero con Virgi Villa. Sesiones presenciales y online.</p>
-      <button class="btn-cta" onclick="document.getElementById('contact-form').scrollIntoView({behavior:'smooth'})">Reserva tu cita gratis</button>
-    </div>
     <img src="https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?ixlib=rb-4.0.3&auto=format&fit=crop&w=500&q=80" alt="Virgi Villa asesor financiero" />
   </header>
 
@@ -322,7 +312,11 @@
     <h2>¿Qué te ofrecemos?</h2>
     <div class="benefits">
       <div class="benefit" tabindex="0" aria-describedby="benefit1desc">
-        <img src="https://img.icons8.com/external-flaticons-lineal-color-flat-icons/64/000000/external-advice-business-flaticons-lineal-color-flat-icons.png" alt="" aria-hidden="true"/>
+        <!-- Icono manos carne (SVG inline) -->
+        <svg class="icon-manos" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
+          <path d="M10 30c0-5 3-9 7-9s7 4 7 9-3 10-7 10-7-5-7-10zM47 30c0-5-3-9-7-9s-7 4-7 9 3 10 7 10 7-5 7-10z"/>
+          <path d="M16 34l15 10m10-20l-15 10" stroke="#dca87d" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+        </svg>
         <h3>Asesoramiento Profesional</h3>
         <p id="benefit1desc">Te guiamos paso a paso para tomar las mejores decisiones económicas.</p>
       </div>
@@ -397,15 +391,17 @@
   </footer>
 
   <!-- WhatsApp floating button -->
-  <a 
-    href="https://wa.me/34677863127" 
-    target="_blank" 
-    rel="noopener noreferrer" 
-    aria-label="Enviar mensaje por WhatsApp a Virgi Villa" 
+  <a
+    href="https://wa.me/34677863127"
+    target="_blank"
+    rel="noopener noreferrer"
+    aria-label="Enviar mensaje por WhatsApp a Virgi Villa"
     class="whatsapp-float"
   >
-    &#x1F4AC;
+    <!-- Emoji icono chat -->
+    💬
   </a>
+  <div class="whatsapp-tooltip" aria-hidden="true">Contactar por WhatsApp</div>
 
   <script>
     // Testimonial carousel logic
@@ -419,13 +415,12 @@
       });
     }
 
-    // Optional: Auto-cycle testimonials every 8s
+    // Auto-ciclo opiniones cada 8 segundos
     let currentSlide = 0;
     setInterval(() => {
       currentSlide = (currentSlide + 1) % slides.length;
       showTestimonial(currentSlide);
     }, 8000);
   </script>
-
 </body>
 </html>
