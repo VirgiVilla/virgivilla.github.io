@@ -98,11 +98,23 @@
       box-shadow: 0 3px 8px rgba(0,0,0,0.1);
       color: #555; /* texto opiniones */
       position: relative;
-      min-height: 120px;
+      min-height: 140px;
     }
     .opinion p {
       margin-bottom: 15px;
       line-height: 1.4;
+      display: inline-block;
+      max-width: calc(100% - 110px);
+      vertical-align: top;
+    }
+    /* Aquí añadí el contenedor de estrellas */
+    .estrellas {
+      color: #f5b301; /* dorado */
+      font-size: 1.2rem;
+      vertical-align: top;
+      display: inline-block;
+      margin-left: 10px;
+      user-select: none;
     }
     .opinion footer {
       font-weight: 700;
@@ -110,6 +122,8 @@
       font-style: normal;
       text-align: right;
       background: transparent !important; /* evitar fondo */
+      margin-top: 10px;
+      display: block;
     }
 
     /* Formulario */
@@ -197,6 +211,15 @@
       .about-photo img {
         max-width: 80%;
       }
+      .opinion p, .estrellas {
+        max-width: 100% !important;
+        display: block;
+        margin-left: 0;
+        margin-bottom: 10px;
+      }
+      .estrellas {
+        font-size: 1.5rem;
+      }
     }
   </style>
 </head>
@@ -229,26 +252,32 @@
     <div class="opiniones-grid">
       <article class="opinion">
         <p>"Gracias a Virgi mejoré mi ahorro y conseguí mejores condiciones en mi banco. Muy recomendable."</p>
+        <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
         <footer>— Laura G.</footer>
       </article>
       <article class="opinion">
         <p>"Su asesoría fue clara y personalizada, me ayudó a organizar mis finanzas sin complicaciones."</p>
+        <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
         <footer>— Carlos M.</footer>
       </article>
       <article class="opinion">
         <p>"Muy profesional y atento, me acompañó durante todo el proceso para cambiar de banco."</p>
+        <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
         <footer>— Ana R.</footer>
       </article>
       <article class="opinion">
         <p>"Con sus consejos logré invertir con más confianza y seguridad. ¡Gracias Virgi!"</p>
+        <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
         <footer>— José L.</footer>
       </article>
       <article class="opinion">
         <p>"Me ayudó a entender mejor mis gastos y a planificar un presupuesto realista."</p>
+        <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
         <footer>— Marta S.</footer>
       </article>
       <article class="opinion">
         <p>"Un servicio personalizado y cercano que recomiendo a todos los que quieren mejorar sus finanzas."</p>
+        <span class="estrellas" aria-label="5 estrellas">★★★★★</span>
         <footer>— David P.</footer>
       </article>
     </div>
@@ -300,9 +329,3 @@
     </div>
   </section>
 
-  <footer>
-    <p>&copy; 2025 Virgi Villa – Todos los derechos reservados.</p>
-  </footer>
-
-</body>
-</html>
