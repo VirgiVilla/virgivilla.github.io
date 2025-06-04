@@ -8,7 +8,7 @@
   <meta name="keywords" content="asesor financiero, asesor financiero personal, cambio de banco, ayuda para cambio de banco, ahorro, inversión personalizada, finanzas personales, asesoría financiera" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* (Igual CSS que antes para no repetir) */
+    /* Estilos generales */
     * {
       margin: 0; padding: 0; box-sizing: border-box;
     }
@@ -18,9 +18,11 @@
       background-color: #f4f7fa;
       color: #333;
     }
+
+    /* Header con nueva imagen de fondo */
     header {
       position: relative;
-      background-image: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1350&q=80');
+      background-image: url('https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/refs/heads/main/img/5a00846f-17c0-4f9b-b033-69d2f3615ab8.JPG');
       background-size: cover;
       background-position: center;
       color: white;
@@ -44,6 +46,37 @@
       max-width: 700px;
       margin: 0 auto;
     }
+
+    /* Sección SOBRE MÍ con imagen y texto lado a lado */
+    .about-text {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+      max-width: 900px;
+      margin: 40px auto 60px auto;
+      background: #fff;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      color: #444;
+      line-height: 1.5;
+      font-size: 1.1rem;
+    }
+    .about-text img {
+      width: 150px;
+      border-radius: 10px;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+    .about-text div {
+      flex: 1;
+    }
+    .about-text h2 {
+      margin-bottom: 15px;
+      color: #004a99;
+    }
+
+    /* Resto de estilos igual que antes */
     section {
       padding: 60px 20px;
       max-width: 1100px;
@@ -71,19 +104,6 @@
     .benefit img {
       height: 60px;
       margin-bottom: 15px;
-    }
-    .about-text {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
-      margin-bottom: 60px;
-      max-width: 700px;
-      margin-left: auto;
-      margin-right: auto;
-      font-size: 1.1rem;
-      color: #444;
-      line-height: 1.5;
     }
     form {
       background: #fff;
@@ -209,9 +229,12 @@
   </header>
 
   <section class="about-text" id="sobre-mi">
-    <h2>SOBRE EL ASESOR FINANCIERO</h2>
-    <p>Soy <strong>Virgi Villa</strong>, asesor financiero personal con más de 6 años de experiencia ayudando a clientes a mejorar sus finanzas personales. Especializado en <em>cambio de banco</em>, estrategias de <em>ahorro</em> y <em>inversión personalizada</em>, te acompaño en el proceso para lograr una gestión financiera clara y efectiva.</p>
-    <p>Mi asesoría financiera se adapta a tus necesidades para que logres estabilidad económica, tranquilidad y crecimiento sostenible.</p>
+    <img src="https://raw.githubusercontent.com/VirgiVilla/virgivilla.github.io/refs/heads/main/img/6f980eb4-5554-4af3-9d57-2756c1b77e23.JPG" alt="Foto Virgi Villa" />
+    <div>
+      <h2>SOBRE EL ASESOR FINANCIERO</h2>
+      <p>Soy <strong>Virgi Villa</strong>, asesor financiero personal con más de 6 años de experiencia ayudando a clientes a mejorar sus finanzas personales. Especializado en <em>cambio de banco</em>, estrategias de <em>ahorro</em> y <em>inversión personalizada</em>, te acompaño en el proceso para lograr una gestión financiera clara y efectiva.</p>
+      <p>Mi asesoría financiera se adapta a tus necesidades para que logres estabilidad económica, tranquilidad y crecimiento sostenible.</p>
+    </div>
   </section>
 
   <section id="servicios">
@@ -291,22 +314,20 @@
     </article>
     <article class="opinion">
       <div class="stars" aria-label="5 estrellas">★★★★★</div>
-      <strong>Raúl D.</strong>
-      <p>Muy recomendable. Gracias a él ahora tengo una estrategia clara de ahorro e inversión.</p>
+      <strong>Miguel R.</strong>
+      <p>El mejor asesor financiero que he tenido. Lo recomiendo para cualquier tema de finanzas personales.</p>
     </article>
   </section>
 
   <footer>
-    <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
-    <p>
-      <a href="politica-privacidad.html">Política de Privacidad</a> |
-      <a href="politica-cookies.html">Política de Cookies</a> |
-      <a href="aviso-legal.html">Aviso Legal</a>
-    </p>
+    <p>Contacto: <a href="mailto:contacto@virgivilla.com">contacto@virgivilla.com</a> | Teléfono: +34 632 435 190</p>
+    <p>Sígueme en <a href="https://www.linkedin.com/in/virgivilla" target="_blank" rel="noopener noreferrer">LinkedIn</a> y <a href="https://www.facebook.com/virgivilla" target="_blank" rel="noopener noreferrer">Facebook</a></p>
+    <p>&copy; 2025 Virgi Villa - Asesor Financiero Personal</p>
   </footer>
 
-  <a href="https://wa.me/34632435190" target="_blank" id="whatsapp" aria-label="WhatsApp chat">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Icono WhatsApp para contacto rápido" />
+  <!-- WhatsApp flotante -->
+  <a href="https://wa.me/34632435190" id="whatsapp" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
   </a>
 
 </body>
