@@ -2,7 +2,7 @@
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="google-site-verification" content="YgyjmPJLvKIX1qU_oF-JO6m3bI1W5w7hgn8r8p1wpTg" />
   <title>Asesoría Financiera Personalizada</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
@@ -33,7 +33,6 @@
     header p {
       font-size: 1.2rem;
     }
-
     section {
       padding: 60px 20px;
       max-width: 1100px;
@@ -57,29 +56,36 @@
       height: 60px;
       margin-bottom: 15px;
     }
-
-    .about {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 40px;
-      align-items: center;
-    }
-    .about img {
-      max-width: 100%;
+    .opinions {
+      background: #fff;
+      padding: 30px;
       border-radius: 10px;
-      flex: 1;
+      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      max-width: 900px;
+      margin: 40px auto;
+      text-align: center;
     }
-    .about-text {
-      flex: 2;
+    .opinion {
+      margin-bottom: 30px;
     }
-
+    .opinion p {
+      font-style: italic;
+      margin-bottom: 10px;
+      color: #555;
+    }
+    .opinion .author {
+      font-weight: bold;
+      color: #004a99;
+    }
     form {
       background: #fff;
       padding: 30px;
       border-radius: 10px;
       box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 600px;
+      margin: auto;
     }
-    form input, form textarea {
+    form input, form textarea, form select {
       width: 100%;
       padding: 12px;
       margin-bottom: 15px;
@@ -105,6 +111,36 @@
       color: #ddd;
       margin: 0 10px;
       text-decoration: none;
+    }
+    .whatsapp-link {
+      display: inline-block;
+      margin-top: 10px;
+      background-color: #25D366;
+      color: white;
+      padding: 10px 20px;
+      border-radius: 25px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+    .whatsapp-link:hover {
+      background-color: #1ebe5b;
+    }
+    .whatsapp-float {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #25D366;
+      color: white;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 26px;
+      text-align: center;
+      text-decoration: none;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.3);
+      z-index: 1000;
+    }
+    .whatsapp-float:hover {
+      background-color: #1ebe5b;
     }
   </style>
 </head>
@@ -136,12 +172,20 @@
     </div>
   </section>
 
-  <section class="about">
-    <div class="about-text">
-      <h2>Sobre mí</h2>
-      <p>Mi nombre es Virgi Villa y estoy aquí para ayudarte a entender tus finanzas, sin tecnicismos. Me apasiona ver cómo mis clientes ganan control, tranquilidad y prosperidad.</p>
+  <section class="opinions">
+    <h2>Opiniones de los clientes</h2>
+    <div class="opinion">
+      <p>"Gracias a Virgi logré organizar mis finanzas y ahorrar más de lo que imaginaba. Su trato es cercano y profesional."</p>
+      <div class="author">— Laura M.</div>
     </div>
-    <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?auto=format&fit=crop&w=800&q=80" alt="Virgi Villa Asesor Financiero" />
+    <div class="opinion">
+      <p>"Muy recomendable. Me ayudó a invertir con seguridad y a entender mejor mis gastos. El servicio personalizado marcó la diferencia."</p>
+      <div class="author">— Carlos R.</div>
+    </div>
+    <div class="opinion">
+      <p>"Asesoría clara y eficaz, siempre dispuesta a resolver mis dudas. Ahora siento control y tranquilidad con mi dinero."</p>
+      <div class="author">— Marta G.</div>
+    </div>
   </section>
 
   <section>
@@ -150,6 +194,12 @@
       <input type="text" name="nombre" placeholder="Tu nombre completo" required />
       <input type="email" name="email" placeholder="Tu correo electrónico" required />
       <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" />
+      <select name="horario" required>
+        <option value="" disabled selected>¿Cuándo prefieres que nos veamos?</option>
+        <option value="mañana">Por la mañana</option>
+        <option value="tarde">Por la tarde</option>
+        <option value="sin_preferencia">Sin preferencia</option>
+      </select>
       <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required></textarea>
       <button type="submit">Enviar solicitud</button>
     </form>
@@ -157,15 +207,33 @@
 
   <footer>
     <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
+    <p>Teléfono: <strong>677 863 127</strong></p>
     <p>
       <a href="politica-privacidad.html">Política de Privacidad</a> |
       <a href="politica-cookies.html">Política de Cookies</a> |
       <a href="aviso-legal.html">Aviso Legal</a>
     </p>
-    <p style="margin-top: 10px;">
-      📞 <a href="tel:+34677863127" style="color: #ddd;">Llámanos: 677 863 127</a>
-    </p>
+    <a
+      href="https://wa.me/34677863127"
+      target="_blank"
+      rel="noopener"
+      class="whatsapp-link"
+      aria-label="Contactar por WhatsApp"
+    >
+      📱 WhatsApp
+    </a>
   </footer>
+
+  <a
+    href="https://wa.me/34677863127"
+    target="_blank"
+    rel="noopener"
+    class="whatsapp-float"
+    aria-label="WhatsApp flotante"
+    title="Contáctanos por WhatsApp"
+  >
+    🟢
+  </a>
 
 </body>
 </html>
