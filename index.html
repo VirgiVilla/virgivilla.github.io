@@ -7,57 +7,52 @@
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
     * {
-      margin: 0; padding: 0; box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
     body {
       font-family: 'Montserrat', sans-serif;
       background-color: #f4f7fa;
       color: #333;
       line-height: 1.6;
-      min-height: 100vh;
-      position: relative;
-      padding-bottom: 80px; /* espacio para footer */
     }
     header {
-      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') center/cover no-repeat;
       color: white;
-      padding: 100px 20px 80px;
+      padding: 120px 20px 80px;
       text-align: center;
       position: relative;
-      overflow: hidden;
     }
     header::before {
       content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background: rgba(0, 74, 153, 0.6); /* overlay azul semitransparente */
+      background: rgba(0, 40, 80, 0.75);
       z-index: 0;
+    }
+    header h1, header p {
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 0 8px rgba(0,0,0,0.8);
     }
     header h1 {
       font-size: 3rem;
-      font-weight: 700;
-      position: relative;
-      z-index: 1;
-      text-shadow: 0 0 8px rgba(0,0,0,0.7);
-      margin-bottom: 15px;
+      font-weight: 800;
+      margin-bottom: 20px;
     }
     header p {
       font-size: 1.3rem;
-      font-weight: 400;
-      position: relative;
-      z-index: 1;
       max-width: 700px;
       margin: 0 auto;
-      text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
 
     section {
+      padding: 60px 20px;
       max-width: 1100px;
-      margin: 50px auto;
-      padding: 0 20px;
+      margin: auto;
     }
 
-    /* ¿Qué te ofrecemos? */
     .benefits {
       display: flex;
       flex-wrap: wrap;
@@ -72,127 +67,80 @@
       border-radius: 12px;
       box-shadow: 0 0 15px rgba(0,0,0,0.05);
       transition: transform 0.3s ease;
-      cursor: default;
     }
     .benefit:hover {
-      transform: translateY(-8px);
-      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
+      transform: translateY(-5px);
     }
     .benefit img {
       height: 60px;
       margin-bottom: 20px;
     }
     .benefit h3 {
-      margin-bottom: 12px;
       color: #004a99;
-    }
-    .benefit p {
-      font-size: 1rem;
-      color: #555;
+      margin-bottom: 10px;
     }
 
-    /* Opiniones */
-    .reviews {
+    .about {
       background: white;
-      border-radius: 12px;
-      padding: 30px 40px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.05);
-      max-width: 900px;
-      margin: 0 auto 60px;
+      padding: 40px;
+      border-radius: 10px;
+      margin-top: 40px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-    .reviews h2 {
-      text-align: left;
-      color: #004a99;
-      margin-bottom: 25px;
-      font-weight: 700;
+
+    .reviews {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+      margin-top: 60px;
     }
     .review {
-      margin-bottom: 25px;
-      border-left: 4px solid #004a99;
-      padding-left: 18px;
-      font-style: italic;
-      color: #333;
-      outline: none;
+      background: white;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.05);
     }
-    .review strong {
-      display: block;
-      margin-top: 6px;
-      font-style: normal;
-      color: #004a99;
-    }
-    .review:last-child {
-      margin-bottom: 0;
+    .stars {
+      color: gold;
+      font-size: 1.2rem;
+      margin-bottom: 10px;
     }
 
-    /* Formulario */
     form {
       background: white;
-      padding: 30px 30px 40px;
-      max-width: 600px;
-      margin: 0 auto 70px;
-      border-radius: 12px;
-      box-shadow: 0 0 20px rgba(0,0,0,0.07);
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-top: 60px;
     }
-    form h2 {
-      color: #004a99;
-      margin-bottom: 30px;
-      text-align: center;
-      font-weight: 700;
-    }
-    label {
-      display: block;
-      margin-bottom: 6px;
-      font-weight: 600;
-      color: #004a99;
-    }
-    input[type="text"],
-    input[type="email"],
-    input[type="tel"],
-    input[type="date"],
-    select,
-    textarea {
+    form input, form textarea, form select {
       width: 100%;
-      padding: 12px 14px;
-      margin-bottom: 18px;
-      border: 1.5px solid #ccc;
-      border-radius: 8px;
-      font-size: 1rem;
-      transition: border-color 0.3s ease;
-      font-family: inherit;
-      resize: vertical;
+      padding: 12px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
     }
-    input[type="text"]:focus,
-    input[type="email"]:focus,
-    input[type="tel"]:focus,
-    input[type="date"]:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #004a99;
-      outline: none;
-      box-shadow: 0 0 6px #004a99aa;
-    }
-    textarea {
-      min-height: 100px;
-    }
-    button {
+    form button {
+      padding: 12px 25px;
       background-color: #25d366;
-      border: none;
       color: white;
-      font-weight: 700;
-      padding: 15px 0;
-      width: 100%;
-      font-size: 1.2rem;
-      border-radius: 8px;
+      border: none;
+      border-radius: 6px;
       cursor: pointer;
-      transition: background-color 0.3s ease;
+      font-weight: bold;
     }
-    button:hover,
-    button:focus {
-      background-color: #1ebe57;
-      outline: none;
+    footer {
+      background: #222;
+      color: #fff;
+      padding: 20px;
+      text-align: center;
+    }
+    footer a {
+      color: #ddd;
+      margin: 0 10px;
+      text-decoration: none;
     }
 
-    /* WhatsApp flotante */
     .whatsapp-float {
       position: fixed;
       width: 60px;
@@ -209,126 +157,104 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      transition: background-color 0.3s ease;
+      text-decoration: none;
     }
-    .whatsapp-float:hover,
-    .whatsapp-float:focus {
+    .whatsapp-float:hover {
       background-color: #1ebe57;
-      outline: none;
-    }
-    .whatsapp-float svg {
-      width: 32px;
-      height: 32px;
-      fill: white;
-    }
-
-    /* Media queries */
-    @media (max-width: 768px) {
-      .benefits {
-        flex-direction: column;
-        align-items: center;
-      }
-      header h1 {
-        font-size: 2.2rem;
-      }
-      header p {
-        font-size: 1rem;
-      }
     }
   </style>
 </head>
 <body>
 
-  <header role="banner" aria-label="Encabezado principal">
-    <h1>Asesoría Financiera Personalizada</h1>
-    <p>Nos podemos ver en persona u online para ayudarte a organizar, ahorrar e invertir mejor tu dinero.</p>
+  <header>
+    <h1>Asesoramiento Financiero Personalizado Gratis</h1>
+    <p>Organiza, ahorra e invierte con confianza y seguridad</p>
   </header>
 
-  <section aria-labelledby="offer-title">
-    <h2 id="offer-title" style="text-align:center; margin-bottom:40px; color:#004a99;">¿Qué te ofrecemos?</h2>
-    <div class="benefits" role="list">
-      <article class="benefit" role="listitem" tabindex="0" aria-label="Asesoramiento Profesional">
-        <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/68/004a99/external-investment-finance-smashingstocks-flat-smashing-stocks.png" alt="Icono inversión" />
+  <section>
+    <h2 style="text-align:center; margin-bottom:40px;">¿Qué te ofrecemos?</h2>
+    <div class="benefits">
+      <div class="benefit">
+        <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/68/004a99/external-investment-finance-smashingstocks-flat-smashing-stocks.png" alt="Inversión" />
         <h3>Asesoramiento Profesional</h3>
         <p>Te guiamos paso a paso para tomar las mejores decisiones económicas.</p>
-      </article>
-      <article class="benefit" role="listitem" tabindex="0" aria-label="Optimización de Ahorros">
-        <img src="https://img.icons8.com/color/68/004a99/money.png" alt="Icono ahorro" />
+      </div>
+      <div class="benefit">
+        <img src="https://img.icons8.com/color/68/004a99/money.png" alt="Ahorro" />
         <h3>Optimización de Ahorros</h3>
         <p>Descubre dónde puedes ahorrar sin perder calidad de vida.</p>
-      </article>
-      <article class="benefit" role="listitem" tabindex="0" aria-label="Flexibilidad Total">
-        <img src="https://img.icons8.com/ios-filled/68/004a99/calendar--v1.png" alt="Icono calendario" />
+      </div>
+      <div class="benefit">
+        <img src="https://img.icons8.com/ios-filled/68/004a99/calendar--v1.png" alt="Agenda" />
         <h3>Flexibilidad Total</h3>
         <p>Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
-      </article>
+      </div>
+    </div>
+
+    <div class="about">
+      <h2>Sobre mí</h2>
+      <p>Soy asesor financiero desde hace más de 6 años. Durante este tiempo he ayudado a personas de todas las edades a tomar el control de sus finanzas.  
+      Mi misión es ayudarte a entender cómo ahorrar, invertir y planificar tus metas con claridad.  
+      Trabajo con cada cliente de forma personalizada, según su situación y sus objetivos.  
+      La confianza, la claridad y los resultados son mis prioridades.  
+      Me apasiona ver cómo mis clientes ganan tranquilidad y prosperidad.  
+      Estoy aquí para acompañarte paso a paso hacia tu bienestar financiero.</p>
     </div>
   </section>
 
-  <section class="reviews" aria-labelledby="reviews-title">
-    <h2 id="reviews-title">Opiniones de Clientes</h2>
-    <div class="review" tabindex="0">
-      <p>"Gracias al asesoramiento pude ahorrar y comenzar a invertir con confianza. ¡Muy recomendable!"</p>
-      <strong>- María G.</strong>
-    </div>
-    <div class="review" tabindex="0">
-      <p>"Profesionales y atentos, me ayudaron a organizar mis finanzas de forma clara y sencilla."</p>
-      <strong>- Carlos R.</strong>
-    </div>
-    <div class="review" tabindex="0">
-      <p>"Servicio gratuito que realmente marca la diferencia. El trato fue excelente."</p>
-      <strong>- Laura M.</strong>
-    </div>
-    <div class="review" tabindex="0">
-      <p>"Virgi Villa me ayudó a entender mejor mis finanzas y a planificar mi futuro económico."</p>
-      <strong>- José F.</strong>
-    </div>
-    <div class="review" tabindex="0">
-      <p>"Muy buen servicio, atención personalizada y consejos útiles para ahorrar e invertir."</p>
-      <strong>- Ana P.</strong>
+  <section>
+    <h2 style="text-align:center;">Opiniones de Clientes</h2>
+    <div class="reviews">
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Gracias al asesoramiento pude ahorrar y comenzar a invertir con confianza. ¡Muy recomendable!"<br><strong>- María G.</strong></p>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Profesional y atento, me ayudó a organizar mis finanzas de forma clara y sencilla."<br><strong>- Carlos R.</strong></p>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Servicio gratuito que realmente marca la diferencia. El trato fue excelente."<br><strong>- Laura M.</strong></p>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Me ayudó a entender mejor mis finanzas y a planificar mi futuro económico."<br><strong>- José F.</strong></p>
+      </div>
+      <div class="review">
+        <div class="stars">★★★★★</div>
+        <p>"Muy buen servicio, atención personalizada y consejos útiles para ahorrar e invertir."<br><strong>- Ana P.</strong></p>
+      </div>
     </div>
   </section>
 
-  <section aria-labelledby="contact-form-title">
-    <form action="https://formspree.io/f/xldneqpv" method="POST" aria-label="Formulario de reserva de cita gratuita">
-      <h2 id="contact-form-title">Reserva tu cita gratuita</h2>
-      
-      <label for="nombre">Nombre completo:</label>
-      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
-
-      <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="email" required placeholder="tu@email.com" />
-
-      <label for="telefono">Número de teléfono:</label>
-      <input type="tel" id="telefono" name="telefono" placeholder="Opcional" />
-
-      <label for="preferencia">¿Prefieres que nos veamos por la mañana o por la tarde?</label>
-      <select id="preferencia" name="preferencia" required>
-        <option value="" disabled selected>Selecciona una opción</option>
+  <section>
+    <form action="https://formspree.io/f/xldneqpv" method="POST">
+      <h2 style="text-align:center; margin-bottom:30px;">Solicita tu asesoría gratuita</h2>
+      <input type="text" name="nombre" placeholder="Tu nombre completo" required />
+      <input type="email" name="email" placeholder="Tu correo electrónico" required />
+      <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" />
+      <select name="horario">
+        <option value="">¿Qué horario prefieres?</option>
         <option value="mañana">Por la mañana</option>
         <option value="tarde">Por la tarde</option>
       </select>
-
-      <label for="mensaje">Cuéntanos tu situación o qué necesitas:</label>
-      <textarea id="mensaje" name="mensaje" required placeholder="Escribe aquí..."></textarea>
-
+      <textarea name="mensaje" rows="5" placeholder="Cuéntanos tu situación o qué necesitas..." required></textarea>
       <button type="submit">Enviar solicitud</button>
     </form>
   </section>
 
-  <footer style="text-align:center; padding: 20px 0; background:#222; color:#fff; position: fixed; bottom: 0; width: 100%;">
-    <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
+  <footer>
+    <p>&copy; 2025 Tu Nombre. Todos los derechos reservados.</p>
     <p>
-      <a href="politica-privacidad.html" style="color:#ddd; text-decoration:none; margin: 0 10px;">Política de Privacidad</a>|
-      <a href="politica-cookies.html" style="color:#ddd; text-decoration:none; margin: 0 10px;">Política de Cookies</a>|
-      <a href="aviso-legal.html" style="color:#ddd; text-decoration:none; margin: 0 10px;">Aviso Legal</a>
+      <a href="politica-privacidad.html">Política de Privacidad</a> |
+      <a href="politica-cookies.html">Política de Cookies</a> |
+      <a href="aviso-legal.html">Aviso Legal</a>
     </p>
   </footer>
 
-  <a href="https://wa.me/34677863127" class="whatsapp-float" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true" focusable="false" fill="currentColor">
-      <path d="M380.9 97.1C339-16.9 197.5-24.9 107.8 40.2 17.5 105.7 1 245.4 45.2 347.4L0 512l164.2-44.6c101.6 42.7 241.1 25.6 305-64.7 35.7-54.7 34.3-128.8-8.3-179.6zM224 360c-28.2 0-54.2-11.1-73.9-29.3l-5.3-5.1c-19.7-19.7-30.9-45.7-30.9-73.9 0-58.1 47.1-105.2 105.2-105.2 27.7 0 53.7 11.2 73.3 29.7 19.6 18.4 31.1 44.1 31.1 72.9 0 57.8-47 104.9-104.5 104.9z"/>
-    </svg>
+  <a href="https://wa.me/34677863127" class="whatsapp-float" target="_blank" title="Contactar por WhatsApp">
+    💬
   </a>
 
 </body>
