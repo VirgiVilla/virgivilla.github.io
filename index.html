@@ -3,131 +3,61 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="google-site-verification" content="YgyjmPJLvKIX1qU_oF-JO6m3bI1W5w7hgn8r8p1wpTg" />
   <title>Asesoría Financiera Personalizada</title>
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
-    /* Reset */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
-
     body {
       font-family: 'Montserrat', sans-serif;
-      line-height: 1.6;
       background-color: #f4f7fa;
       color: #333;
-      scroll-behavior: smooth;
-    }
-
-    /* Header con imagen */
-    header {
+      line-height: 1.6;
+      min-height: 100vh;
       position: relative;
-      height: 350px;
-      border-radius: 0 0 40px 40px;
-      overflow: hidden;
-      margin-bottom: 60px;
-      text-align: center;
-      display: flex;
-      justify-content: center;
-      align-items: center;
+      padding-bottom: 80px; /* espacio para footer */
     }
-    .header-image {
+    header {
+      background: url('https://images.unsplash.com/photo-1506744038136-46273834b3fb?auto=format&fit=crop&w=1400&q=80') no-repeat center center/cover;
+      color: white;
+      padding: 100px 20px 80px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: "";
       position: absolute;
       top: 0; left: 0; right: 0; bottom: 0;
-      background-image: url('https://images.unsplash.com/photo-1565372919297-cf812ea4a42d?auto=format&fit=crop&w=1350&q=80');
-      background-size: cover;
-      background-position: center;
-      filter: brightness(0.5);
+      background: rgba(0, 74, 153, 0.6); /* overlay azul semitransparente */
       z-index: 0;
-    }
-    .header-content {
-      position: relative;
-      z-index: 1;
-      max-width: 750px;
-      padding: 0 20px;
-      color: #fff;
-      text-shadow: 0 3px 10px rgba(0,0,0,0.7);
-      animation: fadeInDown 1.6s ease forwards;
-      opacity: 0;
     }
     header h1 {
       font-size: 3rem;
-      font-weight: 900;
-      margin-bottom: 12px;
-      line-height: 1.1;
+      font-weight: 700;
+      position: relative;
+      z-index: 1;
+      text-shadow: 0 0 8px rgba(0,0,0,0.7);
+      margin-bottom: 15px;
     }
-    .subtitle {
+    header p {
       font-size: 1.3rem;
-      margin-bottom: 30px;
-      font-weight: 500;
-    }
-    .btn-cta {
-      display: inline-block;
-      background: #ff6f61;
-      color: #fff;
-      font-weight: 700;
-      font-size: 1.15rem;
-      padding: 14px 38px;
-      border-radius: 40px;
-      box-shadow: 0 6px 15px rgba(255,111,97,0.7);
-      transition: background-color 0.3s ease, box-shadow 0.3s ease;
-      cursor: pointer;
-      text-decoration: none;
-      user-select: none;
-    }
-    .btn-cta:hover,
-    .btn-cta:focus {
-      background: #e65b50;
-      box-shadow: 0 8px 20px rgba(230,91,80,0.8);
-      outline: none;
+      font-weight: 400;
+      position: relative;
+      z-index: 1;
+      max-width: 700px;
+      margin: 0 auto;
+      text-shadow: 0 0 6px rgba(0,0,0,0.6);
     }
 
-    @keyframes fadeInDown {
-      0% {
-        opacity: 0;
-        transform: translateY(-30px);
-      }
-      100% {
-        opacity: 1;
-        transform: translateY(0);
-      }
-    }
-
-    @media (max-width: 760px) {
-      header {
-        height: 300px;
-        border-radius: 0 0 30px 30px;
-      }
-      header h1 {
-        font-size: 2rem;
-      }
-      .subtitle {
-        font-size: 1.1rem;
-      }
-      .btn-cta {
-        padding: 12px 28px;
-        font-size: 1rem;
-      }
-    }
-
-    /* Resto igual... */
-
-    /* Section: ¿Qué te ofrecemos? */
     section {
-      padding: 60px 20px;
       max-width: 1100px;
-      margin: auto;
+      margin: 50px auto;
+      padding: 0 20px;
     }
-    h2 {
-      text-align: center;
-      margin-bottom: 40px;
-      font-weight: 700;
-      font-size: 2rem;
-      color: #004a99;
-    }
+
+    /* ¿Qué te ofrecemos? */
     .benefits {
       display: flex;
       flex-wrap: wrap;
@@ -136,116 +66,155 @@
       text-align: center;
     }
     .benefit {
-      flex: 1 1 250px;
-      padding: 20px;
-      background: #fff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.05);
+      flex: 1 1 280px;
+      background: white;
+      padding: 25px;
+      border-radius: 12px;
+      box-shadow: 0 0 15px rgba(0,0,0,0.05);
       transition: transform 0.3s ease;
+      cursor: default;
     }
     .benefit:hover {
       transform: translateY(-8px);
-      box-shadow: 0 8px 20px rgba(0,74,153,0.2);
+      box-shadow: 0 10px 20px rgba(0,0,0,0.12);
     }
     .benefit img {
       height: 60px;
-      margin-bottom: 15px;
+      margin-bottom: 20px;
     }
     .benefit h3 {
       margin-bottom: 12px;
       color: #004a99;
     }
+    .benefit p {
+      font-size: 1rem;
+      color: #555;
+    }
 
     /* Opiniones */
-    .reviews-section {
-      max-width: 900px;
-      margin: 60px auto 80px auto;
-      padding: 0 20px;
-      background: #fff;
+    .reviews {
+      background: white;
       border-radius: 12px;
-      box-shadow: 0 5px 25px rgba(0,0,0,0.07);
-      color: #222;
+      padding: 30px 40px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.05);
+      max-width: 900px;
+      margin: 0 auto 60px;
     }
-    .reviews-section h2 {
-      color: #004a99;
-      margin-bottom: 30px;
+    .reviews h2 {
       text-align: left;
+      color: #004a99;
+      margin-bottom: 25px;
+      font-weight: 700;
     }
     .review {
-      border-bottom: 1px solid #ddd;
-      padding: 20px 0;
+      margin-bottom: 25px;
+      border-left: 4px solid #004a99;
+      padding-left: 18px;
       font-style: italic;
-    }
-    .review:last-child {
-      border-bottom: none;
+      color: #333;
+      outline: none;
     }
     .review strong {
       display: block;
-      margin-top: 8px;
+      margin-top: 6px;
       font-style: normal;
-      font-weight: 700;
       color: #004a99;
+    }
+    .review:last-child {
+      margin-bottom: 0;
     }
 
     /* Formulario */
     form {
-      background: #fff;
-      padding: 30px;
-      border-radius: 10px;
-      box-shadow: 0 0 15px rgba(0,0,0,0.1);
+      background: white;
+      padding: 30px 30px 40px;
       max-width: 600px;
-      margin: 0 auto 60px auto;
+      margin: 0 auto 70px;
+      border-radius: 12px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.07);
     }
-    form input, form textarea, form select {
+    form h2 {
+      color: #004a99;
+      margin-bottom: 30px;
+      text-align: center;
+      font-weight: 700;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #004a99;
+    }
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    input[type="date"],
+    select,
+    textarea {
       width: 100%;
-      padding: 12px;
-      margin-bottom: 15px;
-      border: 1px solid #ccc;
-      border-radius: 6px;
+      padding: 12px 14px;
+      margin-bottom: 18px;
+      border: 1.5px solid #ccc;
+      border-radius: 8px;
       font-size: 1rem;
-      font-family: 'Montserrat', sans-serif;
       transition: border-color 0.3s ease;
+      font-family: inherit;
+      resize: vertical;
     }
-    form input:focus, form textarea:focus, form select:focus {
+    input[type="text"]:focus,
+    input[type="email"]:focus,
+    input[type="tel"]:focus,
+    input[type="date"]:focus,
+    select:focus,
+    textarea:focus {
       border-color: #004a99;
       outline: none;
+      box-shadow: 0 0 6px #004a99aa;
     }
-    form button {
-      padding: 14px 30px;
-      background-color: #004a99;
-      color: white;
+    textarea {
+      min-height: 100px;
+    }
+    button {
+      background-color: #25d366;
       border: none;
-      border-radius: 6px;
+      color: white;
+      font-weight: 700;
+      padding: 15px 0;
+      width: 100%;
+      font-size: 1.2rem;
+      border-radius: 8px;
       cursor: pointer;
-      font-weight: bold;
-      font-size: 1.1rem;
       transition: background-color 0.3s ease;
     }
-    form button:hover,
-    form button:focus {
-      background-color: #003366;
+    button:hover,
+    button:focus {
+      background-color: #1ebe57;
       outline: none;
     }
 
     /* WhatsApp flotante */
     .whatsapp-float {
       position: fixed;
-      bottom: 25px;
-      right: 25px;
-      background-color: #25d366;
       width: 60px;
       height: 60px;
+      bottom: 30px;
+      right: 30px;
+      background-color: #25d366;
+      color: white;
       border-radius: 50%;
-      box-shadow: 0 6px 12px rgba(37,211,102,0.6);
+      text-align: center;
+      font-size: 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
       z-index: 1000;
       display: flex;
-      justify-content: center;
       align-items: center;
-      cursor: pointer;
+      justify-content: center;
       transition: background-color 0.3s ease;
     }
-    .whatsapp-float:hover {
+    .whatsapp-float:hover,
+    .whatsapp-float:focus {
       background-color: #1ebe57;
+      outline: none;
     }
     .whatsapp-float svg {
       width: 32px;
@@ -253,45 +222,51 @@
       fill: white;
     }
 
+    /* Media queries */
+    @media (max-width: 768px) {
+      .benefits {
+        flex-direction: column;
+        align-items: center;
+      }
+      header h1 {
+        font-size: 2.2rem;
+      }
+      header p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <!-- Header Mejorado con imagen -->
   <header role="banner" aria-label="Encabezado principal">
-    <div class="header-image" aria-hidden="true"></div>
-    <div class="header-content" tabindex="0">
-      <h1>Asesoramiento Financiero Personalizado Gratis</h1>
-      <p class="subtitle">Organiza, ahorra e invierte con confianza y seguridad</p>
-      <a href="#contact-form" class="btn-cta" aria-label="Reserva tu cita gratuita">Reserva tu cita gratis</a>
-    </div>
+    <h1>Asesoría Financiera Personalizada</h1>
+    <p>Nos podemos ver en persona u online para ayudarte a organizar, ahorrar e invertir mejor tu dinero.</p>
   </header>
 
-  <!-- ¿Qué te ofrecemos? -->
-  <section aria-labelledby="que-te-ofrecemos-title">
-    <h2 id="que-te-ofrecemos-title">¿Qué te ofrecemos?</h2>
-    <div class="benefits">
-      <div class="benefit" tabindex="0">
-        <img src="https://img.icons8.com/ios-filled/68/004a99/investment-portfolio.png" alt="Inversión" />
+  <section aria-labelledby="offer-title">
+    <h2 id="offer-title" style="text-align:center; margin-bottom:40px; color:#004a99;">¿Qué te ofrecemos?</h2>
+    <div class="benefits" role="list">
+      <article class="benefit" role="listitem" tabindex="0" aria-label="Asesoramiento Profesional">
+        <img src="https://img.icons8.com/external-smashingstocks-flat-smashing-stocks/68/004a99/external-investment-finance-smashingstocks-flat-smashing-stocks.png" alt="Icono inversión" />
         <h3>Asesoramiento Profesional</h3>
         <p>Te guiamos paso a paso para tomar las mejores decisiones económicas.</p>
-      </div>
-      <div class="benefit" tabindex="0">
-        <img src="https://img.icons8.com/color/68/000000/money.png" alt="Ahorro" />
+      </article>
+      <article class="benefit" role="listitem" tabindex="0" aria-label="Optimización de Ahorros">
+        <img src="https://img.icons8.com/color/68/004a99/money.png" alt="Icono ahorro" />
         <h3>Optimización de Ahorros</h3>
         <p>Descubre dónde puedes ahorrar sin perder calidad de vida.</p>
-      </div>
-      <div class="benefit" tabindex="0">
-        <img src="https://img.icons8.com/ios-filled/68/004a99/calendar--v1.png" alt="Agenda" />
+      </article>
+      <article class="benefit" role="listitem" tabindex="0" aria-label="Flexibilidad Total">
+        <img src="https://img.icons8.com/ios-filled/68/004a99/calendar--v1.png" alt="Icono calendario" />
         <h3>Flexibilidad Total</h3>
         <p>Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
-      </div>
+      </article>
     </div>
   </section>
 
-  <!-- Opiniones de Clientes -->
-  <section class="reviews-section" aria-labelledby="reviews-title">
-    <h2 id="reviews-title">Opiniones de Clientes Satisfechos</h2>
+  <section class="reviews" aria-labelledby="reviews-title">
+    <h2 id="reviews-title">Opiniones de Clientes</h2>
     <div class="review" tabindex="0">
       <p>"Gracias al asesoramiento pude ahorrar y comenzar a invertir con confianza. ¡Muy recomendable!"</p>
       <strong>- María G.</strong>
@@ -304,31 +279,56 @@
       <p>"Servicio gratuito que realmente marca la diferencia. El trato fue excelente."</p>
       <strong>- Laura M.</strong>
     </div>
+    <div class="review" tabindex="0">
+      <p>"Virgi Villa me ayudó a entender mejor mis finanzas y a planificar mi futuro económico."</p>
+      <strong>- José F.</strong>
+    </div>
+    <div class="review" tabindex="0">
+      <p>"Muy buen servicio, atención personalizada y consejos útiles para ahorrar e invertir."</p>
+      <strong>- Ana P.</strong>
+    </div>
   </section>
 
-  <!-- Formulario de Contacto -->
-  <section aria-labelledby="contact-form-title" id="contact-form" style="margin-bottom: 60px;">
-    <h2 id="contact-form-title" style="text-align: center; margin-bottom: 30px; color: #004a99;">Reserva tu cita gratuita</h2>
-    <form action="https://formspree.io/f/yourformid" method="POST" aria-label="Formulario de reserva de cita">
-      <label for="name">Nombre completo:</label>
-      <input type="text" id="name" name="name" required placeholder="Tu nombre completo" />
+  <section aria-labelledby="contact-form-title">
+    <form action="https://formspree.io/f/xldneqpv" method="POST" aria-label="Formulario de reserva de cita gratuita">
+      <h2 id="contact-form-title">Reserva tu cita gratuita</h2>
+      
+      <label for="nombre">Nombre completo:</label>
+      <input type="text" id="nombre" name="nombre" required placeholder="Tu nombre completo" />
 
       <label for="email">Correo electrónico:</label>
-      <input type="email" id="email" name="_replyto" required placeholder="tu@email.com" />
+      <input type="email" id="email" name="email" required placeholder="tu@email.com" />
 
-      <label for="phone">Número de teléfono:</label>
-      <input type="tel" id="phone" name="phone" placeholder="Opcional" />
+      <label for="telefono">Número de teléfono:</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Opcional" />
 
-      <label for="date">Fecha preferida:</label>
-      <input type="date" id="date" name="date" required />
+      <label for="preferencia">¿Prefieres que nos veamos por la mañana o por la tarde?</label>
+      <select id="preferencia" name="preferencia" required>
+        <option value="" disabled selected>Selecciona una opción</option>
+        <option value="mañana">Por la mañana</option>
+        <option value="tarde">Por la tarde</option>
+      </select>
+
+      <label for="mensaje">Cuéntanos tu situación o qué necesitas:</label>
+      <textarea id="mensaje" name="mensaje" required placeholder="Escribe aquí..."></textarea>
 
       <button type="submit">Enviar solicitud</button>
     </form>
   </section>
 
-  <!-- Botón WhatsApp -->
-  <a href="https://wa.me/34123456789" class="whatsapp-float" aria-label="Chat por WhatsApp" target="_blank" rel="noopener noreferrer">
-    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><path d="M380.9 97.1C339-16.9 197.5-24.9 107.8 40.2 17.5 105.7 1 245.4 45.2 347.4L0 512l164.2-44.6c101.6 42.7 241.1 25.6 305-64.7 35.7-54.7 34.3-128.8-8.3-179.6zM224 360c-28.2 0-54.2-11.1-73.9-29.3l-5.3-5.1c-19.7-19.7-30.9-45.7-30.9-73.9 0-58.1 47.1-105.2 105.2-105.2 27.7 0 53.7 11.2 73.3 29.7 19.6 18.4 31.1 44.1 31.1 72.9 0 57.8-47 104.9-104.5 104.9z"/></svg>
+  <footer style="text-align:center; padding: 20px 0; background:#222; color:#fff; position: fixed; bottom: 0; width: 100%;">
+    <p>&copy; 2025 Virgi Villa. Todos los derechos reservados.</p>
+    <p>
+      <a href="politica-privacidad.html" style="color:#ddd; text-decoration:none; margin: 0 10px;">Política de Privacidad</a>|
+      <a href="politica-cookies.html" style="color:#ddd; text-decoration:none; margin: 0 10px;">Política de Cookies</a>|
+      <a href="aviso-legal.html" style="color:#ddd; text-decoration:none; margin: 0 10px;">Aviso Legal</a>
+    </p>
+  </footer>
+
+  <a href="https://wa.me/34677863127" class="whatsapp-float" aria-label="Contactar por WhatsApp" target="_blank" rel="noopener noreferrer" title="Contactar por WhatsApp">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" aria-hidden="true" focusable="false" fill="currentColor">
+      <path d="M380.9 97.1C339-16.9 197.5-24.9 107.8 40.2 17.5 105.7 1 245.4 45.2 347.4L0 512l164.2-44.6c101.6 42.7 241.1 25.6 305-64.7 35.7-54.7 34.3-128.8-8.3-179.6zM224 360c-28.2 0-54.2-11.1-73.9-29.3l-5.3-5.1c-19.7-19.7-30.9-45.7-30.9-73.9 0-58.1 47.1-105.2 105.2-105.2 27.7 0 53.7 11.2 73.3 29.7 19.6 18.4 31.1 44.1 31.1 72.9 0 57.8-47 104.9-104.5 104.9z"/>
+    </svg>
   </a>
 
 </body>
