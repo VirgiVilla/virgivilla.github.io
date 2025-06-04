@@ -3,15 +3,14 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <meta name="description" content="Asesor financiero personal con experiencia en cambio de banco, ahorro, inversión personalizada y optimización de finanzas personales." />
-  <meta name="keywords" content="asesor financiero, asesor financiero personal, cambio de banco, ayuda para cambio de banco, ahorro, inversión personalizada, finanzas personales" />
-  <title>Asesoramiento Financiero Personalizado Gratis</title>
+  <title>Asesor Financiero Personal | Cambio de Banco, Ahorro e Inversión</title>
+  <meta name="description" content="Asesor financiero personal experto en cambio de banco, ahorro, inversión personalizada y gestión de finanzas personales. Solicita asesoría financiera gratuita y mejora tus finanzas." />
+  <meta name="keywords" content="asesor financiero, asesor financiero personal, cambio de banco, ayuda para cambio de banco, ahorro, inversión personalizada, finanzas personales, asesoría financiera" />
   <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
   <style>
+    /* (Igual CSS que antes para no repetir) */
     * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
+      margin: 0; padding: 0; box-sizing: border-box;
     }
     body {
       font-family: 'Montserrat', sans-serif;
@@ -19,7 +18,6 @@
       background-color: #f4f7fa;
       color: #333;
     }
-
     header {
       position: relative;
       background-image: url('https://images.unsplash.com/photo-1556740749-887f6717d7e4?auto=format&fit=crop&w=1350&q=80');
@@ -29,40 +27,28 @@
       padding: 100px 20px;
       text-align: center;
     }
-
     .header-overlay {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0, 0, 0, 0.6);
-      z-index: 1;
+      position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0, 0, 0, 0.6); z-index: 1;
     }
-
     header h1, header p {
-      position: relative;
-      z-index: 2;
+      position: relative; z-index: 2;
       text-shadow: 3px 3px 10px rgba(0,0,0,0.9);
     }
-
     header h1 {
       font-size: 3rem;
       margin-bottom: 20px;
       font-weight: 700;
     }
-
     header p {
       font-size: 1.4rem;
       max-width: 700px;
       margin: 0 auto;
     }
-
     section {
       padding: 60px 20px;
       max-width: 1100px;
       margin: auto;
     }
-
     .benefits {
       display: flex;
       flex-wrap: wrap;
@@ -70,7 +56,6 @@
       justify-content: center;
       text-align: center;
     }
-
     .benefit {
       flex: 1 1 250px;
       padding: 20px;
@@ -79,17 +64,14 @@
       box-shadow: 0 0 10px rgba(0,0,0,0.05);
       transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
-
     .benefit:hover {
       transform: translateY(-8px);
       box-shadow: 0 8px 20px rgba(0,0,0,0.15);
     }
-
     .benefit img {
       height: 60px;
       margin-bottom: 15px;
     }
-
     .about-text {
       background: #fff;
       padding: 30px;
@@ -103,7 +85,6 @@
       color: #444;
       line-height: 1.5;
     }
-
     form {
       background: #fff;
       padding: 30px;
@@ -112,7 +93,6 @@
       max-width: 600px;
       margin: auto;
     }
-
     form input, form textarea, form select {
       width: 100%;
       padding: 12px;
@@ -121,7 +101,6 @@
       border-radius: 6px;
       font-size: 1rem;
     }
-
     form button {
       padding: 12px 25px;
       background-color: #004a99;
@@ -131,14 +110,16 @@
       cursor: pointer;
       font-weight: bold;
       font-size: 1.1rem;
+      transition: background-color 0.3s ease;
     }
-
+    form button:hover {
+      background-color: #00306d;
+    }
     .opinions {
       max-width: 900px;
       margin: 40px auto;
       padding: 0 20px;
     }
-
     .opinion {
       background: #fff;
       padding: 20px 30px;
@@ -147,32 +128,31 @@
       box-shadow: 0 0 8px rgba(0,0,0,0.05);
       color: #444;
     }
-
     .stars {
       color: #f5c518;
       margin-bottom: 10px;
     }
-
     .opinion strong {
       display: block;
       margin-bottom: 10px;
       font-weight: 700;
       color: #004a99;
     }
-
     footer {
       background: #222;
       color: #fff;
       padding: 20px;
       text-align: center;
     }
-
     footer a {
       color: #ddd;
       margin: 0 10px;
       text-decoration: none;
     }
-
+    footer a:hover {
+      color: #fff;
+      text-decoration: underline;
+    }
     #whatsapp {
       position: fixed;
       bottom: 25px;
@@ -188,100 +168,132 @@
       z-index: 1000;
       transition: background-color 0.3s ease;
     }
-
     #whatsapp:hover {
       background-color: #128c4a;
     }
-
     #whatsapp img {
       width: 32px;
       height: 32px;
     }
   </style>
+
+  <!-- JSON-LD para SEO local y de persona -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Virgi Villa",
+    "jobTitle": "Asesor Financiero Personal",
+    "url": "https://tuweb.com",
+    "sameAs": [
+      "https://www.linkedin.com/in/virgivilla",
+      "https://www.facebook.com/virgivilla"
+    ],
+    "description": "Asesor financiero personal con experiencia en cambio de banco, ahorro, inversión personalizada y finanzas personales.",
+    "contactPoint": {
+      "@type": "ContactPoint",
+      "telephone": "+34632435190",
+      "contactType": "customer service",
+      "areaServed": "ES",
+      "availableLanguage": ["Spanish", "English"]
+    }
+  }
+  </script>
 </head>
 <body>
 
   <header>
     <div class="header-overlay"></div>
-    <h1>Asesoramiento Financiero Personalizado Gratis</h1>
-    <p>Organiza, ahorra e invierte con confianza y seguridad. Recibe ayuda profesional para cambiar de banco y mejorar tus condiciones financieras.</p>
+    <h1>Asesor Financiero Personal – Cambio de Banco, Ahorro e Inversión</h1>
+    <p>Recibe asesoría financiera gratuita y personalizada para optimizar tus finanzas personales, mejorar tus ahorros y facilitar tu cambio de banco.</p>
   </header>
 
-  <section class="about-text">
-    <h2 style="text-align:center; color:#004a99; margin-bottom:20px;">SOBRE MÍ</h2>
-    <p>Soy asesor financiero personal con más de 6 años de experiencia ayudando a muchas personas a alcanzar sus metas económicas. Me dedico a que entiendas y tomes control de tus finanzas personales. Te acompaño si estás pensando en cambiar de banco o si buscas mejores condiciones financieras. Trabajo con cercanía, claridad y resultados reales. Mi objetivo es que logres estabilidad, tranquilidad y crecimiento.</p>
+  <section class="about-text" id="sobre-mi">
+    <h2>SOBRE EL ASESOR FINANCIERO</h2>
+    <p>Soy <strong>Virgi Villa</strong>, asesor financiero personal con más de 6 años de experiencia ayudando a clientes a mejorar sus finanzas personales. Especializado en <em>cambio de banco</em>, estrategias de <em>ahorro</em> y <em>inversión personalizada</em>, te acompaño en el proceso para lograr una gestión financiera clara y efectiva.</p>
+    <p>Mi asesoría financiera se adapta a tus necesidades para que logres estabilidad económica, tranquilidad y crecimiento sostenible.</p>
   </section>
 
-  <section>
-    <h2 style="text-align:center; margin-bottom: 40px;">¿Qué te ofrecemos?</h2>
+  <section id="servicios">
+    <h2>Servicios de Asesoría Financiera Personalizada</h2>
     <div class="benefits">
-      <div class="benefit">
-        <img src="https://img.icons8.com/external-flat-juicy-fish/64/000000/external-finance-financial-technology-flat-flat-juicy-fish.png" alt="Asesoramiento Profesional" />
+      <article class="benefit" aria-label="Asesoramiento Profesional en Finanzas">
+        <img src="https://img.icons8.com/external-flat-juicy-fish/64/000000/external-finance-financial-technology-flat-flat-juicy-fish.png" alt="Icono asesor financiero" />
         <h3>Asesoramiento Profesional</h3>
-        <p>Te ayudamos con tu cambio de banco y cualquier gestión relacionada con tu banco, para que optimices tus finanzas y ahorros.</p>
-      </div>
-      <div class="benefit">
-        <img src="https://img.icons8.com/color/64/000000/money.png" alt="Ahorro" />
+        <p>Te brindo apoyo experto para el <strong>cambio de banco</strong> y la gestión óptima de tus finanzas personales, garantizando mejores condiciones bancarias.</p>
+      </article>
+      <article class="benefit" aria-label="Optimización de Ahorros">
+        <img src="https://img.icons8.com/color/64/000000/money.png" alt="Icono ahorro de dinero" />
         <h3>Optimización de Ahorros</h3>
-        <p>Descubre dónde puedes ahorrar dinero sin perder calidad de vida, maximizando tus recursos bancarios.</p>
-      </div>
-      <div class="benefit">
-        <img src="https://img.icons8.com/ios-filled/64/4a90e2/calendar--v1.png" alt="Agenda" />
+        <p>Descubre cómo aumentar tus ahorros con estrategias personalizadas y consejos para aprovechar mejor tus recursos financieros.</p>
+      </article>
+      <article class="benefit" aria-label="Flexibilidad en asesoría financiera">
+        <img src="https://img.icons8.com/ios-filled/64/4a90e2/calendar--v1.png" alt="Icono calendario para citas" />
         <h3>Flexibilidad Total</h3>
-        <p>Elige día y hora para reunirte, sin moverte de casa o viéndonos en persona.</p>
-      </div>
+        <p>Agenda tu cita según tu disponibilidad, ya sea online o presencial, para una asesoría financiera sin complicaciones.</p>
+      </article>
     </div>
   </section>
 
-  <section>
-    <h2 style="text-align:center; margin-bottom: 30px;">Solicita tu asesoría financiera gratuita</h2>
-    <form action="https://formspree.io/f/xldneqpv" method="POST">
-      <input type="text" name="nombre" placeholder="Tu nombre completo" required />
-      <input type="email" name="email" placeholder="Tu correo electrónico" required />
-      <input type="tel" name="telefono" placeholder="Tu número de teléfono (opcional)" />
-      <select name="preferencia">
-        <option value="">¿Cuándo prefieres hablar?</option>
+  <section id="contacto" aria-label="Formulario de contacto para asesoría financiera">
+    <h2>Solicita tu Asesoría Financiera Gratuita</h2>
+    <form action="https://formspree.io/f/xldneqpv" method="POST" aria-describedby="form-description">
+      <p id="form-description">Completa el formulario para recibir asesoría personalizada en ahorro, inversión o cambio de banco.</p>
+      <label for="nombre">Nombre completo *</label>
+      <input type="text" id="nombre" name="nombre" placeholder="Tu nombre completo" required aria-required="true" />
+      
+      <label for="email">Correo electrónico *</label>
+      <input type="email" id="email" name="email" placeholder="Tu correo electrónico" required aria-required="true" />
+      
+      <label for="telefono">Número de teléfono (opcional)</label>
+      <input type="tel" id="telefono" name="telefono" placeholder="Tu número de teléfono" />
+      
+      <label for="preferencia">¿Cuándo prefieres hablar?</label>
+      <select id="preferencia" name="preferencia" >
+        <option value="" disabled selected>Selecciona una opción</option>
         <option value="mañana">Por la mañana</option>
         <option value="tarde">Por la tarde</option>
       </select>
-      <textarea name="mensaje" rows="5" placeholder="Cuéntame tu situación o qué necesitas (ahorro, inversión, cambio de banco, finanzas personales)..." required></textarea>
+      
+      <label for="mensaje">Mensaje *</label>
+      <textarea id="mensaje" name="mensaje" rows="5" placeholder="Cuéntame qué necesitas: ahorro, inversión, cambio de banco, finanzas personales..." required aria-required="true"></textarea>
+      
       <button type="submit">Enviar solicitud</button>
     </form>
   </section>
 
-  <section class="opinions">
-    <h2 style="text-align:center; color:#004a99; margin-bottom: 20px;">Opiniones de Clientes</h2>
-
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
+  <section class="opinions" aria-label="Opiniones de clientes sobre asesoría financiera">
+    <h2>Opiniones de Clientes Satisfechos</h2>
+    <article class="opinion">
+      <div class="stars" aria-label="5 estrellas">★★★★★</div>
       <strong>Ana P.</strong>
       <p>Un asesor financiero muy dedicado que me ayudó a conseguir la estabilidad financiera que necesitaba con mi banco.</p>
-    </div>
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
+    </article>
+    <article class="opinion">
+      <div class="stars" aria-label="5 estrellas">★★★★★</div>
       <strong>David S.</strong>
       <p>Su consejo para cambiar de banco fue clave para mejorar mis finanzas personales. ¡Gracias!</p>
-    </div>
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
+    </article>
+    <article class="opinion">
+      <div class="stars" aria-label="5 estrellas">★★★★★</div>
       <strong>Laura G.</strong>
       <p>Me explicó todo de forma clara. Muy profesional y amable. Totalmente recomendable.</p>
-    </div>
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
+    </article>
+    <article class="opinion">
+      <div class="stars" aria-label="5 estrellas">★★★★★</div>
       <strong>Javier M.</strong>
       <p>Gracias a su asesoría, cambié de banco y ahora tengo mejores condiciones. ¡Un acierto!</p>
-    </div>
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
+    </article>
+    <article class="opinion">
+      <div class="stars" aria-label="5 estrellas">★★★★★</div>
       <strong>Claudia T.</strong>
       <p>Me ayudó a organizar mis gastos y encontrar mejores opciones bancarias. Muy contenta con el trato.</p>
-    </div>
-    <div class="opinion">
-      <div class="stars">★★★★★</div>
+    </article>
+    <article class="opinion">
+      <div class="stars" aria-label="5 estrellas">★★★★★</div>
       <strong>Raúl D.</strong>
       <p>Muy recomendable. Gracias a él ahora tengo una estrategia clara de ahorro e inversión.</p>
-    </div>
+    </article>
   </section>
 
   <footer>
@@ -293,8 +305,8 @@
     </p>
   </footer>
 
-  <a href="https://wa.me/34632435190" target="_blank" id="whatsapp" aria-label="WhatsApp">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
+  <a href="https://wa.me/34632435190" target="_blank" id="whatsapp" aria-label="WhatsApp chat">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="Icono WhatsApp para contacto rápido" />
   </a>
 
 </body>
